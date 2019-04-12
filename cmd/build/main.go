@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"github.com/cloudfoundry/conda-cnb/cmd/conda"
+	"github.com/cloudfoundry/libcfbuildpack/runner"
 	"os"
 
 	"github.com/buildpack/libbuildpack/buildplan"
@@ -27,6 +29,17 @@ func main() {
 
 func runBuild(context build.Build) (int, error) {
 	context.Logger.FirstLine(context.Logger.PrettyIdentity(context.Buildpack))
+
+	packagesContributor, willContribute, err := conda.NewContributor(context, runner.CommandRunner{})
+	if err != nil {
+		return context.Failure(102), err
+	}
+
+	if willContribute {
+		if err := packagesContributor.Contribute(); err != nil {
+			return context.Failure(103), err
+		}
+	}
 
 	return context.Success(buildplan.BuildPlan{})
 }

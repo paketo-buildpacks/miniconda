@@ -1,0 +1,1057 @@
+{
+  "channeldata_version": 1,
+  "packages": {
+    "asn1crypto": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "dev_url": "https://github.com/wbond/asn1crypto",
+      "doc_url": "https://github.com/wbond/asn1crypto#documentation",
+      "home": "https://github.com/wbond/asn1crypto",
+      "license": "MIT",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/asn1crypto-0.24.0-py27_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/a/asn1crypto/asn1crypto-0.24.0.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Python ASN.1 library with a focus on performance and a pythonic API",
+      "text_prefix": false,
+      "version": "0.24.0"
+    },
+    "ca-certificates": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "home": "https://github.com/conda-forge/ca-certificates-feedstock",
+      "identifiers": [],
+      "keywords": [],
+      "license": "ISC",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/ca-certificates-2019.1.23-0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://curl.haxx.se/ca/cacert-2019-01-23.pem",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Certificates for use with other packages.",
+      "tags": [],
+      "text_prefix": false,
+      "version": "2019.1.23"
+    },
+    "certifi": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "Certifi is a curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts.",
+      "dev_url": "https://github.com/certifi/python-certifi",
+      "doc_source_url": "https://github.com/certifi/certifi.io/blob/master/README.rst",
+      "doc_url": "https://pypi.python.org/pypi/certifi",
+      "home": "http://certifi.io/",
+      "identifiers": [],
+      "keywords": [],
+      "license": "ISC",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/certifi-2019.3.9-py37_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/c/certifi/certifi-2019.3.9.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Python package for providing Mozilla's CA Bundle.",
+      "tags": [],
+      "text_prefix": false,
+      "version": "2019.3.9"
+    },
+    "cffi": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "Cffi aims to allow users to call C code from Python without having to learn a 3rd language. It provides a convenient and reliable way to call compiled C code from Python using interface declarations written in C.",
+      "dev_url": "https://bitbucket.org/cffi/cffi/overview",
+      "doc_source_url": "https://bitbucket.org/cffi/cffi/src/default/doc/?at=default",
+      "doc_url": "http://cffi.readthedocs.org",
+      "home": "https://bitbucket.org/cffi/cffi",
+      "license": "MIT",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/cffi-1.11.5-py27he75722e_1.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/c/cffi/cffi-1.11.5.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Foreign Function Interface for Python calling C code.",
+      "text_prefix": false,
+      "version": "1.11.5"
+    },
+    "chardet": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "chardet is a character encoding auto-detector in Python.",
+      "dev_url": "https://github.com/chardet/chardet",
+      "doc_source_url": "https://github.com/chardet/chardet/blob/master/docs/index.rst",
+      "doc_url": "http://chardet.readthedocs.org/",
+      "home": "https://github.com/chardet/chardet",
+      "license": "LGPL2",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/chardet-3.0.4-py27_1.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/c/chardet/chardet-3.0.4.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Universal character encoding detector",
+      "text_prefix": true,
+      "version": "3.0.4"
+    },
+    "click": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "Click is a Python package for creating beautiful command line interfaces in a composable way with as little code as necessary.",
+      "dev_url": "https://github.com/pallets/click",
+      "doc_source_url": "https://github.com/pallets/click/blob/master/docs/index.rst",
+      "doc_url": "https://click.palletsprojects.com",
+      "home": "https://palletsprojects.com/p/click",
+      "identifiers": [],
+      "keywords": [],
+      "license": "BSD-3-Clause",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/click-7.0-py37_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/C/Click/Click-7.0.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Python composable command line interface toolkit",
+      "tags": [],
+      "text_prefix": false,
+      "version": "7.0"
+    },
+    "conda": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "Conda is an open source package management system and environment management system for installing multiple versions of software packages and their dependencies and switching easily between them. It works on Linux, OS X and Windows, and was created for Python programs but can package and distribute any software.",
+      "dev_url": "https://github.com/conda/conda",
+      "doc_url": "https://conda.io/docs/",
+      "home": "https://conda.io",
+      "identifiers": [],
+      "keywords": [],
+      "license": "BSD 3-Clause",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/conda-4.5.12-py27_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://github.com/conda/conda/archive/4.5.12.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "OS-agnostic, system-level binary package and environment manager.",
+      "tags": [],
+      "text_prefix": true,
+      "version": "4.5.12"
+    },
+    "conda-env": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "Provides the conda env interface to Conda environments.",
+      "dev_url": "https://github.com/conda/conda-env",
+      "doc_source_url": "https://github.com/conda/conda-docs",
+      "doc_url": "https://conda.io/docs/user-guide/overview.html",
+      "home": "https://github.com/conda/conda-env",
+      "license": "BSD 3-Clause",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/conda-env-2.6.0-1.tar.bz2",
+      "run_exports": {},
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Tools for interacting with conda environments.",
+      "text_prefix": false,
+      "version": "2.6.0"
+    },
+    "cryptography": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "Cryptography is a package which provides cryptographic recipes and primitives to Python developers. Our goal is for it to be your \"cryptographic standard library\". It supports Python 2.6-2.7, Python 3.3+, and PyPy 2.6+. Cryptography includes both high level recipes, and low level interfaces to common cryptographic algorithms such as symmetric ciphers, message digests and key derivation functions.",
+      "dev_url": "https://github.com/pyca/cryptography",
+      "doc_source_url": "https://github.com/pyca/cryptography/tree/master/docs",
+      "doc_url": "http://cryptography.readthedocs.io/",
+      "home": "https://github.com/pyca/cryptography",
+      "identifiers": [],
+      "keywords": [],
+      "license": "Apache 2.0 or BSD 3-Clause, PSF 2",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/cryptography-2.4.2-py27h1ba5d50_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/c/cryptography/cryptography-2.4.2.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Provides cryptographic recipes and primitives to Python developers",
+      "tags": [],
+      "text_prefix": false,
+      "version": "2.4.2"
+    },
+    "enum34": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "enumeration is a set of symbolic names bound to unique, constant values. Within it, the members can be compared by identity and the enumeration itself can be iterated over.",
+      "dev_url": "https://bitbucket.org/stoneleaf/enum34",
+      "doc_source_url": "https://bitbucket.org/stoneleaf/enum34/src/default/enum/doc/enum.rst",
+      "doc_url": "https://pypi.python.org/pypi/enum34",
+      "home": "https://bitbucket.org/stoneleaf/enum34",
+      "license": "BSD 3-Clause",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/enum34-1.1.6-py27_1.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/e/enum34/enum34-1.1.6.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Python 3.4 Enum backported to 3.3, 3.2, 3.1, 2.7, 2.6, 2.5, and 2.4",
+      "text_prefix": false,
+      "version": "1.1.6"
+    },
+    "flask": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "Flask is a microframework for Python based on Werkzeug and Jinja2. It's intended for getting started very quickly and was developed with best intentions in mind.",
+      "dev_url": "https://github.com/pallets/flask",
+      "doc_source_url": "https://github.com/pallets/flask/blob/master/docs/index.rst",
+      "doc_url": "http://flask.pocoo.org/docs/1.0/",
+      "home": "http://flask.pocoo.org",
+      "license": "BSD 3-Clause",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/flask-1.0.2-py37_1.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/F/Flask/Flask-1.0.2.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "A microframework based on Werkzeug, Jinja2 and good intentions.",
+      "text_prefix": true,
+      "version": "1.0.2"
+    },
+    "futures": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "concurrent.futures module provides a high-level interface for asynchronously executing callables.",
+      "dev_url": "https://github.com/agronholm/pythonfutures",
+      "doc_source_url": "https://github.com/agronholm/pythonfutures/blob/master/docs/index.rst",
+      "doc_url": "http://pythonhosted.org/futures/",
+      "home": "https://github.com/agronholm/pythonfutures",
+      "license": "PSF",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/futures-3.2.0-py27_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/f/futures/futures-3.2.0.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Backport of the concurrent.futures package from Python 3.2",
+      "text_prefix": false,
+      "version": "3.2.0"
+    },
+    "idna": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "A library to support the Internationalised Domain Names in Applications (IDNA) protocol as specified in RFC 5891. This version of the protocol is often referred to as \"IDNA2008\".",
+      "home": "https://github.com/kjd/idna",
+      "identifiers": [],
+      "keywords": [],
+      "license": "BSD Like",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/idna-2.8-py27_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/i/idna/idna-2.8.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Internationalized Domain Names in Applications (IDNA).",
+      "tags": [],
+      "text_prefix": false,
+      "version": "2.8"
+    },
+    "ipaddress": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "Python 3.3's ipadress for older Python versions",
+      "doc_source_url": "https://github.com/phihag/ipaddress/blob/master/README.md",
+      "doc_url": "https://pypi.python.org/pypi/ipaddress",
+      "home": "https://github.com/phihag/ipaddress",
+      "license": "PSF 2",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/ipaddress-1.0.22-py27_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/i/ipaddress/ipaddress-1.0.22.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "IPv4/IPv6 manipulation library",
+      "text_prefix": false,
+      "version": "1.0.22"
+    },
+    "itsdangerous": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "Internally itsdangerous uses HMAC and SHA1 for signing data and bases the implementation on the Django signing module.  It also however supports JSON Web Signatures (JWS).",
+      "dev_url": "https://github.com/pallets/itsdangerous",
+      "doc_source_url": "https://github.com/pallets/itsdangerous/blob/master/docs/index.rst",
+      "doc_url": "http://pythonhosted.org/itsdangerous",
+      "home": "https://github.com/pallets/itsdangerous",
+      "identifiers": [],
+      "keywords": [],
+      "license": "BSD 3-Clause",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/itsdangerous-1.1.0-py37_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/i/itsdangerous/itsdangerous-1.1.0.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Various helpers to pass trusted data to untrusted environments.",
+      "tags": [],
+      "text_prefix": false,
+      "version": "1.1.0"
+    },
+    "jinja2": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "Jinja2 is a full featured template engine for Python. It has full unicode support, an optional integrated sandboxed execution environment, widely used and BSD licensed.",
+      "dev_url": "https://github.com/pallets/jinja",
+      "doc_source_url": "https://github.com/pallets/jinja/blob/master/docs/index.rst",
+      "doc_url": "http://jinja.pocoo.org/docs/dev/",
+      "home": "http://jinja.pocoo.org",
+      "license": "3-Clause BSD",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/jinja2-2.10-py37_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/J/Jinja2/Jinja2-2.10.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "An easy to use stand-alone template engine written in pure python.",
+      "text_prefix": false,
+      "version": "2.10"
+    },
+    "libedit": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "This is an autotool- and libtoolized port of the NetBSD Editline library (libedit). This Berkeley-style licensed command line editor library provides generic line editing, history, and tokenization functions, similar to those found in GNU Readline",
+      "home": "http://thrysoee.dk/editline/",
+      "identifiers": [],
+      "keywords": [],
+      "license": "NetBSD",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/libedit-3.1.20181209-hc058e9b_0.tar.bz2",
+      "run_exports": {
+        "weak": [
+          "libedit >=3.1.20181209,<3.2.0a0"
+        ]
+      },
+      "source_url": "http://thrysoee.dk/editline/libedit-20181209-3.1.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Editline Library (libedit)",
+      "tags": [],
+      "text_prefix": true,
+      "version": "3.1.20181209"
+    },
+    "libffi": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "The libffi library provides a portable, high level programming interface to various calling conventions. This allows a programmer to call any function specified by a call interface description at run-time.",
+      "dev_url": "https://github.com/libffi/libffi",
+      "doc_url": "https://sourceware.org/libffi/",
+      "home": "https://sourceware.org/libffi/",
+      "license": "Custom",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/libffi-3.2.1-hd88cf55_4.tar.bz2",
+      "run_exports": {
+        "weak": [
+          "libffi >=3.2.1,<4.0a0"
+        ]
+      },
+      "source_url": "ftp://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "A Portable Foreign Function Interface Library.",
+      "text_prefix": true,
+      "version": "3.2.1"
+    },
+    "libgcc-ng": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "home": "https://gcc.gnu.org/onlinedocs/gccint/Libgcc.html",
+      "license": "GPL",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/libgcc-ng-8.2.0-hdf63c60_1.tar.bz2",
+      "run_exports": {},
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "The GCC low-level runtime library",
+      "text_prefix": false,
+      "version": "8.2.0"
+    },
+    "libstdcxx-ng": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "home": "https://gcc.gnu.org/",
+      "license": "GPL3 with runtime exception",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/libstdcxx-ng-8.2.0-hdf63c60_1.tar.bz2",
+      "run_exports": {},
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "The GNU C++ Runtime Library",
+      "text_prefix": false,
+      "version": "8.2.0"
+    },
+    "markupsafe": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "MarkupSafe is a library for Python that implements a unicode string that is aware of HTML escaping rules and can be used to implement automatic string escaping. It is used by Jinja 2, the Mako templating engine, the Pylons web framework and many more.",
+      "dev_url": "https://github.com/pallets/markupsafe",
+      "doc_source_url": "https://github.com/pallets/markupsafe/blob/master/README.rst",
+      "doc_url": "https://pypi.python.org/pypi/MarkupSafe",
+      "home": "https://www.palletsprojects.com/p/markupsafe",
+      "identifiers": [],
+      "keywords": [],
+      "license": "BSD-3-Clause",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/markupsafe-1.1.1-py37h7b6447c_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/M/MarkupSafe/MarkupSafe-1.1.1.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "A Python module that implements the jinja2.Markup string",
+      "tags": [],
+      "text_prefix": false,
+      "version": "1.1.1"
+    },
+    "ncurses": {
+      "activate.d": false,
+      "binary_prefix": true,
+      "deactivate.d": false,
+      "description": "The ncurses (new curses) library is a free software emulation of curses in System V Release 4.0 (SVr4), and more. It uses terminfo format, supports pads and color and multiple highlights and forms characters and function-key mapping, and has all the other SVr4-curses enhancements over BSD curses. SVr4 curses is better known today as X/Open Curses",
+      "dev_url": "http://invisible-island.net/ncurses/",
+      "doc_url": "http://invisible-island.net/ncurses/NCURSES-Programming-HOWTO.html",
+      "home": "http://www.gnu.org/software/ncurses/",
+      "identifiers": [],
+      "keywords": [],
+      "license": "Free software (MIT-like)",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/ncurses-6.1-he6710b0_1.tar.bz2",
+      "run_exports": {
+        "weak": [
+          "ncurses >=6.1,<7.0a0"
+        ]
+      },
+      "source_url": "http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Library for text-based user interfaces",
+      "tags": [],
+      "text_prefix": true,
+      "version": "6.1"
+    },
+    "nose": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "NOTE: Nose has been in maintenance mode for the past several years and will likely cease without a new person/team to take over maintainership. New projects should consider using Nose2, py.test, or just plain unittest/unittest2.",
+      "dev_url": "https://github.com/nose-devs/nose/",
+      "doc_source_url": "https://github.com/nose-devs/nose/blob/master/doc/index.rst",
+      "doc_url": "https://nose.readthedocs.org",
+      "home": "http://readthedocs.org/docs/nose/",
+      "license": "LGPL-2.1",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/nose-1.3.7-py37_2.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/n/nose/nose-1.3.7.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Nose extends unittest to make testing easier",
+      "text_prefix": true,
+      "version": "1.3.7"
+    },
+    "openssl": {
+      "activate.d": false,
+      "binary_prefix": true,
+      "deactivate.d": false,
+      "dev_url": "https://github.com/openssl/openssl",
+      "doc_url": "https://www.openssl.org/docs/man1.1.1/",
+      "home": "http://www.openssl.org/",
+      "identifiers": [],
+      "keywords": [],
+      "license": "OpenSSL",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/openssl-1.1.1b-h7b6447c_1.tar.bz2",
+      "run_exports": {
+        "weak": [
+          "openssl >=1.1.1b,<1.1.2a"
+        ]
+      },
+      "source_url": "http://www.openssl.org/source/openssl-1.1.1b.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "OpenSSL is an open-source implementation of the SSL and TLS protocols",
+      "tags": [],
+      "text_prefix": true,
+      "version": "1.1.1b"
+    },
+    "pip": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "dev_url": "https://github.com/pypa/pip",
+      "doc_url": "https://pip.pypa.io/en/stable/",
+      "home": "https://pip.pypa.io/en/stable/",
+      "identifiers": [],
+      "keywords": [],
+      "license": "MIT",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/pip-19.0.3-py37_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/p/pip/pip-19.0.3.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "PyPA recommended tool for installing Python packages",
+      "tags": [],
+      "text_prefix": true,
+      "version": "19.0.3"
+    },
+    "pycosat": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "PicoSAT is a popular SAT solver written by Armin Biere in pure C. This package provides efficient Python bindings to picosat on the C level, i.e. when importing pycosat, the picosat solver becomes part of the Python process itself.",
+      "dev_url": "https://github.com/ContinuumIO/pycosat",
+      "doc_source_url": "https://github.com/ContinuumIO/pycosat/blob/master/README.rst",
+      "doc_url": "https://pypi.python.org/pypi/pycosat",
+      "home": "https://github.com/ContinuumIO/pycosat",
+      "license": "MIT",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/pycosat-0.6.3-py27h14c3975_0.tar.bz2",
+      "run_exports": {},
+      "source_git_rev": "0.6.3",
+      "source_git_url": "https://github.com/mingwandroid/pycosat.git",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Bindings to picosat (a SAT solver)",
+      "text_prefix": false,
+      "version": "0.6.3"
+    },
+    "pycparser": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "pycparser is a complete parser of the C language, written in pure Python using the PLY parsing library.  It parses C code into an AST and can serve as a front-end for C compilers or analysis tools.",
+      "dev_url": "https://github.com/eliben/pycparser",
+      "doc_source_url": "https://github.com/eliben/pycparser",
+      "doc_url": "https://pypi.python.org/pypi/pycparser",
+      "home": "https://github.com/eliben/pycparser",
+      "identifiers": [],
+      "keywords": [],
+      "license": "BSD 3-clause",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/pycparser-2.19-py27_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/p/pycparser/pycparser-2.19.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Complete C99 parser in pure Python",
+      "tags": [],
+      "text_prefix": false,
+      "version": "2.19"
+    },
+    "pyopenssl": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "pyOpenSSL is a high-level wrapper around a subset of the OpenSSL library. It includes: -SSL.Connection objects, wrapping the methods of Python's portable sockets -Callbacks written in Python -Extensive error-handling mechanism, mirroring OpenSSL's error codes and much more.",
+      "dev_url": "https://github.com/pyca/pyopenssl",
+      "doc_source_url": "https://github.com/pyca/pyopenssl/blob/master/doc/index.rst",
+      "doc_url": "https://pyopenssl.readthedocs.org/en/stable/",
+      "home": "https://github.com/pyca/pyopenssl",
+      "license": "Apache 2.0",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/pyopenssl-18.0.0-py27_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/p/pyOpenSSL/pyOpenSSL-18.0.0.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Python wrapper module around the OpenSSL library",
+      "text_prefix": false,
+      "version": "18.0.0"
+    },
+    "pysocks": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "dev_url": "https://github.com/Anorov/PySocks",
+      "doc_url": "https://github.com/Anorov/PySocks/blob/master/README.md",
+      "home": "https://github.com/Anorov/PySocks",
+      "license": "BSD 3-Clause",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/pysocks-1.6.8-py27_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/P/PySocks/PySocks-1.6.8.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "A Python SOCKS client module. See https://github.com/Anorov/PySocks for more information.",
+      "text_prefix": false,
+      "version": "1.6.8"
+    },
+    "python": {
+      "activate.d": false,
+      "binary_prefix": true,
+      "deactivate.d": false,
+      "description": "Python is a widely used high-level, general-purpose, interpreted, dynamic programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java. The language provides constructs intended to enable clear programs on both a small and large scale.",
+      "dev_url": "https://docs.python.org/devguide/",
+      "doc_source_url": "https://github.com/python/pythondotorg/blob/master/docs/source/index.rst",
+      "doc_url": "https://www.python.org/doc/versions/",
+      "home": "http://www.python.org/",
+      "identifiers": [],
+      "keywords": [],
+      "license": "PSF",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/python-3.7.3-h0371630_0.tar.bz2",
+      "run_exports": {},
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "General purpose programming language",
+      "tags": [],
+      "text_prefix": true,
+      "version": "3.7.3"
+    },
+    "readline": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "The standard Python readline extension statically linked against the GNU readline library.",
+      "dev_url": "https://github.com/ludwigschwardt/python-gnureadline",
+      "doc_source_url": "https://github.com/ludwigschwardt/python-gnureadline",
+      "doc_url": "https://pypi.python.org/pypi/readline",
+      "home": "https://cnswww.cns.cwru.edu/php/chet/readline/rltop.html",
+      "license": "GPL-3.0",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/readline-7.0-h7b6447c_5.tar.bz2",
+      "run_exports": {
+        "weak": [
+          "readline >=7.0,<8.0a0"
+        ]
+      },
+      "source_url": "ftp://ftp.gnu.org/gnu/readline/readline-7.0.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "library for editing command lines as they are typed in",
+      "text_prefix": false,
+      "version": "7.0"
+    },
+    "requests": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "Requests is the only Non-GMO HTTP library for Python, safe for human consumption.",
+      "dev_url": "https://github.com/kennethreitz/requests",
+      "doc_source_url": "https://github.com/requests/requests/tree/master/docs",
+      "doc_url": "http://docs.python-requests.org/",
+      "home": "http://python-requests.org",
+      "identifiers": [],
+      "keywords": [],
+      "license": "Apache 2.0",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/requests-2.21.0-py27_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/r/requests/requests-2.21.0.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Python HTTP for Humans",
+      "tags": [],
+      "text_prefix": false,
+      "version": "2.21.0"
+    },
+    "ruamel_yaml": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "ruamel.yaml is a YAML 1.2 loader/dumper package for Python.",
+      "dev_url": "https://bitbucket.org/ruamel/yaml/src",
+      "doc_source_url": "https://bitbucket.org/ruamel/yaml/src/default/_doc/?at=default",
+      "doc_url": "http://yaml.readthedocs.io/en/latest/overview.html",
+      "home": "https://bitbucket.org/ruamel/yaml",
+      "license": "MIT",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/ruamel_yaml-0.15.46-py27h14c3975_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://bitbucket.org/ruamel/yaml/get/0.15.46.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "A patched copy of ruamel.yaml.",
+      "text_prefix": false,
+      "version": "0.15.46"
+    },
+    "setuptools": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "Setuptools is a fully-featured, actively-maintained, and stable library designed to facilitate packaging Python projects.",
+      "dev_url": "https://github.com/pypa/setuptools",
+      "doc_source_url": "https://github.com/pypa/setuptools/tree/master/docs",
+      "doc_url": "http://pythonhosted.org/setuptools/",
+      "home": "https://github.com/pypa/setuptools",
+      "identifiers": [],
+      "keywords": [],
+      "license": "MIT",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/setuptools-40.8.0-py37_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/s/setuptools/setuptools-40.8.0.zip",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Download, build, install, upgrade, and uninstall Python packages",
+      "tags": [],
+      "text_prefix": true,
+      "version": "40.8.0"
+    },
+    "six": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "Six provides simple utilities for wrapping over differences between Python 2 and Python 3. It is intended to support codebases that work on both Python 2 and 3 without modification. six consists of only one Python file, so it is painless to copy into a project.",
+      "dev_url": "https://github.com/benjaminp/six",
+      "doc_url": "http://pythonhosted.org/six/",
+      "home": "http://pypi.python.org/pypi/six/",
+      "identifiers": [],
+      "keywords": [],
+      "license": "MIT",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/six-1.12.0-py27_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/s/six/six-1.12.0.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Python 2 and 3 compatibility utilities",
+      "tags": [],
+      "text_prefix": false,
+      "version": "1.12.0"
+    },
+    "sqlite": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "SQLite is a self-contained, high-reliability, embedded, full-featured, public-domain, SQL database engine.It is the most used database engine in the world.",
+      "dev_url": "https://github.com/mackyle/sqlite",
+      "doc_source_url": "https://github.com/mackyle/sqlite/tree/master/doc",
+      "doc_url": "http://www.sqlite.org/docs.html",
+      "home": "http://www.sqlite.org/",
+      "identifiers": [],
+      "keywords": [],
+      "license": "Public-Domain (http://www.sqlite.org/copyright.html)",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/sqlite-3.27.2-h7b6447c_0.tar.bz2",
+      "run_exports": {
+        "weak": [
+          "sqlite >=3.27.2,<4.0a0"
+        ]
+      },
+      "source_url": "https://www.sqlite.org/2019/sqlite-autoconf-3270200.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Implements a self-contained, zero-configuration, SQL database engine.",
+      "tags": [],
+      "text_prefix": true,
+      "version": "3.27.2"
+    },
+    "tk": {
+      "activate.d": false,
+      "binary_prefix": true,
+      "deactivate.d": false,
+      "home": "http://www.tcl.tk/",
+      "license": "Tcl/Tk",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/tk-8.6.8-hbc83047_0.tar.bz2",
+      "run_exports": {
+        "weak": [
+          "tk >=8.6.8,<8.7.0a0"
+        ]
+      },
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "A dynamic programming language with GUI support.  Bundles Tcl and Tk.",
+      "text_prefix": true,
+      "version": "8.6.8"
+    },
+    "urllib3": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "urllib3 is a powerful, sanity-friendly HTTP client for Python. Much of the Python ecosystem already uses urllib3. urllib3 brings many critical features that are missing from the Python standard libraries, such as thread safety, connection pooling, client side ssl/tls verification, support for gzip and deflate encodings, HTTP and SOCKS proxy support, helpers for retrying requests and dealing with HTTP redirects.",
+      "dev_url": "https://github.com/shazow/urllib3",
+      "doc_source_url": "https://github.com/shazow/urllib3/tree/master/docs",
+      "doc_url": "https://urllib3.readthedocs.io/",
+      "home": "https://urllib3.readthedocs.io/",
+      "identifiers": [],
+      "keywords": [],
+      "license": "MIT",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/urllib3-1.24.1-py27_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/u/urllib3/urllib3-1.24.1.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "HTTP library with thread-safe connection pooling, file post, and more.",
+      "tags": [],
+      "text_prefix": false,
+      "version": "1.24.1"
+    },
+    "werkzeug": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "Werkzeug is a WSGI utility library for Python. It's widely used and BSD licensed.",
+      "dev_url": "https://github.com/pallets/werkzeug",
+      "doc_source_url": "https://github.com/pallets/werkzeug/tree/master/docs",
+      "doc_url": "http://werkzeug.pocoo.org/docs",
+      "home": "http://werkzeug.pocoo.org/",
+      "license": "BSD 3-Clause",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/werkzeug-0.14.1-py37_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/W/Werkzeug/Werkzeug-0.14.1.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "The Python WSGI Utility Library.",
+      "text_prefix": false,
+      "version": "0.14.1"
+    },
+    "wheel": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "home": "https://github.com/pypa/wheel",
+      "identifiers": [],
+      "keywords": [],
+      "license": "MIT",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/wheel-0.33.1-py37_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/w/wheel/wheel-0.33.1.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "A built-package format for Python.",
+      "tags": [],
+      "text_prefix": true,
+      "version": "0.33.1"
+    },
+    "xz": {
+      "activate.d": false,
+      "binary_prefix": true,
+      "deactivate.d": false,
+      "description": "XZ Utils is free general-purpose data compression software with a high compression ratio. XZ Utils were written for POSIX-like systems, but also work on some not-so-POSIX systems.",
+      "dev_url": "http://git.tukaani.org/",
+      "doc_source_url": "https://github.com/xz-mirror/xz/blob/master/README",
+      "doc_url": "http://tukaani.org/xz/",
+      "home": "http://tukaani.org/xz/",
+      "license": "LGPL-2.1 and GPL-2.0",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/xz-5.2.4-h14c3975_4.tar.bz2",
+      "run_exports": {
+        "weak": [
+          "xz >=5.2.4,<6.0a0"
+        ]
+      },
+      "source_url": "http://downloads.sourceforge.net/project/lzmautils/xz-5.2.4.tar.bz2",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Data compression software with high compression ratio",
+      "text_prefix": true,
+      "version": "5.2.4"
+    },
+    "yaml": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "YAML is a human friendly data serialization standard for all programming languages.",
+      "dev_url": "https://github.com/yaml",
+      "doc_source_url": "https://github.com/yaml/www.yaml.org/tree/master/docs",
+      "doc_url": "http://www.yaml.org/spec/1.2/spec.html",
+      "home": "http://pyyaml.org/wiki/LibYAML",
+      "license": "MIT",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/yaml-0.1.7-had09818_2.tar.bz2",
+      "run_exports": {
+        "weak": [
+          "yaml >=0.1.7,<0.2.0a0"
+        ]
+      },
+      "source_url": "http://pyyaml.org/download/libyaml/yaml-0.1.7.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "A C library for parsing and emitting YAML.",
+      "text_prefix": true,
+      "version": "0.1.7"
+    },
+    "zlib": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "zlib is designed to be a free, general-purpose, lossless data-compression library for use on virtually any computer hardware and operating system.",
+      "dev_url": "https://github.com/madler/zlib",
+      "doc_url": "http://zlib.net/manual.html",
+      "home": "http://zlib.net/",
+      "identifiers": [],
+      "keywords": [],
+      "license": "zlib",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "linux-64/zlib-1.2.11-h7b6447c_3.tar.bz2",
+      "run_exports": {
+        "weak": [
+          "zlib >=1.2.11,<1.3.0a0"
+        ]
+      },
+      "source_url": "http://zlib.net/zlib-1.2.11.tar.gz",
+      "subdirs": [
+        "linux-64"
+      ],
+      "summary": "Massively spiffy yet delicately unobtrusive compression library",
+      "tags": [],
+      "text_prefix": true,
+      "version": "1.2.11"
+    }
+  },
+  "subdirs": [
+    "linux-64",
+    "noarch"
+  ]
+}

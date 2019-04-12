@@ -1,0 +1,22 @@
+{
+  "build": "py27_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "certifi >=2016.09",
+    "python >=2.7,<2.8.0a0"
+  ],
+  "features": "",
+  "fn": "setuptools-40.6.3-py27_0.tar.bz2",
+  "license": "MIT",
+  "license_family": "MIT",
+  "md5": "31436d7efec9caaac0c812f56f942ad8",
+  "name": "setuptools",
+  "size": 642522,
+  "subdir": "linux-64",
+  "timestamp": 1545069686566,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/setuptools-40.6.3-py27_0.tar.bz2",
+  "version": "40.6.3"
+}

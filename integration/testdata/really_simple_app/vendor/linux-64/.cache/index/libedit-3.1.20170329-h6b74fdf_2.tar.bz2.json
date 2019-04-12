@@ -1,0 +1,1 @@
+{"sha256": "4a30b3252242d542c804792afd605358869d07db3a3c42302ba6fa99360e5696", "build_number": 2, "name": "libedit", "license": "NetBSD", "timestamp": 1525913899914, "license_family": "BSD", "depends": ["libgcc-ng >=7.2.0", "ncurses >=6.1,<7.0a0"], "version": "3.1.20170329", "build": "h6b74fdf_2", "size": 176192, "md5": "a964d1e4af67f04710aa18950279b7f4", "subdir": "linux-64"}

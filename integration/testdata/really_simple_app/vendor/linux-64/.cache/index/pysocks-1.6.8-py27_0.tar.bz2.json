@@ -1,0 +1,1 @@
+{"sha256": "a33171b82898ef8b0f2a1528a8b0a587388fe11501128f1333a3e351b80b221f", "build_number": 0, "name": "pysocks", "license": "BSD 3-Clause", "timestamp": 1519749372651, "license_family": "BSD", "depends": ["python >=2.7,<2.8.0a0"], "version": "1.6.8", "build": "py27_0", "size": 22522, "md5": "89b5047703f68a5db1a44b1a896738f8", "subdir": "linux-64"}

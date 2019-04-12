@@ -1,0 +1,1 @@
+{"sha256": "175d31deb3572f2986609dd9b1ce2126097f5c10f03e5139ccc54e15b3649d72", "build_number": 0, "name": "pip", "license": "MIT", "timestamp": 1541177326945, "license_family": "MIT", "depends": ["python >=2.7,<2.8.0a0", "setuptools", "wheel"], "version": "18.1", "build": "py27_0", "size": 1871974, "md5": "4915958b9854062c43b1ea40ac53b1de", "subdir": "linux-64"}

@@ -1,0 +1,55 @@
+{
+  "paths": [
+    {
+      "_path": "bin/sqlite3",
+      "path_type": "hardlink",
+      "sha256": "caf5e4efd2f52c57d1bfa6857e99655758d9cbfb49881b0be8f32f9a7a992695",
+      "size_in_bytes": 1384232
+    },
+    {
+      "_path": "include/sqlite3.h",
+      "path_type": "hardlink",
+      "sha256": "4665ec0dc1a9bc06884c492a245f21ec06470d65cc6f3023e3c2e3e7b4d97d02",
+      "size_in_bytes": 556318
+    },
+    {
+      "_path": "include/sqlite3ext.h",
+      "path_type": "hardlink",
+      "sha256": "938b297f63f40cd4855677900fb25270632364eca62d77decd563d671b458898",
+      "size_in_bytes": 33713
+    },
+    {
+      "_path": "lib/libsqlite3.a",
+      "path_type": "hardlink",
+      "sha256": "a8d049a03f1ee8090ca56d9752a003bbafff5c58968496cba79463a8dd884e98",
+      "size_in_bytes": 1490786
+    },
+    {
+      "_path": "lib/libsqlite3.so",
+      "path_type": "softlink",
+      "sha256": "15fb1bb6ed8a86f56d32f091eac34267740497d1206d673f7d01886fea8199b6",
+      "size_in_bytes": 1228808
+    },
+    {
+      "_path": "lib/libsqlite3.so.0",
+      "path_type": "softlink",
+      "sha256": "15fb1bb6ed8a86f56d32f091eac34267740497d1206d673f7d01886fea8199b6",
+      "size_in_bytes": 1228808
+    },
+    {
+      "_path": "lib/libsqlite3.so.0.8.6",
+      "path_type": "hardlink",
+      "sha256": "15fb1bb6ed8a86f56d32f091eac34267740497d1206d673f7d01886fea8199b6",
+      "size_in_bytes": 1228808
+    },
+    {
+      "_path": "lib/pkgconfig/sqlite3.pc",
+      "file_mode": "text",
+      "path_type": "hardlink",
+      "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+      "sha256": "5b031a9d59f93201caf1f043e2965e46e148098113d3a3fa5edb758fc8a64767",
+      "size_in_bytes": 304
+    }
+  ],
+  "paths_version": 1
+}

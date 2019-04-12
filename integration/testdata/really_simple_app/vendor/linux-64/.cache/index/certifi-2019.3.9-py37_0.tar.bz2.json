@@ -1,0 +1,1 @@
+{"sha256": "9689c6463d8ced2570ea705928a46bef1b902bb8bd0578a7733b73655f0b5ba9", "build_number": 0, "name": "certifi", "license": "ISC", "timestamp": 1552318217480, "depends": ["python >=3.7,<3.8.0a0"], "version": "2019.3.9", "build": "py37_0", "size": 158568, "md5": "28921b59b39bc66578303264677a5232", "subdir": "linux-64"}

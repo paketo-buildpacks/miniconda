@@ -1,0 +1,47 @@
+{
+  "paths": [
+    {
+      "_path": "lib/python2.7/site-packages/ipaddress-1.0.22-py2.7.egg-info/PKG-INFO",
+      "path_type": "hardlink",
+      "sha256": "9262157c91e7d55af58f0121e1dbabf66812b5b26f4caa4565ed29f41f4b83fc",
+      "size_in_bytes": 933
+    },
+    {
+      "_path": "lib/python2.7/site-packages/ipaddress-1.0.22-py2.7.egg-info/SOURCES.txt",
+      "path_type": "hardlink",
+      "sha256": "b4a5162a0b2858983789fae81298eb1e934abecbc0550fe009c8f2c57da3c7f9",
+      "size_in_bytes": 227
+    },
+    {
+      "_path": "lib/python2.7/site-packages/ipaddress-1.0.22-py2.7.egg-info/dependency_links.txt",
+      "path_type": "hardlink",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "size_in_bytes": 1
+    },
+    {
+      "_path": "lib/python2.7/site-packages/ipaddress-1.0.22-py2.7.egg-info/installed-files.txt",
+      "path_type": "hardlink",
+      "sha256": "6f49731de2c1381a3699f4dd81754b41e3f46e36235a44f7af91e2376c62637c",
+      "size_in_bytes": 89
+    },
+    {
+      "_path": "lib/python2.7/site-packages/ipaddress-1.0.22-py2.7.egg-info/top_level.txt",
+      "path_type": "hardlink",
+      "sha256": "d9e355e64a150c2b81ee11b5ed87e1fa590bea24274a99d072bf5c9ac131d835",
+      "size_in_bytes": 10
+    },
+    {
+      "_path": "lib/python2.7/site-packages/ipaddress.py",
+      "path_type": "hardlink",
+      "sha256": "d8e81b91e003dab2e4717a9b72fa1fdc9e51ee54708cd2e80724b24e406d2a77",
+      "size_in_bytes": 79852
+    },
+    {
+      "_path": "lib/python2.7/site-packages/ipaddress.pyc",
+      "path_type": "hardlink",
+      "sha256": "3ea9154ace6b14bbc7f3fe768b5feedac2f7da33599c355b3f0842e4d9376665",
+      "size_in_bytes": 75097
+    }
+  ],
+  "paths_version": 1
+}

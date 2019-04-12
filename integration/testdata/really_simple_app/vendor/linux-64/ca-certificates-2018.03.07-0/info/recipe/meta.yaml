@@ -1,0 +1,36 @@
+# This file created by conda-build 3.8.0
+# meta.yaml template originally from:
+# /tmp/build/80754af9/rsync-recipes/ca-certificates-2018.03.07-on-linux_64, last modified Mon Apr  2 19:13:34 2018
+# ------------------------------------------------
+
+package:
+    name: ca-certificates
+    version: 2018.03.07
+source:
+    fn: cacert.pem
+    sha256: 79ea479e9f329de7075c40154c591b51eb056d458bc4dff76d9a4b9c6c4f6d0b
+    url: https://curl.haxx.se/ca/cacert-2018-03-07.pem
+build:
+    commands:
+        - /usr/bin/curl --cacert "${PREFIX}/ssl/cacert.pem" https://www.google.com
+        - /usr/bin/openssl -CAfile "${PREFIX}/ssl/cacert.pem" -CApath nosuchdir s_client
+            -showcerts -connect www.google.com:443
+        - test -f "${PREFIX}/ssl/cacert.pem"
+        - test -f "${PREFIX}/ssl/cert.pem"
+    string: '0'
+about:
+    home: https://github.com/conda-forge/ca-certificates-feedstock
+    license: ISC
+    summary: Certificates for use with other packages.
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - jakirkham
+        - jjhelmus
+        - msarahan
+        - mwcraig
+        - ocefpaf
+        - patricksnape
+        - pelson
+        - scopatz

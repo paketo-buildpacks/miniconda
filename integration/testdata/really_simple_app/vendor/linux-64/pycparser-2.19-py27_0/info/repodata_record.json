@@ -1,0 +1,21 @@
+{
+  "build": "py27_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "python >=2.7,<2.8.0a0"
+  ],
+  "features": "",
+  "fn": "pycparser-2.19-py27_0.tar.bz2",
+  "license": "BSD 3-clause",
+  "license_family": "BSD",
+  "md5": "59eac17b5f6649970db3e74df69fd904",
+  "name": "pycparser",
+  "size": 177054,
+  "subdir": "linux-64",
+  "timestamp": 1538230997120,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/pycparser-2.19-py27_0.tar.bz2",
+  "version": "2.19"
+}

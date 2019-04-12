@@ -1,0 +1,20 @@
+{
+  "build": "py27_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "python >=2.7,<2.8.0a0"
+  ],
+  "features": "",
+  "fn": "futures-3.2.0-py27_0.tar.bz2",
+  "license": "PSF",
+  "md5": "6892ff402aef19d82a6472ce5c2c1ea9",
+  "name": "futures",
+  "size": 24947,
+  "subdir": "linux-64",
+  "timestamp": 1530735271877,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/futures-3.2.0-py27_0.tar.bz2",
+  "version": "3.2.0"
+}

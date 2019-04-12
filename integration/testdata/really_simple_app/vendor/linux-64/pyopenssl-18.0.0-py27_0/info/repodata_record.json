@@ -1,0 +1,23 @@
+{
+  "build": "py27_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "cryptography >=2.2.1",
+    "python >=2.7,<2.8.0a0",
+    "six >=1.5.2"
+  ],
+  "features": "",
+  "fn": "pyopenssl-18.0.0-py27_0.tar.bz2",
+  "license": "Apache 2.0",
+  "license_family": "Apache",
+  "md5": "5ae067ce9da3f2a4c2f967d50cdf1257",
+  "name": "pyopenssl",
+  "size": 82138,
+  "subdir": "linux-64",
+  "timestamp": 1526617759133,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/pyopenssl-18.0.0-py27_0.tar.bz2",
+  "version": "18.0.0"
+}

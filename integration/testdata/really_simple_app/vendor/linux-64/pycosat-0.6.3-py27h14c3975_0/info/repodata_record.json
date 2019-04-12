@@ -1,0 +1,21 @@
+{
+  "build": "py27h14c3975_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "libgcc-ng >=7.2.0",
+    "python >=2.7,<2.8.0a0"
+  ],
+  "features": "",
+  "fn": "pycosat-0.6.3-py27h14c3975_0.tar.bz2",
+  "license": "MIT",
+  "md5": "38298e902f033d650e4c7defe156c06f",
+  "name": "pycosat",
+  "size": 105808,
+  "subdir": "linux-64",
+  "timestamp": 1530812765823,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/pycosat-0.6.3-py27h14c3975_0.tar.bz2",
+  "version": "0.6.3"
+}

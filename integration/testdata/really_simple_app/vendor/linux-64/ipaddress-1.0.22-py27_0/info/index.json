@@ -1,0 +1,15 @@
+{
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+    "python >=2.7,<2.8.0a0"
+  ],
+  "license": "PSF 2",
+  "license_family": "PSF",
+  "name": "ipaddress",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "timestamp": 1523974561353,
+  "version": "1.0.22"
+}

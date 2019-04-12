@@ -1,0 +1,20 @@
+{
+  "build": "py27_1",
+  "build_number": 1,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "python >=2.7,<2.8.0a0"
+  ],
+  "features": "",
+  "fn": "enum34-1.1.6-py27_1.tar.bz2",
+  "license": "BSD 3-Clause",
+  "md5": "eaed0f82ad53c1de779afb0faf3b0873",
+  "name": "enum34",
+  "size": 57952,
+  "subdir": "linux-64",
+  "timestamp": 1530735352907,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/enum34-1.1.6-py27_1.tar.bz2",
+  "version": "1.1.6"
+}

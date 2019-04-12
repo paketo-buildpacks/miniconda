@@ -1,0 +1,57 @@
+# This file created by conda-build 3.10.9+36.gd10dbde.dirty
+# meta.yaml template originally from:
+# /home/rdonnelly/conda/aggregate/futures-feedstock/recipe, last modified Mon Dec  4 23:17:19 2017
+# ------------------------------------------------
+
+package:
+    name: futures
+    version: 3.2.0
+source:
+    fn: futures-3.2.0.tar.gz
+    sha256: 9ec02aa7d674acb8618afb127e27fde7fc68994c0437ad759fa094a574adb265
+    url: https://pypi.io/packages/source/f/futures/futures-3.2.0.tar.gz
+build:
+    number: '0'
+    script: python setup.py install --single-version-externally-managed --record=record.txt
+    string: py27_0
+requirements:
+    host:
+        - ca-certificates 2018.03.07 0
+        - certifi 2018.4.16 py27_0
+        - libedit 3.1.20170329 h6b74fdf_2
+        - libffi 3.2.1 hd88cf55_4
+        - libgcc-ng 7.2.0 hdf63c60_3
+        - libstdcxx-ng 7.2.0 hdf63c60_3
+        - ncurses 6.1 hf484d3e_0
+        - openssl 1.0.2o h20670df_0
+        - python 2.7.15 h1571d57_0
+        - readline 7.0 ha6073c6_4
+        - setuptools 39.2.0 py27_0
+        - sqlite 3.24.0 h84994c4_0
+        - tk 8.6.7 hc745277_3
+        - zlib 1.2.11 ha838bed_2
+    run:
+        - python >=2.7,<2.8.0a0
+test:
+    imports:
+        - concurrent
+        - concurrent.futures
+about:
+    description: 'concurrent.futures module provides a high-level interface for
+
+        asynchronously executing callables.
+
+        '
+    dev_url: https://github.com/agronholm/pythonfutures
+    doc_source_url: https://github.com/agronholm/pythonfutures/blob/master/docs/index.rst
+    doc_url: http://pythonhosted.org/futures/
+    home: https://github.com/agronholm/pythonfutures
+    license: PSF
+    license_file: LICENSE
+    summary: Backport of the concurrent.futures package from Python 3.2
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - jakirkham
+        - nehaljwani

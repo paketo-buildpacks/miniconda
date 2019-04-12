@@ -1,0 +1,1 @@
+{"sha256": "8349b0b47abd0851d9496277c296af7f9ca6be5f03113ec2f1694e5c04a39d7d", "build_number": 1, "name": "chardet", "license": "LGPL2", "timestamp": 1530733536657, "license_family": "GPL", "depends": ["python >=2.7,<2.8.0a0"], "version": "3.0.4", "build": "py27_1", "size": 184136, "md5": "0ee8a673c47be9ff3aff20ba03738db6", "subdir": "linux-64"}

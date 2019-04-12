@@ -1,0 +1,79 @@
+# This file created by conda-build 3.10.9+36.gd10dbde.dirty
+# meta.yaml template originally from:
+# /home/rdonnelly/conda/aggregate/cffi-feedstock/recipe, last modified Wed Aug 15 13:44:20 2018
+# ------------------------------------------------
+
+package:
+    name: cffi
+    version: 1.11.5
+source:
+    patches:
+        - 0001-Link-to-dl-library.patch
+        - setup-linux.patch
+    sha256: e90f17980e6ab0f3c2f3730e56d1fe9bcba1891eeea58966e89d352492cc74f4
+    url: https://pypi.io/packages/source/c/cffi/cffi-1.11.5.tar.gz
+build:
+    number: '1'
+    script: python -m pip install --no-deps --ignore-installed .
+    string: py27he75722e_1
+requirements:
+    build:
+        - binutils_impl_linux-64 2.28.1 had2808c_3
+        - binutils_linux-64 7.2.0 had2808c_27
+        - gcc_impl_linux-64 7.2.0 habb00fd_3
+        - gcc_linux-64 7.2.0 h550dcbe_27
+        - libstdcxx-ng 7.2.0 hdf63c60_3
+    host:
+        - ca-certificates 2018.03.07 0
+        - certifi 2018.8.13 py27_0
+        - libedit 3.1.20170329 h6b74fdf_2
+        - libffi 3.2.1 hd88cf55_4
+        - libgcc-ng 7.2.0 hdf63c60_3
+        - libstdcxx-ng 7.2.0 hdf63c60_3
+        - ncurses 6.1 hf484d3e_0
+        - openssl 1.0.2p h14c3975_0
+        - pip 10.0.1 py27_0
+        - pycparser 2.18 py27_1
+        - python 2.7.15 h1571d57_0
+        - readline 7.0 ha6073c6_4
+        - setuptools 40.0.0 py27_0
+        - sqlite 3.24.0 h84994c4_0
+        - tk 8.6.7 hc745277_3
+        - wheel 0.31.1 py27_0
+        - zlib 1.2.11 ha838bed_2
+    run:
+        - libffi >=3.2.1,<4.0a0
+        - libgcc-ng >=7.2.0
+        - pycparser
+        - python >=2.7,<2.8.0a0
+test:
+    imports:
+        - _cffi_backend
+        - cffi
+    requires:
+        - openssl
+about:
+    description: 'Cffi aims to allow users to call C code from Python without having
+        to
+
+        learn a 3rd language. It provides a convenient and reliable way to call
+
+        compiled C code from Python using interface declarations written in C.
+
+        '
+    dev_url: https://bitbucket.org/cffi/cffi/overview
+    doc_source_url: https://bitbucket.org/cffi/cffi/src/default/doc/?at=default
+    doc_url: http://cffi.readthedocs.org
+    home: https://bitbucket.org/cffi/cffi
+    license: MIT
+    license_file: LICENSE
+    summary: Foreign Function Interface for Python calling C code.
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - goanpeca
+        - inducer
+        - jschueller
+        - mingwandroid
+        - ocefpaf

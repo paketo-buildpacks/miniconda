@@ -1,0 +1,4 @@
+{
+  "sqlite": "3",
+  "c_compiler": "gcc"
+}

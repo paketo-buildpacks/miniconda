@@ -1,0 +1,1 @@
+{"sha256": "7eac01729dcdb187a1bc3584e61956d1ded34ee50e7a810daa7b83f34d54e063", "build_number": 4, "name": "libffi", "license": "Custom", "timestamp": 1510177337742, "depends": ["libgcc-ng 7.2.0.*", "libstdcxx-ng 7.2.0.*"], "version": "3.2.1", "build": "hd88cf55_4", "size": 44477, "md5": "723c98107d830bdf000772bf1976e0c3", "subdir": "linux-64"}

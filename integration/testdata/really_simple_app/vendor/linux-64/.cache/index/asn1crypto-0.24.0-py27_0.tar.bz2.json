@@ -1,0 +1,1 @@
+{"sha256": "a6fd3374086c43816a02d6552ab78bc7b84f96ae1af0a9f31f99f018bbc04b0a", "build_number": 0, "name": "asn1crypto", "license": "MIT", "timestamp": 1515702537268, "depends": ["python >=2.7,<2.8.0a0"], "version": "0.24.0", "build": "py27_0", "size": 158632, "md5": "f6ba95df21661c0646e251f3403189c3", "subdir": "linux-64"}

@@ -1,0 +1,21 @@
+{
+  "build": "py27_1",
+  "build_number": 1,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "python >=2.7,<2.8.0a0"
+  ],
+  "features": "",
+  "fn": "chardet-3.0.4-py27_1.tar.bz2",
+  "license": "LGPL2",
+  "license_family": "GPL",
+  "md5": "0ee8a673c47be9ff3aff20ba03738db6",
+  "name": "chardet",
+  "size": 184136,
+  "subdir": "linux-64",
+  "timestamp": 1530733536657,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/chardet-3.0.4-py27_1.tar.bz2",
+  "version": "3.0.4"
+}

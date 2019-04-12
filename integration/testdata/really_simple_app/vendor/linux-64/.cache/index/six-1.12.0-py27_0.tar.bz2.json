@@ -1,0 +1,1 @@
+{"sha256": "2db08901a2bb73fee41839bbda82b8f96d6f0afa5cbe3a067517162fb8119a40", "build_number": 0, "name": "six", "license": "MIT", "timestamp": 1544542935561, "license_family": "MIT", "depends": ["python >=2.7,<2.8.0a0"], "version": "1.12.0", "build": "py27_0", "size": 22326, "md5": "8afd153522a742b029e4aab70a61925e", "subdir": "linux-64"}

@@ -1,0 +1,1 @@
+{"sha256": "f9966597feaf298bb7e4b44f27797d877fbb3ef25bf36e486c2eca37cef79b6a", "build_number": 0, "name": "itsdangerous", "license": "BSD 3-Clause", "timestamp": 1541025206057, "license_family": "BSD", "depends": ["python >=3.7,<3.8.0a0"], "version": "1.1.0", "build": "py37_0", "size": 27189, "md5": "4e8e4d299c21bbcf5a8081ade37d4440", "subdir": "linux-64"}

@@ -1,0 +1,22 @@
+{
+  "build": "h7b6447c_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "ca-certificates",
+    "libgcc-ng >=7.3.0"
+  ],
+  "features": "",
+  "fn": "openssl-1.1.1a-h7b6447c_0.tar.bz2",
+  "license": "OpenSSL",
+  "license_family": "Apache",
+  "md5": "4cd3d8b9ee3d0da9ded05d0c2dd3767f",
+  "name": "openssl",
+  "size": 5279598,
+  "subdir": "linux-64",
+  "timestamp": 1542740345038,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/openssl-1.1.1a-h7b6447c_0.tar.bz2",
+  "version": "1.1.1a"
+}

@@ -1,0 +1,1 @@
+{"sha256": "9df01532722aa5658a99e0fdc87d7c5d43245a36cb29ed7bbd4f1e54b9ac67a6", "build_number": 1, "name": "libstdcxx-ng", "license": "GPL3 with runtime exception", "timestamp": 1534516131602, "depends": [], "version": "8.2.0", "build": "hdf63c60_1", "size": 3058753, "md5": "16e7bf6ac5207cc989841be16938a3cf", "subdir": "linux-64"}

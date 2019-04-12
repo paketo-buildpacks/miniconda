@@ -1,0 +1,14 @@
+{
+  "arch": "x86_64",
+  "build": "py27_0",
+  "build_number": 0,
+  "depends": [
+    "python >=2.7,<2.8.0a0"
+  ],
+  "license": "PSF",
+  "name": "futures",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "timestamp": 1530735271877,
+  "version": "3.2.0"
+}

@@ -1,0 +1,1 @@
+{"sha256": "b4e14c8dd7274cc3b0a04ffacba77d3073885a6fc5c03569211b26cfe1ac124c", "build_number": 0, "name": "wheel", "license": "MIT", "timestamp": 1542642542001, "depends": ["python >=2.7,<2.8.0a0", "setuptools"], "version": "0.32.3", "build": "py27_0", "size": 35262, "md5": "ee813999cd8c39d08038638e76a8cc6e", "subdir": "linux-64"}

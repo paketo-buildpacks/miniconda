@@ -1,0 +1,41 @@
+{% set version = "1.0.22" %}
+
+package:
+  name: ipaddress
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/i/ipaddress/ipaddress-{{ version }}.tar.gz
+  sha256: b146c751ea45cad6188dd6cf2d9b757f6f4f8d6ffb96a023e6f2e26eea02a72c
+
+build:
+  number: 0
+  script: python -m pip install --no-deps --ignore-installed .
+  skip: true  # [py>=33]
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+
+test:
+  imports:
+    - ipaddress
+
+about:
+  home: https://github.com/phihag/ipaddress
+  license: PSF 2
+  license_file: LICENSE
+  license_family: PSF
+  summary: 'IPv4/IPv6 manipulation library'
+  description: |
+    Python 3.3's ipadress for older Python versions
+  doc_url: https://pypi.python.org/pypi/ipaddress
+  doc_source_url: https://github.com/phihag/ipaddress/blob/master/README.md
+
+extra:
+  recipe-maintainers:
+    - jakirkham
+    - ocefpaf

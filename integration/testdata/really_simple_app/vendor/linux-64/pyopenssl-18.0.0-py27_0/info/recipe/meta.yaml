@@ -1,0 +1,73 @@
+# This file created by conda-build 3.10.3
+# meta.yaml template originally from:
+# /tmp/build/80754af9/rsync-recipes/pyopenssl-18.0.0-python_2.7-on-linux_64, last modified Fri May 18 04:26:27 2018
+# ------------------------------------------------
+
+package:
+    name: pyopenssl
+    version: 18.0.0
+source:
+    sha256: 6488f1423b00f73b7ad5167885312bb0ce410d3312eb212393795b53c8caa580
+    url: https://pypi.io/packages/source/p/pyOpenSSL/pyOpenSSL-18.0.0.tar.gz
+build:
+    number: '0'
+    script: python -m pip install --no-deps --ignore-installed .
+    string: py27_0
+requirements:
+    host:
+        - ca-certificates 2018.03.07 0
+        - certifi 2018.4.16 py27_0
+        - libedit 3.1.20170329 h6b74fdf_2
+        - libffi 3.2.1 hd88cf55_4
+        - libgcc-ng 7.2.0 hdf63c60_3
+        - libstdcxx-ng 7.2.0 hdf63c60_3
+        - ncurses 6.1 hf484d3e_0
+        - openssl 1.0.2o h20670df_0
+        - pip 10.0.1 py27_0
+        - python 2.7.15 h1571d57_0
+        - readline 7.0 ha6073c6_4
+        - setuptools 39.1.0 py27_0
+        - sqlite 3.23.1 he433501_0
+        - tk 8.6.7 hc745277_3
+        - wheel 0.31.1 py27_0
+        - zlib 1.2.11 ha838bed_2
+    run:
+        - cryptography >=2.2.1
+        - python >=2.7,<2.8.0a0
+        - six >=1.5.2
+test:
+    imports:
+        - OpenSSL
+        - OpenSSL.SSL
+        - OpenSSL.crypto
+        - OpenSSL.rand
+about:
+    description: 'pyOpenSSL is a high-level wrapper around a subset of the OpenSSL
+        library.
+
+        It includes:
+
+        -SSL.Connection objects, wrapping the methods of Python''s portable sockets
+
+        -Callbacks written in Python
+
+        -Extensive error-handling mechanism, mirroring OpenSSL''s error codes
+
+        and much more.
+
+        '
+    dev_url: https://github.com/pyca/pyopenssl
+    doc_source_url: https://github.com/pyca/pyopenssl/blob/master/doc/index.rst
+    doc_url: https://pyopenssl.readthedocs.org/en/stable/
+    home: https://github.com/pyca/pyopenssl
+    license: Apache 2.0
+    license_family: Apache
+    license_file: LICENSE
+    summary: Python wrapper module around the OpenSSL library
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - goanpeca
+        - mingwandroid
+        - nehaljwani

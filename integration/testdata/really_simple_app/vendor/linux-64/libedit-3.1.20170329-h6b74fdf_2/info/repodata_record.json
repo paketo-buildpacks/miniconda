@@ -1,0 +1,22 @@
+{
+  "build": "h6b74fdf_2",
+  "build_number": 2,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "libgcc-ng >=7.2.0",
+    "ncurses >=6.1,<7.0a0"
+  ],
+  "features": "",
+  "fn": "libedit-3.1.20170329-h6b74fdf_2.tar.bz2",
+  "license": "NetBSD",
+  "license_family": "BSD",
+  "md5": "a964d1e4af67f04710aa18950279b7f4",
+  "name": "libedit",
+  "size": 176192,
+  "subdir": "linux-64",
+  "timestamp": 1525913899914,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/libedit-3.1.20170329-h6b74fdf_2.tar.bz2",
+  "version": "3.1.20170329"
+}

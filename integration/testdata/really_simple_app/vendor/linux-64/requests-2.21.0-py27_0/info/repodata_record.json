@@ -1,0 +1,24 @@
+{
+  "build": "py27_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "certifi >=2017.4.17",
+    "chardet >=3.0.2,<3.1.0",
+    "idna >=2.5,<2.9",
+    "python >=2.7,<2.8.0a0",
+    "urllib3 >=1.21.1,<1.25"
+  ],
+  "features": "",
+  "fn": "requests-2.21.0-py27_0.tar.bz2",
+  "license": "Apache 2.0",
+  "md5": "c0e05292e06a016ad9bbd59e3e8fa17c",
+  "name": "requests",
+  "size": 85793,
+  "subdir": "linux-64",
+  "timestamp": 1545070280718,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/requests-2.21.0-py27_0.tar.bz2",
+  "version": "2.21.0"
+}

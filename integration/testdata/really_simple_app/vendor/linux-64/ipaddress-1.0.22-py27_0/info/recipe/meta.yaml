@@ -1,0 +1,55 @@
+# This file created by conda-build 3.8.1
+# meta.yaml template originally from:
+# /tmp/build/80754af9/rsync-recipes/ipaddress-1.0.22-python_2.7-on-linux_64, last modified Tue Apr 17 14:13:33 2018
+# ------------------------------------------------
+
+package:
+    name: ipaddress
+    version: 1.0.22
+source:
+    sha256: b146c751ea45cad6188dd6cf2d9b757f6f4f8d6ffb96a023e6f2e26eea02a72c
+    url: https://pypi.io/packages/source/i/ipaddress/ipaddress-1.0.22.tar.gz
+build:
+    number: '0'
+    script: python -m pip install --no-deps --ignore-installed .
+    string: py27_0
+requirements:
+    host:
+        - ca-certificates 2018.03.07 0
+        - certifi 2018.1.18 py27_0
+        - libedit 3.1 heed3624_0
+        - libffi 3.2.1 hd88cf55_4
+        - libgcc-ng 7.2.0 hdf63c60_3
+        - libstdcxx-ng 7.2.0 hdf63c60_3
+        - ncurses 6.0 h9df7e31_2
+        - openssl 1.0.2o h20670df_0
+        - pip 9.0.3 py27_0
+        - python 2.7.14 h1571d57_31
+        - readline 7.0 ha6073c6_4
+        - setuptools 39.0.1 py27_0
+        - sqlite 3.22.0 h1bed415_0
+        - tk 8.6.7 hc745277_3
+        - wheel 0.31.0 py27_0
+        - zlib 1.2.11 ha838bed_2
+    run:
+        - python >=2.7,<2.8.0a0
+test:
+    imports:
+        - ipaddress
+about:
+    description: 'Python 3.3''s ipadress for older Python versions
+
+        '
+    doc_source_url: https://github.com/phihag/ipaddress/blob/master/README.md
+    doc_url: https://pypi.python.org/pypi/ipaddress
+    home: https://github.com/phihag/ipaddress
+    license: PSF 2
+    license_family: PSF
+    license_file: LICENSE
+    summary: IPv4/IPv6 manipulation library
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - jakirkham
+        - ocefpaf

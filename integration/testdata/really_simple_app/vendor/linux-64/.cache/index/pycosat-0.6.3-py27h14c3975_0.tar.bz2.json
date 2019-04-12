@@ -1,0 +1,1 @@
+{"sha256": "0a550784a13267ea8c4981068180b442736f5dcf64591a2f5f9c888f838dec02", "build_number": 0, "name": "pycosat", "license": "MIT", "timestamp": 1530812765823, "depends": ["libgcc-ng >=7.2.0", "python >=2.7,<2.8.0a0"], "version": "0.6.3", "build": "py27h14c3975_0", "size": 105808, "md5": "38298e902f033d650e4c7defe156c06f", "subdir": "linux-64"}

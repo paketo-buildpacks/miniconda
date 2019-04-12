@@ -1,0 +1,21 @@
+{
+  "build": "py27_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "python >=2.7,<2.8.0a0"
+  ],
+  "features": "",
+  "fn": "ipaddress-1.0.22-py27_0.tar.bz2",
+  "license": "PSF 2",
+  "license_family": "PSF",
+  "md5": "3ff78790b92ed2bb5c73c031db1104da",
+  "name": "ipaddress",
+  "size": 33023,
+  "subdir": "linux-64",
+  "timestamp": 1523974561353,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/ipaddress-1.0.22-py27_0.tar.bz2",
+  "version": "1.0.22"
+}

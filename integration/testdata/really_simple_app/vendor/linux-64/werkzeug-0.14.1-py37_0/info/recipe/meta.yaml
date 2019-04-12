@@ -1,0 +1,58 @@
+# This file created by conda-build 3.10.9+36.gd10dbde.dirty
+# meta.yaml template originally from:
+# /home/rdonnelly/conda/aggregate/werkzeug-feedstock/recipe, last modified Fri Apr 13 21:51:14 2018
+# ------------------------------------------------
+
+package:
+    name: werkzeug
+    version: 0.14.1
+source:
+    fn: Werkzeug-0.14.1.tar.gz
+    sha256: c3fd7a7d41976d9f44db327260e263132466836cef6f91512889ed60ad26557c
+    url: https://pypi.io/packages/source/W/Werkzeug/Werkzeug-0.14.1.tar.gz
+build:
+    number: '0'
+    script: python setup.py install --single-version-externally-managed --record=record.txt
+    string: py37_0
+requirements:
+    host:
+        - ca-certificates 2018.03.07 0
+        - certifi 2018.4.16 py37_0
+        - libedit 3.1.20170329 h6b74fdf_2
+        - libffi 3.2.1 hd88cf55_4
+        - libgcc-ng 7.2.0 hdf63c60_3
+        - libstdcxx-ng 7.2.0 hdf63c60_3
+        - ncurses 6.1 hf484d3e_0
+        - openssl 1.0.2o h20670df_0
+        - python 3.7.0 hc3d631a_0
+        - readline 7.0 ha6073c6_4
+        - setuptools 39.2.0 py37_0
+        - sqlite 3.24.0 h84994c4_0
+        - tk 8.6.7 hc745277_3
+        - xz 5.2.4 h14c3975_4
+        - zlib 1.2.11 ha838bed_2
+    run:
+        - python >=3.7,<3.8.0a0
+test:
+    imports:
+        - werkzeug
+        - werkzeug.contrib
+        - werkzeug.debug
+about:
+    description: 'Werkzeug is a WSGI utility library for Python. It''s widely used
+        and BSD licensed.
+
+        '
+    dev_url: https://github.com/pallets/werkzeug
+    doc_source_url: https://github.com/pallets/werkzeug/tree/master/docs
+    doc_url: http://werkzeug.pocoo.org/docs
+    home: http://werkzeug.pocoo.org/
+    license: BSD 3-Clause
+    license_family: BSD
+    license_file: LICENSE
+    summary: The Python WSGI Utility Library.
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - goanpeca

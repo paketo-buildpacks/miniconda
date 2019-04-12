@@ -1,0 +1,29 @@
+{
+  "paths": [
+    {
+      "_path": "lib/python2.7/site-packages/pycosat-0.6.3-py2.7.egg-info",
+      "path_type": "hardlink",
+      "sha256": "29222b460de7756db6052f43e4ddb2ef3c58755a02d016fb6a5497f823818c96",
+      "size_in_bytes": 6371
+    },
+    {
+      "_path": "lib/python2.7/site-packages/pycosat.so",
+      "path_type": "hardlink",
+      "sha256": "9e0dcae85afe852e682c8e29031f0e7d4ce8fe2589e987667db98e5075a5ed1a",
+      "size_in_bytes": 94480
+    },
+    {
+      "_path": "lib/python2.7/site-packages/test_pycosat.py",
+      "path_type": "hardlink",
+      "sha256": "f7bcef178eabacb9c477ba20b88e8646ade28c86c23ed9327eecc8144777d8b2",
+      "size_in_bytes": 8806
+    },
+    {
+      "_path": "lib/python2.7/site-packages/test_pycosat.pyc",
+      "path_type": "hardlink",
+      "sha256": "6f49d1171a0672d6c18c0928bcdaf3cdf2603f69b30637ed3f5b375e88c3c9ce",
+      "size_in_bytes": 15102
+    }
+  ],
+  "paths_version": 1
+}

@@ -1,0 +1,1 @@
+{"sha256": "4bb36b824359b3616877de78e419dae0aaf6578f8485164197935287b01186e0", "build_number": 0, "name": "jinja2", "license": "3-Clause BSD", "timestamp": 1530695439574, "depends": ["markupsafe >=0.23", "python >=3.7,<3.8.0a0", "setuptools"], "version": "2.10", "build": "py37_0", "size": 187670, "md5": "e9d3c1f4a727b135cd82031ff17b9515", "subdir": "linux-64"}

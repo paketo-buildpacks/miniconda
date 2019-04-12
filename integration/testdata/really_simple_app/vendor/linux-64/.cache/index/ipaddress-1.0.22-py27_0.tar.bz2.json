@@ -1,0 +1,1 @@
+{"sha256": "41898b62022e5725f9b73385202dfa6f2ae28a72d68b3c20416ebdf3cfee373c", "build_number": 0, "name": "ipaddress", "license": "PSF 2", "timestamp": 1523974561353, "license_family": "PSF", "depends": ["python >=2.7,<2.8.0a0"], "version": "1.0.22", "build": "py27_0", "size": 33023, "md5": "3ff78790b92ed2bb5c73c031db1104da", "subdir": "linux-64"}

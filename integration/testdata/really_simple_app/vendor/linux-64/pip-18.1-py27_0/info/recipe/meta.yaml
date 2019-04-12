@@ -1,0 +1,61 @@
+# This file created by conda-build 3.16.2
+# meta.yaml template originally from:
+# /tmp/build/80754af9/rsync-recipes/pip-18.1-python_2.7-on-linux_64, last modified Fri Nov  2 16:28:46 2018
+# ------------------------------------------------
+
+package:
+    name: pip
+    version: '18.1'
+source:
+    sha256: c0a292bd977ef590379a3f05d7b7f65135487b67470f6281289a94e015650ea1
+    url: https://pypi.io/packages/source/p/pip/pip-18.1.tar.gz
+build:
+    disable_pip: true
+    entry_points:
+        - pip = pip._internal:main
+    number: '0'
+    string: py27_0
+requirements:
+    host:
+        - ca-certificates 2018.03.07 0
+        - certifi 2018.10.15 py27_0
+        - libedit 3.1.20170329 h6b74fdf_2
+        - libffi 3.2.1 hd88cf55_4
+        - libgcc-ng 8.2.0 hdf63c60_1
+        - libstdcxx-ng 8.2.0 hdf63c60_1
+        - ncurses 6.1 hf484d3e_0
+        - openssl 1.1.1 h7b6447c_0
+        - python 2.7.15 h9bab390_2
+        - readline 7.0 h7b6447c_5
+        - setuptools 40.5.0 py27_0
+        - sqlite 3.25.2 h7b6447c_0
+        - tk 8.6.8 hbc83047_0
+        - zlib 1.2.11 ha838bed_2
+    run:
+        - python >=2.7,<2.8.0a0
+        - setuptools
+        - wheel
+test:
+    commands:
+        - pip -h
+        - pip list
+    imports:
+        - pip
+about:
+    dev_url: https://github.com/pypa/pip
+    doc_url: https://pip.pypa.io/en/stable/
+    home: https://pip.pypa.io/en/stable/
+    license: MIT
+    license_family: MIT
+    license_file: LICENSE.txt
+    summary: PyPA recommended tool for installing Python packages
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - jakirkham
+        - jjhelmus
+        - mingwandroid
+        - msarahan
+        - ocefpaf
+        - pelson

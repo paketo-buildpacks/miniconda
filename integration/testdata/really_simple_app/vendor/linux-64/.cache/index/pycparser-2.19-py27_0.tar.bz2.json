@@ -1,0 +1,1 @@
+{"sha256": "b35f35e3ca46a875cc93566ee37151e3bdb0c52ca10c4ac9e3c2896dd251f378", "build_number": 0, "name": "pycparser", "license": "BSD 3-clause", "timestamp": 1538230997120, "license_family": "BSD", "depends": ["python >=2.7,<2.8.0a0"], "version": "2.19", "build": "py27_0", "size": 177054, "md5": "59eac17b5f6649970db3e74df69fd904", "subdir": "linux-64"}

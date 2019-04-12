@@ -1,0 +1,1 @@
+{"sha256": "baa84ebef778f81955fa46a0179b3193b91ea1c62294c0de2869ba8562554094", "build_number": 1, "name": "enum34", "license": "BSD 3-Clause", "timestamp": 1530735352907, "depends": ["python >=2.7,<2.8.0a0"], "version": "1.1.6", "build": "py27_1", "size": 57952, "md5": "eaed0f82ad53c1de779afb0faf3b0873", "subdir": "linux-64"}

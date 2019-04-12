@@ -1,0 +1,6 @@
+name: pydata_test
+channels:
+- /workspace/app/vendor
+dependencies:
+- flask
+- nose

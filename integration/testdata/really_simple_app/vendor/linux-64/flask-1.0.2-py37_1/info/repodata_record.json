@@ -1,0 +1,27 @@
+{
+  "arch": "x86_64",
+  "build": "py37_1",
+  "build_number": 1,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "click >=5.1",
+    "itsdangerous >=0.24",
+    "jinja2 >=2.10",
+    "python >=3.7,<3.8.0a0",
+    "werkzeug >=0.14"
+  ],
+  "features": "",
+  "fn": "flask-1.0.2-py37_1.tar.bz2",
+  "license": "BSD 3-Clause",
+  "license_family": "BSD",
+  "md5": "b1585f51b5335d354aeb16d52c3a1ff6",
+  "name": "flask",
+  "platform": "linux",
+  "size": 122034,
+  "subdir": "linux-64",
+  "timestamp": 1530771776393,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/flask-1.0.2-py37_1.tar.bz2",
+  "version": "1.0.2"
+}

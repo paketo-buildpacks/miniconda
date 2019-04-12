@@ -1,0 +1,29 @@
+From 88ea3685e4bf30fc529fe46e19effc6317726de8 Mon Sep 17 00:00:00 2001
+From: Richard Levitte <levitte@openssl.org>
+Date: Wed, 12 Sep 2018 02:06:26 +0200
+Subject: [PATCH 2/2] crypto/sm2/sm2_sign.c: ensure UINT16_MAX is properly
+ defined
+
+Fixes #7186
+
+Reviewed-by: Tim Hudson <tjh@openssl.org>
+(Merged from https://github.com/openssl/openssl/pull/7193)
+---
+ crypto/sm2/sm2_sign.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/crypto/sm2/sm2_sign.c b/crypto/sm2/sm2_sign.c
+index e594ffd10a..0f9c14cb5f 100644
+--- a/crypto/sm2/sm2_sign.c
++++ b/crypto/sm2/sm2_sign.c
+@@ -12,6 +12,7 @@
+ #include "internal/sm2.h"
+ #include "internal/sm2err.h"
+ #include "internal/ec_int.h" /* ec_group_do_inverse_ord() */
++#include "internal/numbers.h"
+ #include <openssl/err.h>
+ #include <openssl/evp.h>
+ #include <openssl/err.h>
+-- 
+2.18.0
+

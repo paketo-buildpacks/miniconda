@@ -1,0 +1,20 @@
+{
+  "build": "py27_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "python >=2.7,<2.8.0a0"
+  ],
+  "features": "",
+  "fn": "asn1crypto-0.24.0-py27_0.tar.bz2",
+  "license": "MIT",
+  "md5": "f6ba95df21661c0646e251f3403189c3",
+  "name": "asn1crypto",
+  "size": 158632,
+  "subdir": "linux-64",
+  "timestamp": 1515702537268,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/asn1crypto-0.24.0-py27_0.tar.bz2",
+  "version": "0.24.0"
+}

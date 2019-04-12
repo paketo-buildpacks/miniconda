@@ -1,0 +1,1 @@
+{"sha256": "ee3cc734e9bf40ce45304449dfb0bf3e2e11efda0f886cba7aceca59610ebb9f", "build_number": 0, "name": "ca-certificates", "license": "ISC", "timestamp": 1522697436619, "depends": [], "version": "2018.03.07", "build": "0", "size": 127102, "md5": "05ea0fcce559e29de8e0f1cca9174013", "subdir": "linux-64"}

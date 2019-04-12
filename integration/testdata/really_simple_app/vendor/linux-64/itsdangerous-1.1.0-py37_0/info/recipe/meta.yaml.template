@@ -1,0 +1,51 @@
+{% set name = "itsdangerous" %}
+{% set version = "1.1.0" %}
+{% set hash_type = "sha256" %}
+{% set hash = "321b033d07f2a4136d3ec762eac9f16a10ccd60f53c0c91af90217ace7ba1f19" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  {{ hash_type }}: {{ hash }}
+
+build:
+  noarch: python
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vvv
+
+requirements:
+  host:
+    - pip
+    - python
+    - setuptools
+
+  run:
+    - python
+
+test:
+  imports:
+    - itsdangerous
+
+about:
+  home: https://github.com/pallets/itsdangerous
+  license: BSD 3-Clause
+  license_family: BSD
+  license_file: LICENSE.rst
+  summary: Various helpers to pass trusted data to untrusted environments.
+  description: |
+    Internally itsdangerous uses HMAC and SHA1 for signing data and bases the
+    implementation on the Django signing module.  It also however supports JSON Web
+    Signatures (JWS).
+  doc_url: http://pythonhosted.org/itsdangerous
+  dev_url: https://github.com/pallets/itsdangerous
+  doc_source_url: https://github.com/pallets/itsdangerous/blob/master/docs/index.rst
+
+extra:
+  recipe-maintainers:
+    - goanpeca
+    - nicoddemus
+    - williamjamir

@@ -1,0 +1,1 @@
+{"sha256": "00e9e135a450f39076aca5f40034643facf413b80cccebc1761839cde4d44643", "build_number": 5, "name": "readline", "license": "GPL-3.0", "timestamp": 1535475436442, "depends": ["libgcc-ng >=7.3.0", "ncurses >=6.1,<7.0a0"], "version": "7.0", "build": "h7b6447c_5", "size": 401325, "md5": "44547de0c0be291132a3fdd18829f5ff", "subdir": "linux-64"}

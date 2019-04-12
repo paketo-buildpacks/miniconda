@@ -1,0 +1,23 @@
+{
+  "build": "py27h14c3975_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "libgcc-ng >=7.2.0",
+    "python >=2.7,<2.8.0a0",
+    "yaml >=0.1.7,<0.2.0a0"
+  ],
+  "features": "",
+  "fn": "ruamel_yaml-0.15.46-py27h14c3975_0.tar.bz2",
+  "license": "MIT",
+  "license_family": "MIT",
+  "md5": "4f2571815bc52c4d8bde3386ebdaddbe",
+  "name": "ruamel_yaml",
+  "size": 247279,
+  "subdir": "linux-64",
+  "timestamp": 1532968689673,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/ruamel_yaml-0.15.46-py27h14c3975_0.tar.bz2",
+  "version": "0.15.46"
+}

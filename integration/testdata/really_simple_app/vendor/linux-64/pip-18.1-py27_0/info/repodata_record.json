@@ -1,0 +1,23 @@
+{
+  "build": "py27_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "python >=2.7,<2.8.0a0",
+    "setuptools",
+    "wheel"
+  ],
+  "features": "",
+  "fn": "pip-18.1-py27_0.tar.bz2",
+  "license": "MIT",
+  "license_family": "MIT",
+  "md5": "4915958b9854062c43b1ea40ac53b1de",
+  "name": "pip",
+  "size": 1871974,
+  "subdir": "linux-64",
+  "timestamp": 1541177326945,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/pip-18.1-py27_0.tar.bz2",
+  "version": "18.1"
+}

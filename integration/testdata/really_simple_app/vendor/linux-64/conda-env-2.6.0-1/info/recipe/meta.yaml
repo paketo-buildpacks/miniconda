@@ -1,0 +1,33 @@
+# This file created by conda-build 3.10.9+36.gd10dbde.dirty
+# meta.yaml template originally from:
+# /home/rdonnelly/conda/aggregate/conda-env-feedstock/recipe, last modified Sun Sep 17 15:37:12 2017
+# ------------------------------------------------
+
+package:
+    name: conda-env
+    version: 2.6.0
+build:
+    number: '1'
+    string: '1'
+test:
+    requires:
+        - python
+about:
+    description: 'Provides the conda env interface to Conda environments.
+
+        '
+    dev_url: https://github.com/conda/conda-env
+    doc_source_url: https://github.com/conda/conda-docs
+    doc_url: https://conda.io/docs/user-guide/overview.html
+    home: https://github.com/conda/conda-env
+    license: BSD 3-Clause
+    summary: Tools for interacting with conda environments.
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - jakirkham
+        - kalefranz
+        - mcg1969
+        - msarahan
+        - pelson

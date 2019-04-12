@@ -1,0 +1,1 @@
+{"sha256": "c4eeccabac7754b0fdc66439c4e5e69d753c6b0e5931632c96f330a04654834a", "build_number": 0, "name": "werkzeug", "license": "BSD 3-Clause", "timestamp": 1530771750607, "license_family": "BSD", "depends": ["python >=3.7,<3.8.0a0"], "version": "0.14.1", "build": "py37_0", "size": 433408, "md5": "800ce77b89fce2580288947ff677540c", "subdir": "linux-64"}

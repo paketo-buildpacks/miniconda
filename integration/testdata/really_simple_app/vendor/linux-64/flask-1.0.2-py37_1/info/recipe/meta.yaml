@@ -1,0 +1,74 @@
+# This file created by conda-build 3.10.9+36.gd10dbde.dirty
+# meta.yaml template originally from:
+# /home/rdonnelly/conda/aggregate/flask-feedstock/recipe, last modified Thu May 10 16:03:43 2018
+# ------------------------------------------------
+
+package:
+    name: flask
+    version: 1.0.2
+source:
+    fn: Flask-1.0.2.tar.gz
+    sha256: 2271c0070dbcb5275fad4a82e29f23ab92682dc45f9dfbc22c02ba9b9322ce48
+    url: https://pypi.io/packages/source/F/Flask/Flask-1.0.2.tar.gz
+build:
+    entry_points:
+        - flask = flask.cli:main
+    number: '1'
+    script: python -m pip install --no-deps --ignore-installed .
+    string: py37_1
+requirements:
+    host:
+        - ca-certificates 2018.03.07 0
+        - certifi 2018.4.16 py37_0
+        - libedit 3.1.20170329 h6b74fdf_2
+        - libffi 3.2.1 hd88cf55_4
+        - libgcc-ng 7.2.0 hdf63c60_3
+        - libstdcxx-ng 7.2.0 hdf63c60_3
+        - ncurses 6.1 hf484d3e_0
+        - openssl 1.0.2o h20670df_0
+        - pip 10.0.1 py37_0
+        - python 3.7.0 hc3d631a_0
+        - readline 7.0 ha6073c6_4
+        - setuptools 39.2.0 py37_0
+        - sqlite 3.24.0 h84994c4_0
+        - tk 8.6.7 hc745277_3
+        - wheel 0.31.1 py37_0
+        - xz 5.2.4 h14c3975_4
+        - zlib 1.2.11 ha838bed_2
+    run:
+        - click >=5.1
+        - itsdangerous >=0.24
+        - jinja2 >=2.10
+        - python >=3.7,<3.8.0a0
+        - werkzeug >=0.14
+test:
+    commands:
+        - flask --help
+    imports:
+        - flask
+        - flask.json
+about:
+    description: 'Flask is a microframework for Python based on Werkzeug and Jinja2.
+        It''s
+
+        intended for getting started very quickly and was developed with best
+
+        intentions in mind.
+
+        '
+    dev_url: https://github.com/pallets/flask
+    doc_source_url: https://github.com/pallets/flask/blob/master/docs/index.rst
+    doc_url: http://flask.pocoo.org/docs/1.0/
+    home: http://flask.pocoo.org
+    license: BSD 3-Clause
+    license_family: BSD
+    license_file: LICENSE
+    summary: A microframework based on Werkzeug, Jinja2 and good intentions.
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - goanpeca
+        - marcelotrevisani
+        - nehaljwani
+        - ukaratay

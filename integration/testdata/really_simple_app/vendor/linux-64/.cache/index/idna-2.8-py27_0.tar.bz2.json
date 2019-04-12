@@ -1,0 +1,1 @@
+{"sha256": "668d8ae0ab84f5206b3deb3b9c429678074f0f793ef511bef196ca9d5c2f7c14", "build_number": 0, "name": "idna", "license": "BSD Like", "timestamp": 1545082875447, "depends": ["python >=2.7,<2.8.0a0"], "version": "2.8", "build": "py27_0", "size": 136544, "md5": "8128b1c61408b43fcb6f7b9013ebe7d5", "subdir": "linux-64"}

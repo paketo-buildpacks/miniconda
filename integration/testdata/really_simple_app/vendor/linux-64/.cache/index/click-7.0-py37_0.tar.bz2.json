@@ -1,0 +1,1 @@
+{"sha256": "1070961e8e776307869313325a2e091869d70e79de7adfb64b48d489f8ae9113", "build_number": 0, "name": "click", "license": "BSD-3-Clause", "timestamp": 1538599032841, "license_family": "BSD", "depends": ["python >=3.7,<3.8.0a0"], "version": "7.0", "build": "py37_0", "size": 121075, "md5": "e650ebf60660e6fae0ea24e788ed2281", "subdir": "linux-64"}

@@ -1,0 +1,12 @@
+{
+  "arch": "x86_64",
+  "build": "1",
+  "build_number": 1,
+  "depends": [],
+  "license": "BSD 3-Clause",
+  "name": "conda-env",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "timestamp": 1530812938329,
+  "version": "2.6.0"
+}

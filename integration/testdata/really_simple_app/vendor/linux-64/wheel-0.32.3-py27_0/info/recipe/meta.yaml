@@ -1,0 +1,54 @@
+# This file created by conda-build 3.16.2
+# meta.yaml template originally from:
+# /tmp/build/80754af9/rsync-recipes/wheel-0.32.3-python_2.7-on-linux_64, last modified Mon Nov 19 14:40:44 2018
+# ------------------------------------------------
+
+package:
+    name: wheel
+    version: 0.32.3
+source:
+    sha256: 029703bf514e16c8271c3821806a1c171220cc5bdd325cbf4e7da1e056a01db6
+    url: https://pypi.io/packages/source/w/wheel/wheel-0.32.3.tar.gz
+build:
+    entry_points:
+        - wheel = wheel.cli:main
+    number: '0'
+    script: python setup.py install --single-version-externally-managed --record=record.txt
+    string: py27_0
+requirements:
+    host:
+        - ca-certificates 2018.03.07 0
+        - certifi 2018.10.15 py27_0
+        - libedit 3.1.20170329 h6b74fdf_2
+        - libffi 3.2.1 hd88cf55_4
+        - libgcc-ng 8.2.0 hdf63c60_1
+        - libstdcxx-ng 8.2.0 hdf63c60_1
+        - ncurses 6.1 hf484d3e_0
+        - openssl 1.1.1 h7b6447c_0
+        - python 2.7.15 h9bab390_4
+        - readline 7.0 h7b6447c_5
+        - setuptools 40.6.2 py27_0
+        - sqlite 3.25.3 h7b6447c_0
+        - tk 8.6.8 hbc83047_0
+        - zlib 1.2.11 ha838bed_2
+    run:
+        - python >=2.7,<2.8.0a0
+        - setuptools
+test:
+    commands:
+        - wheel --help
+    imports:
+        - wheel
+about:
+    home: https://github.com/pypa/wheel
+    license: MIT
+    license_file: LICENSE.txt
+    summary: A built-package format for Python.
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - jakirkham
+        - mingwandroid
+        - ocefpaf
+        - pelson

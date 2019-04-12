@@ -1,0 +1,1 @@
+{"sha256": "753e926e7fe778c1abd964c4f60b8d0df6a6f7f473ea87e86a2cb807b8257c49", "build_number": 0, "name": "setuptools", "license": "MIT", "timestamp": 1550362226771, "license_family": "MIT", "depends": ["certifi >=2016.09", "python >=3.7,<3.8.0a0"], "version": "40.8.0", "build": "py37_0", "size": 658477, "md5": "660dc053dfe07f65c34e3e24fd369ceb", "subdir": "linux-64"}

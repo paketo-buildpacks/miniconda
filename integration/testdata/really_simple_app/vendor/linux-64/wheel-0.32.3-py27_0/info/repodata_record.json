@@ -1,0 +1,21 @@
+{
+  "build": "py27_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/linux-64",
+  "constrains": [],
+  "depends": [
+    "python >=2.7,<2.8.0a0",
+    "setuptools"
+  ],
+  "features": "",
+  "fn": "wheel-0.32.3-py27_0.tar.bz2",
+  "license": "MIT",
+  "md5": "ee813999cd8c39d08038638e76a8cc6e",
+  "name": "wheel",
+  "size": 35262,
+  "subdir": "linux-64",
+  "timestamp": 1542642542001,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/linux-64/wheel-0.32.3-py27_0.tar.bz2",
+  "version": "0.32.3"
+}

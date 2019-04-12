@@ -1,0 +1,1 @@
+{"sha256": "1abdcefc724dccb211740dc19354bbf8f53ed8abd93634a67b97fbc8de02dc0f", "build_number": 0, "name": "tk", "license": "Tcl/Tk", "timestamp": 1535485270027, "license_family": "BSD", "depends": ["libgcc-ng >=7.3.0", "zlib >=1.2.11,<1.3.0a0"], "version": "8.6.8", "build": "hbc83047_0", "size": 3295425, "md5": "7cfa80461710ca1d25a692d28738cfd3", "subdir": "linux-64"}
