@@ -1,0 +1,208 @@
+commit ce10b4b1fb591a5a4cacfccb64f0437852f2a3c9
+Merge: d87eecd 5f5ef7a
+Author: Nehal J Wani <nehaljw.kkd1@gmail.com>
+Date:   Sun Apr 7 11:39:43 2019 +0530
+
+    Merge pull request #15 from regro-cf-autotick-bot/2.10.1
+    
+    jinja2 v2.10.1
+
+commit 5f5ef7a6aa6d707ce1bc0ace19f8aadee3677ddd
+Author: regro-cf-autotick-bot <circleci@cf-graph.regro.github.com>
+Date:   Sat Apr 6 21:25:18 2019 +0000
+
+    MNT: Re-rendered with conda-build 3.17.8, conda-smithy 3.3.2, and conda-forge-pinning 2019.03.17
+
+commit 83a8a2dad0cddd1dc342c05a502f039f70ae0ced
+Author: regro-cf-autotick-bot <circleci@cf-graph.regro.github.com>
+Date:   Sat Apr 6 21:25:06 2019 +0000
+
+    updated v2.10.1
+
+commit d87eecd649bb76a270eb08d2b21ee9d7be568d58
+Author: Travis CI User <travis@example.org>
+Date:   Sat Aug 4 17:11:39 2018 +0000
+
+    [ci skip] [skip ci] Update anaconda token
+
+commit 4e0e2897d1cbfb0dc0f043ca2cbc01dd2d220eba
+Merge: 4cafcdf 317e793
+Author: Anthony Scopatz <scopatz@gmail.com>
+Date:   Tue Jul 10 13:00:55 2018 -0400
+
+    Merge pull request #14 from regro-cf-autotick-bot/noarch_migration
+    
+    Suggestion: add noarch
+
+commit 317e7939ef544bb61fa10c6b1ba053b48943ffb1
+Author: regro-cf-autotick-bot <circleci@cf-graph.regro.github.com>
+Date:   Mon Jul 9 11:51:32 2018 +0000
+
+    MNT: Re-rendered with conda-smithy 3.1.6 and pinning 2018.07.01
+
+commit 91d4552ec74d58e1eef22036afb38dd730f35fdd
+Author: regro-cf-autotick-bot <circleci@cf-graph.regro.github.com>
+Date:   Mon Jul 9 11:51:27 2018 +0000
+
+    add noarch
+
+commit 4cafcdfdcbb7cfbfeaaa3ea9022421a9a480f9c4
+Merge: cfa1fdd dbc68ae
+Author: Filipe <ocefpaf@gmail.com>
+Date:   Thu Nov 30 11:20:03 2017 -0200
+
+    Merge pull request #12 from AnacondaRecipes/cf_sync
+    
+    Bump version to 2.10
+
+commit dbc68ae13cf6cd33f8b043be7d82a6329675a613
+Author: Nehal J Wani <nehaljw.kkd1@gmail.com>
+Date:   Thu Nov 30 05:41:08 2017 -0600
+
+    Bump version to 2.10
+
+commit cfa1fddfa3605758d008c002f07414b8cbca2ff0
+Merge: 5c1ae1b 62c1756
+Author: jakirkham <jakirkham@gmail.com>
+Date:   Tue Aug 15 02:45:10 2017 -0400
+
+    Merge pull request #11 from nehaljwani/bump-version-2.9.6
+    
+    Update recipe for v2.9.6
+
+commit 62c1756771dffd49abc6fe57dfcff0d93210036b
+Author: Nehal J Wani <nehaljw.kkd1@gmail.com>
+Date:   Sun Aug 13 11:59:27 2017 +0000
+
+    Update recipe for 2.9.6
+
+commit 5c1ae1b20f0eb47ff77a5ef47916be876c387f70
+Author: Travis-CI on github.com/conda-forge/staged-recipes <conda-forge@googlegroups.com>
+Date:   Tue Aug 15 01:18:26 2017 +0000
+
+    Re-render the feedstock after CI registration.
+
+commit 74b1a3f9b6730af01cf96363b29c2bc49fd917e7
+Merge: b1e33af a3ced17
+Author: Anthony Scopatz <scopatz@gmail.com>
+Date:   Tue Apr 4 15:21:03 2017 -0400
+
+    Merge pull request #10 from conda-forge-admin/feedstock_rerender_master
+    
+    MNT: Re-render the feedstock [ci skip]
+
+commit a3ced176ba6b0ba6f5334582c21d6be77096fb19
+Author: conda-forge-admin <pelson.pub+conda-forge@gmail.com>
+Date:   Tue Apr 4 01:43:16 2017 +0000
+
+    MNT: Updated the feedstock for conda-smithy version 2.2.2.
+
+commit b1e33afad8628e350edf73e69262b0650e6a56ef
+Merge: f0a0cbc 257cf4a
+Author: jakirkham <jakirkham@gmail.com>
+Date:   Sun Mar 12 14:37:35 2017 -0400
+
+    Merge pull request #9 from conda-forge-admin/feedstock_rerender_master
+    
+    MNT: Re-render the feedstock [ci skip]
+
+commit 257cf4a23ece5542f6034d4e6bd93b516fcb229a
+Author: conda-forge-admin <pelson.pub+conda-forge@gmail.com>
+Date:   Fri Mar 10 01:40:54 2017 +0000
+
+    MNT: Updated the feedstock for conda-smithy version 2.1.1.
+
+commit f0a0cbce7b4df9780b017cd139bd029ffaeb8d6b
+Merge: 884364e 894b429
+Author: Anthony Scopatz <scopatz@gmail.com>
+Date:   Tue Feb 21 16:28:19 2017 -0500
+
+    Merge pull request #8 from bow/version-2.9.5
+    
+    Update for version 2.9.5
+
+commit 894b42924cccb41704b564ade0ae19a7aa49eb83
+Author: bow <bow@bow.web.id>
+Date:   Thu Feb 16 10:26:14 2017 +0100
+
+    Use sha256 instead of md5sum
+
+commit 1df565c28155a02caa2281146b9c33bc8ae2e49f
+Author: bow <bow@bow.web.id>
+Date:   Thu Feb 16 00:12:47 2017 +0100
+
+    Update for 2.9.5. build
+
+commit 884364e90a7fb63787359d7db44da3b29d3c9233
+Merge: ea7b9e1 cdadde5
+Author: Filipe <ocefpaf@gmail.com>
+Date:   Fri Jan 6 06:17:51 2017 -0300
+
+    Merge pull request #6 from scopatz/py36
+    
+    Rerender for Python 36
+
+commit cdadde524af8e7f57aec26655df694b0f23522c6
+Author: Anthony Scopatz <scopatz@gmail.com>
+Date:   Fri Jan 6 00:28:03 2017 -0800
+
+    Rerender for Python 36
+
+commit ea7b9e19857fee917c37c8f815bbef52b8cddf16
+Merge: b7a4221 37ac344
+Author: jakirkham <jakirkham@gmail.com>
+Date:   Sun Jul 24 23:32:29 2016 -0400
+
+    Merge pull request #4 from jakirkham/add_setuptools
+    
+    Add `setuptools` as a runtime requirement
+
+commit 37ac344c9194ea426c9b4d7bddb860cc81eeb391
+Author: John Kirkham <kirkhamj@janelia.hhmi.org>
+Date:   Sat Jul 2 18:14:02 2016 -0400
+
+    recipe: Add `setuptools` as a runtime requirement.
+
+commit b7a42213436bfcb2314338bf385047074b7d67e9
+Merge: d188738 49358b0
+Author: Mike Sarahan <msarahan@gmail.com>
+Date:   Fri May 13 07:22:22 2016 -0500
+
+    Merge pull request #2 from jakirkham/add_jakirkham
+    
+    Add @jakirkham
+
+commit 49358b06693f8e12a788347dbadfc854753fe8d7
+Author: jakirkham <jakirkham@gmail.com>
+Date:   Fri May 13 07:55:34 2016 -0400
+
+    recipe: Add @jakirkham as a maintainer.
+
+commit d188738cab775cbfcf33c16474eb0f8541498766
+Merge: ebfeccc 1ebabda
+Author: jakirkham <jakirkham@gmail.com>
+Date:   Fri May 13 07:54:55 2016 -0400
+
+    Merge pull request #1 from conda-forge-admin/feedstock_rerender_master
+    
+    MNT: Re-render the feedstock
+
+commit 1ebabdaea554b404660f65b05fa37980ab7dd4f9
+Author: conda-forge-admin <pelson.pub+conda-forge@gmail.com>
+Date:   Fri May 13 11:43:33 2016 +0000
+
+    MNT: Updated the feedstock for conda-smithy version 0.10.3.
+    
+    [ci skip]
+
+commit ebfeccca225aaa1487634698d0348e4963e740f2
+Author: Travis-CI on github.com/conda-forge/staged-recipes <conda-forge@googlegroups.com>
+Date:   Tue May 3 02:05:43 2016 +0000
+
+    Re-render the feedstock after CI registration.
+
+commit 248d1e860cb6e85d831f864e75e7d4cf9e763133
+Author: Travis-CI on github.com/conda-forge/staged-recipes <conda-forge@googlegroups.com>
+Date:   Tue May 3 02:04:59 2016 +0000
+
+    Initial commit of the jinja2 feedstock.

@@ -1,0 +1,1 @@
+{"build": "py_0", "build_number": 0, "depends": ["python"], "license": "BSD 3-Clause", "license_family": "BSD", "name": "werkzeug", "noarch": "python", "subdir": "noarch", "timestamp": 1555429443749, "version": "0.15.2", "size": 268957, "md5": "9fcc1e181823da067212de1c34b56165", "sha256": "7a58547180de9bff83be362014e1f1694f10849b4ba8c2303131e5d84d0494fe"}

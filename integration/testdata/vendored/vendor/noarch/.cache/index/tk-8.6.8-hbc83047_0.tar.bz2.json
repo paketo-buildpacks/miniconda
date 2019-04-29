@@ -1,0 +1,1 @@
+{"build": "hbc83047_0", "build_number": 0, "depends": ["libgcc-ng >=7.3.0", "zlib >=1.2.11,<1.3.0a0"], "license": "Tcl/Tk", "license_family": "BSD", "name": "tk", "subdir": "linux-64", "timestamp": 1535485270027, "version": "8.6.8", "size": 3295425, "md5": "7cfa80461710ca1d25a692d28738cfd3", "sha256": "1abdcefc724dccb211740dc19354bbf8f53ed8abd93634a67b97fbc8de02dc0f"}

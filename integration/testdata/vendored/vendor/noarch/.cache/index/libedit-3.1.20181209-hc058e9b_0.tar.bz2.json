@@ -1,0 +1,1 @@
+{"build": "hc058e9b_0", "build_number": 0, "depends": ["libgcc-ng >=7.3.0", "ncurses >=6.1,<7.0a0"], "license": "NetBSD", "license_family": "BSD", "name": "libedit", "subdir": "linux-64", "timestamp": 1547971047214, "version": "3.1.20181209", "size": 192019, "md5": "bd18612aa844e6c52e3b659cbaa706ea", "sha256": "8a34c8d291819de4a9c83a8be789687ea83e7d9ae6022467bb49d6b57e6c88b0"}

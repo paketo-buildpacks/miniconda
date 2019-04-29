@@ -1,0 +1,1 @@
+{"build": "h14c3975_4", "build_number": 4, "depends": ["libgcc-ng >=7.2.0"], "license": "LGPL-2.1 and GPL-2.0", "name": "xz", "subdir": "linux-64", "timestamp": 1526499283093, "version": "5.2.4", "size": 374500, "md5": "496e0e34e1c9710bd307765767318269", "sha256": "cc567f3c241b873980b448d8741d1b7b5efa239384ff69a635e61f7a016798fd"}

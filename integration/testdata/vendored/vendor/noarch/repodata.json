@@ -1,0 +1,387 @@
+{
+  "info": {
+    "subdir": "noarch"
+  },
+  "packages": {
+    "ca-certificates-2019.1.23-0.tar.bz2": {
+      "build": "0",
+      "build_number": 0,
+      "depends": [],
+      "license": "ISC",
+      "md5": "68eed18f420722007d6e45758766c1e4",
+      "name": "ca-certificates",
+      "sha256": "7ba68f267acc1ba8eee0a6105e70f15f3c2069bf1a0de687b06e87234a8a2717",
+      "size": 129401,
+      "subdir": "linux-64",
+      "timestamp": 1549469958294,
+      "version": "2019.1.23"
+    },
+    "certifi-2019.3.9-py37_0.tar.bz2": {
+      "build": "py37_0",
+      "build_number": 0,
+      "depends": [
+        "python >=3.7,<3.8.0a0"
+      ],
+      "license": "ISC",
+      "md5": "28921b59b39bc66578303264677a5232",
+      "name": "certifi",
+      "sha256": "9689c6463d8ced2570ea705928a46bef1b902bb8bd0578a7733b73655f0b5ba9",
+      "size": 158568,
+      "subdir": "linux-64",
+      "timestamp": 1552318217480,
+      "version": "2019.3.9"
+    },
+    "click-7.0-py37_0.tar.bz2": {
+      "build": "py37_0",
+      "build_number": 0,
+      "depends": [
+        "python >=3.7,<3.8.0a0"
+      ],
+      "license": "BSD-3-Clause",
+      "license_family": "BSD",
+      "md5": "e650ebf60660e6fae0ea24e788ed2281",
+      "name": "click",
+      "sha256": "1070961e8e776307869313325a2e091869d70e79de7adfb64b48d489f8ae9113",
+      "size": 121075,
+      "subdir": "linux-64",
+      "timestamp": 1538599032841,
+      "version": "7.0"
+    },
+    "flask-1.0.2-py37_1.tar.bz2": {
+      "build": "py37_1",
+      "build_number": 1,
+      "depends": [
+        "click >=5.1",
+        "itsdangerous >=0.24",
+        "jinja2 >=2.10",
+        "python >=3.7,<3.8.0a0",
+        "werkzeug >=0.14"
+      ],
+      "license": "BSD 3-Clause",
+      "license_family": "BSD",
+      "md5": "b1585f51b5335d354aeb16d52c3a1ff6",
+      "name": "flask",
+      "sha256": "131c54d7fbe6a7a06dc120b7d150d0129c4d3cbd1cd8a1e2ccb6cbaa9c7ef718",
+      "size": 122034,
+      "subdir": "linux-64",
+      "timestamp": 1530771776393,
+      "version": "1.0.2"
+    },
+    "itsdangerous-1.1.0-py37_0.tar.bz2": {
+      "build": "py37_0",
+      "build_number": 0,
+      "depends": [
+        "python >=3.7,<3.8.0a0"
+      ],
+      "license": "BSD 3-Clause",
+      "license_family": "BSD",
+      "md5": "4e8e4d299c21bbcf5a8081ade37d4440",
+      "name": "itsdangerous",
+      "sha256": "f9966597feaf298bb7e4b44f27797d877fbb3ef25bf36e486c2eca37cef79b6a",
+      "size": 27189,
+      "subdir": "linux-64",
+      "timestamp": 1541025206057,
+      "version": "1.1.0"
+    },
+    "jinja2-2.10.1-py37_0.tar.bz2": {
+      "build": "py37_0",
+      "build_number": 0,
+      "depends": [
+        "markupsafe >=0.23",
+        "python >=3.7,<3.8.0a0",
+        "setuptools"
+      ],
+      "license": "3-Clause BSD",
+      "md5": "22b058063b541f25f3e584da3eb2dda1",
+      "name": "jinja2",
+      "sha256": "502b16cedac785e73a077b57d351a6115f6df49b25bd16a475e41f7a5c75b656",
+      "size": 192356,
+      "subdir": "linux-64",
+      "timestamp": 1555082345132,
+      "version": "2.10.1"
+    },
+    "libedit-3.1.20181209-hc058e9b_0.tar.bz2": {
+      "build": "hc058e9b_0",
+      "build_number": 0,
+      "depends": [
+        "libgcc-ng >=7.3.0",
+        "ncurses >=6.1,<7.0a0"
+      ],
+      "license": "NetBSD",
+      "license_family": "BSD",
+      "md5": "bd18612aa844e6c52e3b659cbaa706ea",
+      "name": "libedit",
+      "sha256": "8a34c8d291819de4a9c83a8be789687ea83e7d9ae6022467bb49d6b57e6c88b0",
+      "size": 192019,
+      "subdir": "linux-64",
+      "timestamp": 1547971047214,
+      "version": "3.1.20181209"
+    },
+    "libffi-3.2.1-hd88cf55_4.tar.bz2": {
+      "build": "hd88cf55_4",
+      "build_number": 4,
+      "depends": [
+        "libgcc-ng 7.2.0.*",
+        "libstdcxx-ng 7.2.0.*"
+      ],
+      "license": "Custom",
+      "md5": "723c98107d830bdf000772bf1976e0c3",
+      "name": "libffi",
+      "sha256": "7eac01729dcdb187a1bc3584e61956d1ded34ee50e7a810daa7b83f34d54e063",
+      "size": 44477,
+      "subdir": "linux-64",
+      "timestamp": 1510177337742,
+      "version": "3.2.1"
+    },
+    "libgcc-ng-8.2.0-hdf63c60_1.tar.bz2": {
+      "build": "hdf63c60_1",
+      "build_number": 1,
+      "depends": [],
+      "license": "GPL",
+      "md5": "7d17c0d663e285a5e6cd7bfa8eed1cd8",
+      "name": "libgcc-ng",
+      "sha256": "1b6c9018bdfbd3c6b998ba072a244bb45f52d88b8774f4d458263bd3ac91c53f",
+      "size": 7996349,
+      "subdir": "linux-64",
+      "timestamp": 1534516107109,
+      "version": "8.2.0"
+    },
+    "libstdcxx-ng-8.2.0-hdf63c60_1.tar.bz2": {
+      "build": "hdf63c60_1",
+      "build_number": 1,
+      "depends": [],
+      "license": "GPL3 with runtime exception",
+      "md5": "16e7bf6ac5207cc989841be16938a3cf",
+      "name": "libstdcxx-ng",
+      "sha256": "9df01532722aa5658a99e0fdc87d7c5d43245a36cb29ed7bbd4f1e54b9ac67a6",
+      "size": 3058753,
+      "subdir": "linux-64",
+      "timestamp": 1534516131602,
+      "version": "8.2.0"
+    },
+    "markupsafe-1.1.1-py37h7b6447c_0.tar.bz2": {
+      "build": "py37h7b6447c_0",
+      "build_number": 0,
+      "depends": [
+        "libgcc-ng >=7.3.0",
+        "python >=3.7,<3.8.0a0"
+      ],
+      "license": "BSD-3-Clause",
+      "license_family": "BSD",
+      "md5": "bd28bf8a166fb20a1846c7adec17866a",
+      "name": "markupsafe",
+      "sha256": "311867ff3cf43d60d39901051fd6a7004618d453b07191b6825e69ac36958027",
+      "size": 30151,
+      "subdir": "linux-64",
+      "timestamp": 1551141822150,
+      "version": "1.1.1"
+    },
+    "ncurses-6.1-he6710b0_1.tar.bz2": {
+      "build": "he6710b0_1",
+      "build_number": 1,
+      "depends": [
+        "libgcc-ng >=7.3.0",
+        "libstdcxx-ng >=7.3.0"
+      ],
+      "license": "Free software (MIT-like)",
+      "md5": "f8a5abbf28b624eb2c8bbc9f70a6ff70",
+      "name": "ncurses",
+      "sha256": "8fa1f512982baa632e1b20394b502daaf8541bebe1c60e1faa1a96dfedcd2f2f",
+      "size": 980597,
+      "subdir": "linux-64",
+      "timestamp": 1543442069203,
+      "version": "6.1"
+    },
+    "openssl-1.1.1b-h7b6447c_1.tar.bz2": {
+      "build": "h7b6447c_1",
+      "build_number": 1,
+      "depends": [
+        "ca-certificates",
+        "libgcc-ng >=7.3.0"
+      ],
+      "license": "OpenSSL",
+      "license_family": "Apache",
+      "md5": "6124a2c7ec4fa5a6502fb02345b49a55",
+      "name": "openssl",
+      "sha256": "b3e72f5a41798d610d740a2814b1a7c5dda454c68e320bfcfc1e05d768852591",
+      "size": 4160471,
+      "subdir": "linux-64",
+      "timestamp": 1551973352851,
+      "version": "1.1.1b"
+    },
+    "pip-19.0.3-py37_0.tar.bz2": {
+      "build": "py37_0",
+      "build_number": 0,
+      "depends": [
+        "python >=3.7,<3.8.0a0",
+        "setuptools",
+        "wheel"
+      ],
+      "license": "MIT",
+      "license_family": "MIT",
+      "md5": "3825abb75c5695cac45ad66c5d35d1e9",
+      "name": "pip",
+      "sha256": "17158288721464fe8bae6ceb7cdfa6019817e2cca78227ac8766766506cd6502",
+      "size": 1878035,
+      "subdir": "linux-64",
+      "timestamp": 1551143673935,
+      "version": "19.0.3"
+    },
+    "python-3.7.3-h0371630_0.tar.bz2": {
+      "build": "h0371630_0",
+      "build_number": 0,
+      "depends": [
+        "libffi >=3.2.1,<4.0a0",
+        "libgcc-ng >=7.3.0",
+        "libstdcxx-ng >=7.3.0",
+        "ncurses >=6.1,<7.0a0",
+        "openssl >=1.1.1b,<1.1.2a",
+        "readline >=7.0,<8.0a0",
+        "sqlite >=3.27.2,<4.0a0",
+        "tk >=8.6.8,<8.7.0a0",
+        "xz >=5.2.4,<6.0a0",
+        "zlib >=1.2.11,<1.3.0a0"
+      ],
+      "license": "PSF",
+      "md5": "785d85ff35093ab40bb73ba40b80c012",
+      "name": "python",
+      "sha256": "997b40637935ef4b926fed30b80da15994f06e0e1be339e561e97a4f6ab370f4",
+      "size": 38435024,
+      "subdir": "linux-64",
+      "timestamp": 1553725190732,
+      "version": "3.7.3"
+    },
+    "readline-7.0-h7b6447c_5.tar.bz2": {
+      "build": "h7b6447c_5",
+      "build_number": 5,
+      "depends": [
+        "libgcc-ng >=7.3.0",
+        "ncurses >=6.1,<7.0a0"
+      ],
+      "license": "GPL-3.0",
+      "md5": "44547de0c0be291132a3fdd18829f5ff",
+      "name": "readline",
+      "sha256": "00e9e135a450f39076aca5f40034643facf413b80cccebc1761839cde4d44643",
+      "size": 401325,
+      "subdir": "linux-64",
+      "timestamp": 1535475436442,
+      "version": "7.0"
+    },
+    "setuptools-41.0.0-py37_0.tar.bz2": {
+      "build": "py37_0",
+      "build_number": 0,
+      "depends": [
+        "certifi >=2016.09",
+        "python >=3.7,<3.8.0a0"
+      ],
+      "license": "MIT",
+      "license_family": "MIT",
+      "md5": "76b99f8e8f9de6b80d5313fd418aabe7",
+      "name": "setuptools",
+      "sha256": "33702405c885bfde6b1846e5d23b9191ffc8a7235d92b2a490313e508947eb3d",
+      "size": 656148,
+      "subdir": "linux-64",
+      "timestamp": 1555084364723,
+      "version": "41.0.0"
+    },
+    "sqlite-3.28.0-h7b6447c_0.tar.bz2": {
+      "build": "h7b6447c_0",
+      "build_number": 0,
+      "depends": [
+        "libedit >=3.1.20181209,<3.2.0a0",
+        "libgcc-ng >=7.3.0"
+      ],
+      "license": "Public-Domain (http://www.sqlite.org/copyright.html)",
+      "md5": "f0129804aae5d555f6dc90af25413b41",
+      "name": "sqlite",
+      "sha256": "c9b71a0957ac319e9995cb9b711b0118e4099b0b28f26c3e75300f37ff6f6a7f",
+      "size": 2004895,
+      "subdir": "linux-64",
+      "timestamp": 1555958148895,
+      "version": "3.28.0"
+    },
+    "tk-8.6.8-hbc83047_0.tar.bz2": {
+      "build": "hbc83047_0",
+      "build_number": 0,
+      "depends": [
+        "libgcc-ng >=7.3.0",
+        "zlib >=1.2.11,<1.3.0a0"
+      ],
+      "license": "Tcl/Tk",
+      "license_family": "BSD",
+      "md5": "7cfa80461710ca1d25a692d28738cfd3",
+      "name": "tk",
+      "sha256": "1abdcefc724dccb211740dc19354bbf8f53ed8abd93634a67b97fbc8de02dc0f",
+      "size": 3295425,
+      "subdir": "linux-64",
+      "timestamp": 1535485270027,
+      "version": "8.6.8"
+    },
+    "werkzeug-0.15.2-py_0.tar.bz2": {
+      "build": "py_0",
+      "build_number": 0,
+      "depends": [
+        "python"
+      ],
+      "license": "BSD 3-Clause",
+      "license_family": "BSD",
+      "md5": "9fcc1e181823da067212de1c34b56165",
+      "name": "werkzeug",
+      "noarch": "python",
+      "sha256": "7a58547180de9bff83be362014e1f1694f10849b4ba8c2303131e5d84d0494fe",
+      "size": 268957,
+      "subdir": "noarch",
+      "timestamp": 1555429443749,
+      "version": "0.15.2"
+    },
+    "wheel-0.33.1-py37_0.tar.bz2": {
+      "build": "py37_0",
+      "build_number": 0,
+      "depends": [
+        "python >=3.7,<3.8.0a0",
+        "setuptools"
+      ],
+      "license": "MIT",
+      "md5": "e15ae8528528a941e87a40059360d893",
+      "name": "wheel",
+      "sha256": "e1457589e95e48aed74a8d7c7a26c9a363e0658164bea83d2ba35a943a52d560",
+      "size": 39885,
+      "subdir": "linux-64",
+      "timestamp": 1551149152778,
+      "version": "0.33.1"
+    },
+    "xz-5.2.4-h14c3975_4.tar.bz2": {
+      "build": "h14c3975_4",
+      "build_number": 4,
+      "depends": [
+        "libgcc-ng >=7.2.0"
+      ],
+      "license": "LGPL-2.1 and GPL-2.0",
+      "md5": "496e0e34e1c9710bd307765767318269",
+      "name": "xz",
+      "sha256": "cc567f3c241b873980b448d8741d1b7b5efa239384ff69a635e61f7a016798fd",
+      "size": 374500,
+      "subdir": "linux-64",
+      "timestamp": 1526499283093,
+      "version": "5.2.4"
+    },
+    "zlib-1.2.11-h7b6447c_3.tar.bz2": {
+      "build": "h7b6447c_3",
+      "build_number": 3,
+      "depends": [
+        "libgcc-ng >=7.3.0"
+      ],
+      "license": "zlib",
+      "license_family": "Other",
+      "md5": "e76217678961a4836e1067a2d11603e2",
+      "name": "zlib",
+      "sha256": "d5653139d823ef26148ea5fe781e48e62a1d95b487a80e9aa3507dfd9efd5971",
+      "size": 122469,
+      "subdir": "linux-64",
+      "timestamp": 1542814864621,
+      "version": "1.2.11"
+    }
+  },
+  "removed": [],
+  "repodata_version": 1
+}

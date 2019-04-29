@@ -1,0 +1,586 @@
+{
+  "channeldata_version": 1,
+  "packages": {
+    "ca-certificates": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "home": "https://github.com/conda-forge/ca-certificates-feedstock",
+      "identifiers": [],
+      "keywords": [],
+      "license": "ISC",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/ca-certificates-2019.1.23-0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://curl.haxx.se/ca/cacert-2019-01-23.pem",
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "Certificates for use with other packages.",
+      "tags": [],
+      "text_prefix": false,
+      "version": "2019.1.23"
+    },
+    "certifi": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "Certifi is a curated collection of Root Certificates for validating the trustworthiness of SSL certificates while verifying the identity of TLS hosts.",
+      "dev_url": "https://github.com/certifi/python-certifi",
+      "doc_source_url": "https://github.com/certifi/certifi.io/blob/master/README.rst",
+      "doc_url": "https://pypi.python.org/pypi/certifi",
+      "home": "http://certifi.io/",
+      "identifiers": [],
+      "keywords": [],
+      "license": "ISC",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/certifi-2019.3.9-py37_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/c/certifi/certifi-2019.3.9.tar.gz",
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "Python package for providing Mozilla's CA Bundle.",
+      "tags": [],
+      "text_prefix": false,
+      "version": "2019.3.9"
+    },
+    "click": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "Click is a Python package for creating beautiful command line interfaces in a composable way with as little code as necessary.",
+      "dev_url": "https://github.com/pallets/click",
+      "doc_source_url": "https://github.com/pallets/click/blob/master/docs/index.rst",
+      "doc_url": "https://click.palletsprojects.com",
+      "home": "https://palletsprojects.com/p/click",
+      "identifiers": [],
+      "keywords": [],
+      "license": "BSD-3-Clause",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/click-7.0-py37_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/C/Click/Click-7.0.tar.gz",
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "Python composable command line interface toolkit",
+      "tags": [],
+      "text_prefix": false,
+      "version": "7.0"
+    },
+    "flask": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "Flask is a microframework for Python based on Werkzeug and Jinja2. It's intended for getting started very quickly and was developed with best intentions in mind.",
+      "dev_url": "https://github.com/pallets/flask",
+      "doc_source_url": "https://github.com/pallets/flask/blob/master/docs/index.rst",
+      "doc_url": "http://flask.pocoo.org/docs/1.0/",
+      "home": "http://flask.pocoo.org",
+      "license": "BSD 3-Clause",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/flask-1.0.2-py37_1.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/F/Flask/Flask-1.0.2.tar.gz",
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "A microframework based on Werkzeug, Jinja2 and good intentions.",
+      "text_prefix": true,
+      "version": "1.0.2"
+    },
+    "itsdangerous": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "Internally itsdangerous uses HMAC and SHA1 for signing data and bases the implementation on the Django signing module.  It also however supports JSON Web Signatures (JWS).",
+      "dev_url": "https://github.com/pallets/itsdangerous",
+      "doc_source_url": "https://github.com/pallets/itsdangerous/blob/master/docs/index.rst",
+      "doc_url": "http://pythonhosted.org/itsdangerous",
+      "home": "https://github.com/pallets/itsdangerous",
+      "identifiers": [],
+      "keywords": [],
+      "license": "BSD 3-Clause",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/itsdangerous-1.1.0-py37_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/i/itsdangerous/itsdangerous-1.1.0.tar.gz",
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "Various helpers to pass trusted data to untrusted environments.",
+      "tags": [],
+      "text_prefix": false,
+      "version": "1.1.0"
+    },
+    "jinja2": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "Jinja2 is a full featured template engine for Python. It has full unicode support, an optional integrated sandboxed execution environment, widely used and BSD licensed.",
+      "dev_url": "https://github.com/pallets/jinja",
+      "doc_source_url": "https://github.com/pallets/jinja/blob/master/docs/index.rst",
+      "doc_url": "http://jinja.pocoo.org/docs/dev/",
+      "home": "http://jinja.pocoo.org",
+      "identifiers": [],
+      "keywords": [],
+      "license": "3-Clause BSD",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/jinja2-2.10.1-py37_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/J/Jinja2/Jinja2-2.10.1.tar.gz",
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "An easy to use stand-alone template engine written in pure python.",
+      "tags": [],
+      "text_prefix": false,
+      "version": "2.10.1"
+    },
+    "libedit": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "This is an autotool- and libtoolized port of the NetBSD Editline library (libedit). This Berkeley-style licensed command line editor library provides generic line editing, history, and tokenization functions, similar to those found in GNU Readline",
+      "home": "http://thrysoee.dk/editline/",
+      "identifiers": [],
+      "keywords": [],
+      "license": "NetBSD",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/libedit-3.1.20181209-hc058e9b_0.tar.bz2",
+      "run_exports": {
+        "weak": [
+          "libedit >=3.1.20181209,<3.2.0a0"
+        ]
+      },
+      "source_url": "http://thrysoee.dk/editline/libedit-20181209-3.1.tar.gz",
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "Editline Library (libedit)",
+      "tags": [],
+      "text_prefix": true,
+      "version": "3.1.20181209"
+    },
+    "libffi": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "The libffi library provides a portable, high level programming interface to various calling conventions. This allows a programmer to call any function specified by a call interface description at run-time.",
+      "dev_url": "https://github.com/libffi/libffi",
+      "doc_url": "https://sourceware.org/libffi/",
+      "home": "https://sourceware.org/libffi/",
+      "license": "Custom",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/libffi-3.2.1-hd88cf55_4.tar.bz2",
+      "run_exports": {
+        "weak": [
+          "libffi >=3.2.1,<4.0a0"
+        ]
+      },
+      "source_url": "ftp://sourceware.org/pub/libffi/libffi-3.2.1.tar.gz",
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "A Portable Foreign Function Interface Library.",
+      "text_prefix": true,
+      "version": "3.2.1"
+    },
+    "libgcc-ng": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "home": "https://gcc.gnu.org/onlinedocs/gccint/Libgcc.html",
+      "license": "GPL",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/libgcc-ng-8.2.0-hdf63c60_1.tar.bz2",
+      "run_exports": {},
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "The GCC low-level runtime library",
+      "text_prefix": false,
+      "version": "8.2.0"
+    },
+    "libstdcxx-ng": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "home": "https://gcc.gnu.org/",
+      "license": "GPL3 with runtime exception",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/libstdcxx-ng-8.2.0-hdf63c60_1.tar.bz2",
+      "run_exports": {},
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "The GNU C++ Runtime Library",
+      "text_prefix": false,
+      "version": "8.2.0"
+    },
+    "markupsafe": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "MarkupSafe is a library for Python that implements a unicode string that is aware of HTML escaping rules and can be used to implement automatic string escaping. It is used by Jinja 2, the Mako templating engine, the Pylons web framework and many more.",
+      "dev_url": "https://github.com/pallets/markupsafe",
+      "doc_source_url": "https://github.com/pallets/markupsafe/blob/master/README.rst",
+      "doc_url": "https://pypi.python.org/pypi/MarkupSafe",
+      "home": "https://www.palletsprojects.com/p/markupsafe",
+      "identifiers": [],
+      "keywords": [],
+      "license": "BSD-3-Clause",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/markupsafe-1.1.1-py37h7b6447c_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/M/MarkupSafe/MarkupSafe-1.1.1.tar.gz",
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "A Python module that implements the jinja2.Markup string",
+      "tags": [],
+      "text_prefix": false,
+      "version": "1.1.1"
+    },
+    "ncurses": {
+      "activate.d": false,
+      "binary_prefix": true,
+      "deactivate.d": false,
+      "description": "The ncurses (new curses) library is a free software emulation of curses in System V Release 4.0 (SVr4), and more. It uses terminfo format, supports pads and color and multiple highlights and forms characters and function-key mapping, and has all the other SVr4-curses enhancements over BSD curses. SVr4 curses is better known today as X/Open Curses",
+      "dev_url": "http://invisible-island.net/ncurses/",
+      "doc_url": "http://invisible-island.net/ncurses/NCURSES-Programming-HOWTO.html",
+      "home": "http://www.gnu.org/software/ncurses/",
+      "identifiers": [],
+      "keywords": [],
+      "license": "Free software (MIT-like)",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/ncurses-6.1-he6710b0_1.tar.bz2",
+      "run_exports": {
+        "weak": [
+          "ncurses >=6.1,<7.0a0"
+        ]
+      },
+      "source_url": "http://ftp.gnu.org/pub/gnu/ncurses/ncurses-6.1.tar.gz",
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "Library for text-based user interfaces",
+      "tags": [],
+      "text_prefix": true,
+      "version": "6.1"
+    },
+    "openssl": {
+      "activate.d": false,
+      "binary_prefix": true,
+      "deactivate.d": false,
+      "dev_url": "https://github.com/openssl/openssl",
+      "doc_url": "https://www.openssl.org/docs/man1.1.1/",
+      "home": "http://www.openssl.org/",
+      "identifiers": [],
+      "keywords": [],
+      "license": "OpenSSL",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/openssl-1.1.1b-h7b6447c_1.tar.bz2",
+      "run_exports": {
+        "weak": [
+          "openssl >=1.1.1b,<1.1.2a"
+        ]
+      },
+      "source_url": "http://www.openssl.org/source/openssl-1.1.1b.tar.gz",
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "OpenSSL is an open-source implementation of the SSL and TLS protocols",
+      "tags": [],
+      "text_prefix": true,
+      "version": "1.1.1b"
+    },
+    "pip": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "dev_url": "https://github.com/pypa/pip",
+      "doc_url": "https://pip.pypa.io/en/stable/",
+      "home": "https://pip.pypa.io/en/stable/",
+      "identifiers": [],
+      "keywords": [],
+      "license": "MIT",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/pip-19.0.3-py37_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/p/pip/pip-19.0.3.tar.gz",
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "PyPA recommended tool for installing Python packages",
+      "tags": [],
+      "text_prefix": true,
+      "version": "19.0.3"
+    },
+    "python": {
+      "activate.d": false,
+      "binary_prefix": true,
+      "deactivate.d": false,
+      "description": "Python is a widely used high-level, general-purpose, interpreted, dynamic programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C++ or Java. The language provides constructs intended to enable clear programs on both a small and large scale.",
+      "dev_url": "https://docs.python.org/devguide/",
+      "doc_source_url": "https://github.com/python/pythondotorg/blob/master/docs/source/index.rst",
+      "doc_url": "https://www.python.org/doc/versions/",
+      "home": "http://www.python.org/",
+      "identifiers": [],
+      "keywords": [],
+      "license": "PSF",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/python-3.7.3-h0371630_0.tar.bz2",
+      "run_exports": {},
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "General purpose programming language",
+      "tags": [],
+      "text_prefix": true,
+      "version": "3.7.3"
+    },
+    "readline": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "The standard Python readline extension statically linked against the GNU readline library.",
+      "dev_url": "https://github.com/ludwigschwardt/python-gnureadline",
+      "doc_source_url": "https://github.com/ludwigschwardt/python-gnureadline",
+      "doc_url": "https://pypi.python.org/pypi/readline",
+      "home": "https://cnswww.cns.cwru.edu/php/chet/readline/rltop.html",
+      "license": "GPL-3.0",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/readline-7.0-h7b6447c_5.tar.bz2",
+      "run_exports": {
+        "weak": [
+          "readline >=7.0,<8.0a0"
+        ]
+      },
+      "source_url": "ftp://ftp.gnu.org/gnu/readline/readline-7.0.tar.gz",
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "library for editing command lines as they are typed in",
+      "text_prefix": false,
+      "version": "7.0"
+    },
+    "setuptools": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "Setuptools is a fully-featured, actively-maintained, and stable library designed to facilitate packaging Python projects.",
+      "dev_url": "https://github.com/pypa/setuptools",
+      "doc_source_url": "https://github.com/pypa/setuptools/tree/master/docs",
+      "doc_url": "http://pythonhosted.org/setuptools/",
+      "home": "https://github.com/pypa/setuptools",
+      "identifiers": [],
+      "keywords": [],
+      "license": "MIT",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/setuptools-41.0.0-py37_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/s/setuptools/setuptools-41.0.0.zip",
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "Download, build, install, upgrade, and uninstall Python packages",
+      "tags": [],
+      "text_prefix": true,
+      "version": "41.0.0"
+    },
+    "sqlite": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "SQLite is a self-contained, high-reliability, embedded, full-featured, public-domain, SQL database engine.It is the most used database engine in the world.",
+      "dev_url": "https://github.com/mackyle/sqlite",
+      "doc_source_url": "https://github.com/mackyle/sqlite/tree/master/doc",
+      "doc_url": "http://www.sqlite.org/docs.html",
+      "home": "http://www.sqlite.org/",
+      "identifiers": [],
+      "keywords": [],
+      "license": "Public-Domain (http://www.sqlite.org/copyright.html)",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/sqlite-3.28.0-h7b6447c_0.tar.bz2",
+      "run_exports": {
+        "weak": [
+          "sqlite >=3.28.0,<4.0a0"
+        ]
+      },
+      "source_url": "https://www.sqlite.org/2019/sqlite-autoconf-3280000.tar.gz",
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "Implements a self-contained, zero-configuration, SQL database engine.",
+      "tags": [],
+      "text_prefix": true,
+      "version": "3.28.0"
+    },
+    "tk": {
+      "activate.d": false,
+      "binary_prefix": true,
+      "deactivate.d": false,
+      "home": "http://www.tcl.tk/",
+      "license": "Tcl/Tk",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/tk-8.6.8-hbc83047_0.tar.bz2",
+      "run_exports": {
+        "weak": [
+          "tk >=8.6.8,<8.7.0a0"
+        ]
+      },
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "A dynamic programming language with GUI support.  Bundles Tcl and Tk.",
+      "text_prefix": true,
+      "version": "8.6.8"
+    },
+    "werkzeug": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "Werkzeug is a WSGI utility library for Python. It's widely used and BSD licensed.",
+      "dev_url": "https://github.com/pallets/werkzeug",
+      "doc_url": "https://werkzeug.palletsprojects.com/",
+      "home": "https://palletsprojects.com/p/werkzeug/",
+      "identifiers": [],
+      "keywords": [],
+      "license": "BSD 3-Clause",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/werkzeug-0.15.2-py_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/W/Werkzeug/Werkzeug-0.15.2.tar.gz",
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "The comprehensive WSGI web application library.",
+      "tags": [],
+      "text_prefix": false,
+      "version": "0.15.2"
+    },
+    "wheel": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "home": "https://github.com/pypa/wheel",
+      "identifiers": [],
+      "keywords": [],
+      "license": "MIT",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/wheel-0.33.1-py37_0.tar.bz2",
+      "run_exports": {},
+      "source_url": "https://pypi.io/packages/source/w/wheel/wheel-0.33.1.tar.gz",
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "A built-package format for Python.",
+      "tags": [],
+      "text_prefix": true,
+      "version": "0.33.1"
+    },
+    "xz": {
+      "activate.d": false,
+      "binary_prefix": true,
+      "deactivate.d": false,
+      "description": "XZ Utils is free general-purpose data compression software with a high compression ratio. XZ Utils were written for POSIX-like systems, but also work on some not-so-POSIX systems.",
+      "dev_url": "http://git.tukaani.org/",
+      "doc_source_url": "https://github.com/xz-mirror/xz/blob/master/README",
+      "doc_url": "http://tukaani.org/xz/",
+      "home": "http://tukaani.org/xz/",
+      "license": "LGPL-2.1 and GPL-2.0",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/xz-5.2.4-h14c3975_4.tar.bz2",
+      "run_exports": {
+        "weak": [
+          "xz >=5.2.4,<6.0a0"
+        ]
+      },
+      "source_url": "http://downloads.sourceforge.net/project/lzmautils/xz-5.2.4.tar.bz2",
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "Data compression software with high compression ratio",
+      "text_prefix": true,
+      "version": "5.2.4"
+    },
+    "zlib": {
+      "activate.d": false,
+      "binary_prefix": false,
+      "deactivate.d": false,
+      "description": "zlib is designed to be a free, general-purpose, lossless data-compression library for use on virtually any computer hardware and operating system.",
+      "dev_url": "https://github.com/madler/zlib",
+      "doc_url": "http://zlib.net/manual.html",
+      "home": "http://zlib.net/",
+      "identifiers": [],
+      "keywords": [],
+      "license": "zlib",
+      "post_link": false,
+      "pre_link": false,
+      "pre_unlink": false,
+      "reference_package": "noarch/zlib-1.2.11-h7b6447c_3.tar.bz2",
+      "run_exports": {
+        "weak": [
+          "zlib >=1.2.11,<1.3.0a0"
+        ]
+      },
+      "source_url": "http://zlib.net/zlib-1.2.11.tar.gz",
+      "subdirs": [
+        "noarch"
+      ],
+      "summary": "Massively spiffy yet delicately unobtrusive compression library",
+      "tags": [],
+      "text_prefix": true,
+      "version": "1.2.11"
+    }
+  },
+  "subdirs": [
+    "noarch"
+  ]
+}

@@ -1,7 +1,44 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/buildpack/libbuildpack/buildplan"
+	"github.com/cloudfoundry/conda-cnb/conda"
+	"github.com/cloudfoundry/libcfbuildpack/detect"
+	"github.com/cloudfoundry/libcfbuildpack/helper"
+	"os"
+	"path/filepath"
+)
 
 func main() {
-	fmt.Println("Implement detect")
+	context, err := detect.DefaultDetect()
+	if err != nil {
+		_, _ = fmt.Fprintf(os.Stderr, "failed to create a default detection context: %s", err)
+		os.Exit(100)
+	}
+
+	code, err := runDetect(context)
+	if err != nil {
+		context.Logger.Info(err.Error())
+	}
+
+	os.Exit(code)
+}
+
+func runDetect(context detect.Detect) (int, error) {
+	environmentYMLPath := filepath.Join(context.Application.Root, conda.EnvironmentFile)
+	if exists, err := helper.FileExists(environmentYMLPath); err != nil {
+		return detect.FailStatusCode, err
+	} else if !exists {
+		return context.Fail(), nil
+	}
+
+	return context.Pass(buildplan.BuildPlan{
+		conda.CondaLayer: buildplan.Dependency{
+			Metadata: buildplan.Metadata{
+				"build":  true,
+				"launch": true,
+			},
+		},
+	})
 }

@@ -1,0 +1,1 @@
+{"build": "py37_0", "build_number": 0, "depends": ["python >=3.7,<3.8.0a0", "setuptools", "wheel"], "license": "MIT", "license_family": "MIT", "name": "pip", "subdir": "linux-64", "timestamp": 1551143673935, "version": "19.0.3", "size": 1878035, "md5": "3825abb75c5695cac45ad66c5d35d1e9", "sha256": "17158288721464fe8bae6ceb7cdfa6019817e2cca78227ac8766766506cd6502"}
