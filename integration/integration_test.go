@@ -1,13 +1,9 @@
 package integration_test
 
 import (
-	"bytes"
-	"io"
 	"io/ioutil"
 	"os"
-	"os/exec"
 	"path/filepath"
-	"regexp"
 	"strings"
 	"testing"
 
@@ -20,185 +16,80 @@ import (
 	"github.com/sclevine/spec/report"
 )
 
+var (
+	bpDir, condaURI string
+	err             error
+)
+
 func TestIntegration(t *testing.T) {
+	RegisterTestingT(t)
+	bpDir, err = dagger.FindBPRoot()
+	Expect(err).NotTo(HaveOccurred())
+	condaURI, err = dagger.PackageBuildpack(bpDir)
+	Expect(err).ToNot(HaveOccurred())
+	defer os.RemoveAll(condaURI)
+
 	spec.Run(t, "Integration", testIntegration, spec.Report(report.Terminal{}))
 }
 
-func testIntegration(t *testing.T, when spec.G, it spec.S) {
-	var (
-		condaURI string
-		err      error
-	)
-
+func testIntegration(t *testing.T, _ spec.G, it spec.S) {
 	it.Before(func() {
 		RegisterTestingT(t)
+	})
 
+	it("builds successfully and reuses the conda cache on a re-build with a simple conda app", func() {
+		appRoot := filepath.Join("testdata", "simple_app")
+		pythonVersion, err := readPythonVersion(filepath.Join(appRoot, conda.EnvironmentFile))
+		Expect(err).NotTo(HaveOccurred())
+
+		app, err := dagger.PackBuild(appRoot, condaURI)
+		Expect(err).NotTo(HaveOccurred())
+		defer app.Destroy()
+		Expect(app.BuildLogs()).To(MatchRegexp("Conda Packages.*: Contributing to layer"))
+
+		app, err = dagger.PackBuildNamedImage(app.ImageName, appRoot, condaURI)
+		Expect(err).NotTo(HaveOccurred())
+		Expect(app.BuildLogs()).NotTo(MatchRegexp("Conda Packages.*: Reusing cached layer"))
+		Expect(app.BuildLogs()).NotTo(ContainSubstring("Downloading and Extracting Packages")) // Shows that conda is caching
+
+		app.Env["PORT"] = "8080"
+		Expect(app.Start()).To(Succeed())
+		body, _, err := app.HTTPGet("/")
 		Expect(err).ToNot(HaveOccurred())
+		Expect(body).To(ContainSubstring("Hello, world!"))
+		Expect(body).To(ContainSubstring("Using python: " + pythonVersion))
+	})
 
-		condaURI, err = dagger.PackageBuildpack()
+	it("uses package-list.txt as a lockfile for re-builds", func() {
+		appRoot := filepath.Join("testdata", "with_lock_file")
+		app, err := dagger.PackBuild(appRoot, condaURI)
+		Expect(err).NotTo(HaveOccurred())
+		defer app.Destroy()
+
+		app, err = dagger.PackBuildNamedImage(app.ImageName, appRoot, condaURI)
+		Expect(err).NotTo(HaveOccurred())
+
+		Expect(app.BuildLogs()).To(MatchRegexp("Conda Packages.*: Reusing cached layer"))
+
+		app.Env["PORT"] = "8080"
+		Expect(app.Start()).To(Succeed())
+		body, _, err := app.HTTPGet("/")
 		Expect(err).ToNot(HaveOccurred())
+		Expect(body).To(ContainSubstring("Hello, world!"))
 	})
 
-	it.After(func() {
-		os.RemoveAll(condaURI)
-	})
+	it("uses the vendored packages when the app is vendored", func() {
+		app, err := dagger.PackBuild(filepath.Join("testdata", "vendored"), condaURI)
+		Expect(err).NotTo(HaveOccurred())
+		defer app.Destroy()
 
-	when("pushing a simple conda app", func() {
-		var (
-			app     *dagger.App
-			appRoot string
-			err     error
-		)
+		Expect(app.BuildLogs()).To(ContainSubstring("file:///workspace/vendor"))
 
-		it.Before(func() {
-			appRoot = filepath.Join("testdata", "simple_app")
-		})
-
-		it.After(func() {
-			app.Destroy()
-		})
-
-		it("builds and runs", func() {
-			app, err = dagger.PackBuild(appRoot, condaURI)
-			Expect(err).NotTo(HaveOccurred())
-
-			app.Env["PORT"] = "8080"
-			Expect(app.Start()).To(Succeed())
-
-			pythonVersion, err := readPythonVersion(filepath.Join(appRoot, conda.EnvironmentFile))
-			Expect(err).NotTo(HaveOccurred())
-
-			body, _, err := app.HTTPGet("/")
-			Expect(err).ToNot(HaveOccurred())
-			Expect(body).To(ContainSubstring("Hello, world!"))
-			Expect(body).To(ContainSubstring("Using python: " + pythonVersion))
-			Expect(app.BuildLogs()).To(MatchRegexp("Conda Packages.*: Contributing to layer"))
-		})
-	})
-
-	when("repushing the same app", func() {
-		when("the app has environment.yml and a package-list.txt", func() {
-			var (
-				app     *dagger.App
-				appRoot string
-				err     error
-			)
-
-			it.Before(func() {
-				appRoot = filepath.Join("testdata", "with_lock_file")
-			})
-
-			it.After(func() {
-				app.Destroy()
-			})
-
-			it("reuses the packages in the launch layer using the package-list.txt", func() {
-				app, err = dagger.PackBuild(appRoot, condaURI)
-				Expect(err).NotTo(HaveOccurred())
-
-				app.Env["PORT"] = "8080"
-				Expect(app.Start()).To(Succeed())
-
-				_, imageID, _, err := app.Info()
-				Expect(err).NotTo(HaveOccurred())
-
-				buildLogs := new(bytes.Buffer)
-				app.BuildLogs()
-				cmd := exec.Command("pack", "build", imageID, "--builder", "cfbuildpacks/cflinuxfs3-cnb-test-builder", "--buildpack", condaURI)
-				cmd.Dir = appRoot
-				cmd.Stdout = io.MultiWriter(os.Stdout, buildLogs)
-				cmd.Stderr = io.MultiWriter(os.Stderr, buildLogs)
-				Expect(cmd.Run()).To(Succeed())
-
-				const ansi = "[\u001B\u009B][[\\]()#;?]*(?:(?:(?:[a-zA-Z\\d]*(?:;[a-zA-Z\\d]*)*)?\u0007)|(?:(?:\\d{1,4}(?:;\\d{0,4})*)?[\\dA-PRZcf-ntqry=><~]))"
-
-				re := regexp.MustCompile(ansi)
-				strippedLogs := re.ReplaceAllString(buildLogs.String(), "")
-
-				Expect(strippedLogs).To(MatchRegexp("Conda Packages.*: Reusing cached layer"))
-
-				body, _, err := app.HTTPGet("/")
-				Expect(err).ToNot(HaveOccurred())
-				Expect(body).To(ContainSubstring("Hello, world!"))
-			})
-		})
-
-		when("the app has environment.yml and NO package-list.txt", func() {
-			var (
-				app     *dagger.App
-				appRoot string
-				err     error
-			)
-
-			it.Before(func() {
-				appRoot = filepath.Join("testdata", "simple_app")
-			})
-
-			it.After(func() {
-				app.Destroy()
-			})
-
-			it("reuses the packages in the cache layer and uses the environment.yml", func() {
-				app, err = dagger.PackBuild(appRoot, condaURI)
-				Expect(err).NotTo(HaveOccurred())
-
-				app.Env["PORT"] = "8080"
-				Expect(app.Start()).To(Succeed())
-
-				_, imageID, _, err := app.Info()
-				Expect(err).NotTo(HaveOccurred())
-
-				buildLogs := new(bytes.Buffer)
-				app.BuildLogs()
-				cmd := exec.Command("pack", "build", imageID, "--builder", "cfbuildpacks/cflinuxfs3-cnb-test-builder", "--buildpack", condaURI)
-				cmd.Dir = appRoot
-				cmd.Stdout = io.MultiWriter(os.Stdout, buildLogs)
-				cmd.Stderr = io.MultiWriter(os.Stderr, buildLogs)
-				Expect(cmd.Run()).To(Succeed())
-
-				const ansi = "[\u001B\u009B][[\\]()#;?]*(?:(?:(?:[a-zA-Z\\d]*(?:;[a-zA-Z\\d]*)*)?\u0007)|(?:(?:\\d{1,4}(?:;\\d{0,4})*)?[\\dA-PRZcf-ntqry=><~]))"
-
-				re := regexp.MustCompile(ansi)
-				strippedLogs := re.ReplaceAllString(buildLogs.String(), "")
-
-				Expect(strippedLogs).NotTo(MatchRegexp("Conda Packages.*: Reusing cached layer"))
-				Expect(strippedLogs).NotTo(ContainSubstring("Downloading and Extracting Packages")) // Shows that conda is caching
-
-				body, _, err := app.HTTPGet("/")
-				Expect(err).ToNot(HaveOccurred())
-				Expect(body).To(ContainSubstring("Hello, world!"))
-			})
-		})
-
-	})
-
-	when("the app is vendored", func() {
-		var (
-			app     *dagger.App
-			appRoot string
-			err     error
-		)
-
-		it.Before(func() {
-			appRoot = filepath.Join("testdata", "vendored")
-		})
-
-		it.After(func() {
-			app.Destroy()
-		})
-
-		it("uses the vendored packages", func() {
-			app, err = dagger.PackBuild(appRoot, condaURI)
-			Expect(err).NotTo(HaveOccurred())
-			Expect(app.BuildLogs()).To(ContainSubstring("file:///workspace/vendor"))
-
-			app.Env["PORT"] = "8080"
-			Expect(app.Start()).To(Succeed())
-
-			body, _, err := app.HTTPGet("/")
-			Expect(err).ToNot(HaveOccurred())
-			Expect(body).To(ContainSubstring("Hello, world!"))
-		})
+		app.Env["PORT"] = "8080"
+		Expect(app.Start()).To(Succeed())
+		body, _, err := app.HTTPGet("/")
+		Expect(err).ToNot(HaveOccurred())
+		Expect(body).To(ContainSubstring("Hello, world!"))
 	})
 }
 
