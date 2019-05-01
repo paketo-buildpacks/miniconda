@@ -186,7 +186,6 @@ func PackBuildNamedImage(appImageName, appDir string, buildpacks ...string) (*Ap
 	for _, bp := range buildpacks {
 		cmd.Args = append(cmd.Args, "--buildpack", bp)
 	}
-
 	cmd.Dir = appDir
 	cmd.Stdout = io.MultiWriter(os.Stdout, buildLogs)
 	cmd.Stderr = io.MultiWriter(os.Stderr, buildLogs)
