@@ -73,7 +73,7 @@ func testConda(t *testing.T, when spec.G, it spec.S) {
 			minicondaLayerPath := filepath.Join(f.Build.Layers.Root, "miniconda3")
 
 			f.AddDependency("miniconda3", stubMinicondaFixture)
-			mockRunner.EXPECT().Run("stub-installer.sh", gomock.Any(), "-b", "-p", minicondaLayerPath)
+			mockRunner.EXPECT().Run(gomock.Any(), gomock.Any(), "-b", "-p", minicondaLayerPath)
 
 			contributor, _, err := conda.NewContributor(f.Build, mockRunner)
 
