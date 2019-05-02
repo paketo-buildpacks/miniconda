@@ -1,11 +1,12 @@
 package conda_test
 
 import (
-	"github.com/cloudfoundry/conda-cnb/conda"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 	"testing"
+
+	"github.com/cloudfoundry/conda-cnb/conda"
 
 	"github.com/buildpack/libbuildpack/buildplan"
 	"github.com/cloudfoundry/libcfbuildpack/helper"
@@ -72,7 +73,7 @@ func testConda(t *testing.T, when spec.G, it spec.S) {
 			minicondaLayerPath := filepath.Join(f.Build.Layers.Root, "miniconda3")
 
 			f.AddDependency("miniconda3", stubMinicondaFixture)
-			mockRunner.EXPECT().Run("sh", gomock.Any(), gomock.Any(), "-b", "-p", minicondaLayerPath)
+			mockRunner.EXPECT().Run("stub-installer.sh", gomock.Any(), "-b", "-p", minicondaLayerPath)
 
 			contributor, _, err := conda.NewContributor(f.Build, mockRunner)
 

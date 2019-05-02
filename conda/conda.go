@@ -98,14 +98,11 @@ func (c *Contributor) ContributeMiniconda() error {
 	c.minicondaLayer = c.context.Layers.DependencyLayer(dep)
 
 	return c.minicondaLayer.Contribute(func(artifact string, layer layers.DependencyLayer) error {
-		artifactName := filepath.Base(artifact)
-		installerDir := filepath.Dir(artifact)
-
-		if err := c.runner.Run("sh", installerDir, artifactName, "-b", "-p", layer.Root); err != nil {
+		if err := os.Chmod(artifact, 0777); err != nil {
 			return err
 		}
 
-		return nil
+		return c.runner.Run(artifact, string(filepath.Separator), "-b", "-p", layer.Root)
 	}, layers.Cache)
 }
 

@@ -18,23 +18,24 @@ import (
 
 var (
 	bpDir, condaURI string
-	err             error
 )
 
 func TestIntegration(t *testing.T) {
-	RegisterTestingT(t)
+	var err error
+	Expect := NewWithT(t).Expect
 	bpDir, err = dagger.FindBPRoot()
 	Expect(err).NotTo(HaveOccurred())
 	condaURI, err = dagger.PackageBuildpack(bpDir)
 	Expect(err).ToNot(HaveOccurred())
 	defer os.RemoveAll(condaURI)
 
-	spec.Run(t, "Integration", testIntegration, spec.Report(report.Terminal{}))
+	spec.Run(t, "Integration", testIntegration, spec.Parallel(), spec.Report(report.Terminal{}))
 }
 
 func testIntegration(t *testing.T, _ spec.G, it spec.S) {
+	var Expect func(interface{}, ...interface{}) GomegaAssertion
 	it.Before(func() {
-		RegisterTestingT(t)
+		Expect = NewWithT(t).Expect
 	})
 
 	it("builds successfully and reuses the conda cache on a re-build with a simple conda app", func() {
@@ -52,7 +53,6 @@ func testIntegration(t *testing.T, _ spec.G, it spec.S) {
 		Expect(app.BuildLogs()).NotTo(MatchRegexp("Conda Packages.*: Reusing cached layer"))
 		Expect(app.BuildLogs()).NotTo(ContainSubstring("Downloading and Extracting Packages")) // Shows that conda is caching
 
-		app.Env["PORT"] = "8080"
 		Expect(app.Start()).To(Succeed())
 		body, _, err := app.HTTPGet("/")
 		Expect(err).ToNot(HaveOccurred())
@@ -71,7 +71,6 @@ func testIntegration(t *testing.T, _ spec.G, it spec.S) {
 
 		Expect(app.BuildLogs()).To(MatchRegexp("Conda Packages.*: Reusing cached layer"))
 
-		app.Env["PORT"] = "8080"
 		Expect(app.Start()).To(Succeed())
 		body, _, err := app.HTTPGet("/")
 		Expect(err).ToNot(HaveOccurred())
@@ -85,7 +84,6 @@ func testIntegration(t *testing.T, _ spec.G, it spec.S) {
 
 		Expect(app.BuildLogs()).To(ContainSubstring("file:///workspace/vendor"))
 
-		app.Env["PORT"] = "8080"
 		Expect(app.Start()).To(Succeed())
 		body, _, err := app.HTTPGet("/")
 		Expect(err).ToNot(HaveOccurred())
