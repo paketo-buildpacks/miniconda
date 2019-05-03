@@ -18,7 +18,7 @@ import (
 	"github.com/sclevine/spec/report"
 )
 
-//go:generate mockgen -destination=mocks_test.go -package=conda_test github.com/cloudfoundry/libcfbuildpack/runner Runner
+//go:generate mockgen -destination=mocks_test.go -package=conda_test github.com/cloudfoundry/libcfbuildpack/runner MyRunner
 
 func TestUnitConda(t *testing.T) {
 	spec.Run(t, "Conda", testConda, spec.Report(report.Terminal{}))
