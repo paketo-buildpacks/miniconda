@@ -29,7 +29,7 @@ func TestIntegration(t *testing.T) {
 	Expect(err).ToNot(HaveOccurred())
 	defer os.RemoveAll(condaURI)
 
-	spec.Run(t, "Integration", testIntegration, spec.Parallel(), spec.Report(report.Terminal{}))
+	spec.Run(t, "Integration", testIntegration, spec.Report(report.Terminal{}))
 }
 
 func testIntegration(t *testing.T, _ spec.G, it spec.S) {
