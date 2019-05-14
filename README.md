@@ -15,8 +15,8 @@ Follow these steps to vendor python packages in your app using conda
 
 **Steps**
 1. `cd <my_conda_app>`
-1. Create `environments.yml` file in the root of your app
-1. `CONDA_PKGS_DIRS=vendor/noarch conda env create -f environments.yml -n <env_name>`
+1. Create `environment.yml` file in the root of your app
+1. `CONDA_PKGS_DIRS=vendor/noarch conda env create -f environment.yml -n <env_name>`
 1. `conda index vendor`
 1. `conda list -n <env_name> -e > package-list.txt`
-1. Commit `environments.yml`, `vendor`, and `package-list.txt`
+1. Commit `environment.yml`, `vendor`, and `package-list.txt`
