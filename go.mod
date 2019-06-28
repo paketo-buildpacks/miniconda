@@ -3,9 +3,9 @@ module github.com/cloudfoundry/conda-cnb
 go 1.12
 
 require (
-	github.com/buildpack/libbuildpack v1.18.0
+	github.com/buildpack/libbuildpack v1.19.0
 	github.com/cloudfoundry/dagger v0.0.0-20190618191508-11a2fd493334
-	github.com/cloudfoundry/libcfbuildpack v1.72.0
+	github.com/cloudfoundry/libcfbuildpack v1.73.1-0.20190628085653-278fdb66d6e5
 	github.com/golang/mock v1.3.0
 	github.com/google/go-cmp v0.3.0
 	github.com/onsi/gomega v1.5.0
