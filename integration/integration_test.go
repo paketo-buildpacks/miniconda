@@ -51,7 +51,13 @@ func testIntegration(t *testing.T, _ spec.G, it spec.S) {
 		app, err = dagger.PackBuildNamedImage(app.ImageName, appRoot, condaURI)
 		Expect(err).NotTo(HaveOccurred())
 		Expect(app.BuildLogs()).NotTo(MatchRegexp("Conda Packages.*: Reusing cached layer"))
-		Expect(app.BuildLogs()).NotTo(ContainSubstring("Downloading and Extracting Packages")) // Shows that conda is caching
+
+		// This currently breaks, because of a conda bug: see https://github.com/ContinuumIO/anaconda-issues/issues/11096
+		// Expect(app.BuildLogs()).NotTo(ContainSubstring("Downloading and Extracting Packages")) // Shows that conda is caching
+
+		// TODO: When this fails, because there aren't any new packages downloaded, remove in place of commented out Expect
+		Expect(app.BuildLogs()).To(MatchRegexp("Downloading and Extracting Packages\\n[^\\n]*libgcc_mutex[^\\n]*\\n\\[builder"))
+		// Shows that conda is mostly caching, except for this one package that's not being persisted through the `clean` stage
 
 		Expect(app.Start()).To(Succeed())
 		body, _, err := app.HTTPGet("/")
