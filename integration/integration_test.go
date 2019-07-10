@@ -2,14 +2,13 @@ package integration_test
 
 import (
 	"io/ioutil"
-	"os"
 	"path/filepath"
 	"strings"
 	"testing"
 
 	"github.com/cloudfoundry/conda-cnb/conda"
 	"github.com/cloudfoundry/dagger"
-	"gopkg.in/yaml.v2"
+	yaml "gopkg.in/yaml.v2"
 
 	. "github.com/onsi/gomega"
 	"github.com/sclevine/spec"
@@ -27,7 +26,7 @@ func TestIntegration(t *testing.T) {
 	Expect(err).NotTo(HaveOccurred())
 	condaURI, err = dagger.PackageBuildpack(bpDir)
 	Expect(err).ToNot(HaveOccurred())
-	defer os.RemoveAll(condaURI)
+	defer dagger.DeleteBuildpack(condaURI)
 
 	spec.Run(t, "Integration", testIntegration, spec.Report(report.Terminal{}))
 }
