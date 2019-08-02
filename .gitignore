@@ -4,4 +4,3 @@
 /bin
 *.tgz
 conda-cnb_*
-/buildpack.toml
