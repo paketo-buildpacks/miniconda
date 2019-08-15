@@ -33,12 +33,19 @@ func runDetect(context detect.Detect) (int, error) {
 		return context.Fail(), nil
 	}
 
-	return context.Pass(buildplan.BuildPlan{
-		conda.CondaLayer: buildplan.Dependency{
-			Metadata: buildplan.Metadata{
-				"build":  true,
-				"launch": true,
+	return context.Pass(buildplan.Plan{
+		Requires: []buildplan.Required {
+			{
+				Name: conda.CondaLayer,
+				Metadata: buildplan.Metadata{
+					"build":  true,
+					"launch": true,
+				},
 			},
+
+		},
+		Provides: []buildplan.Provided {
+			{Name: conda.CondaLayer},
 		},
 	})
 }

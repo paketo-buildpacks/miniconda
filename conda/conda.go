@@ -62,7 +62,7 @@ type Contributor struct {
 }
 
 func NewContributor(context build.Build, runner runner.Runner) (Contributor, bool, error) {
-	_, willContribute := context.BuildPlan[CondaLayer]
+	willContribute := context.Plans.Has(CondaLayer)
 	if !willContribute {
 		return Contributor{}, false, nil
 	}

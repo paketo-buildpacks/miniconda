@@ -1,6 +1,7 @@
 package conda_test
 
 import (
+	"github.com/cloudfoundry/libcfbuildpack/buildpackplan"
 	"io/ioutil"
 	"os"
 	"path/filepath"
@@ -8,7 +9,6 @@ import (
 
 	"github.com/cloudfoundry/conda-cnb/conda"
 
-	"github.com/buildpack/libbuildpack/buildplan"
 	"github.com/cloudfoundry/libcfbuildpack/helper"
 	"github.com/cloudfoundry/libcfbuildpack/layers"
 	"github.com/cloudfoundry/libcfbuildpack/test"
@@ -51,7 +51,7 @@ func testConda(t *testing.T, when spec.G, it spec.S) {
 		})
 
 		it("does contribute when conda is in the buildplan", func() {
-			f.AddBuildPlan(conda.CondaLayer, buildplan.Dependency{})
+			f.AddPlan(buildpackplan.Plan{Name: conda.CondaLayer})
 
 			_, willContribute, err := conda.NewContributor(f.Build, mockRunner)
 
@@ -62,9 +62,10 @@ func testConda(t *testing.T, when spec.G, it spec.S) {
 
 	when("ContributeMiniconda", func() {
 		it("installs miniconda", func() {
-			f.AddBuildPlan(conda.CondaLayer, buildplan.Dependency{
+			f.AddPlan(buildpackplan.Plan{
+				Name:    conda.CondaLayer,
 				Version: "3",
-				Metadata: buildplan.Metadata{
+				Metadata: buildpackplan.Metadata{
 					"build":  true,
 					"launch": true,
 				},
@@ -93,7 +94,7 @@ func testConda(t *testing.T, when spec.G, it spec.S) {
 		)
 
 		it.Before(func() {
-			f.AddBuildPlan(conda.CondaLayer, buildplan.Dependency{})
+			f.AddPlan(buildpackplan.Plan{Name: conda.CondaLayer})
 			contributor, _, err = conda.NewContributor(f.Build, mockRunner)
 			Expect(err).NotTo(HaveOccurred())
 
@@ -157,7 +158,7 @@ func testConda(t *testing.T, when spec.G, it spec.S) {
 
 	when("ContributeStartCommand", func() {
 		it("adds the start command to the application metadata", func() {
-			f.AddBuildPlan(conda.CondaLayer, buildplan.Dependency{})
+			f.AddPlan(buildpackplan.Plan{Name: conda.CondaLayer})
 			Expect(helper.WriteFile(filepath.Join(f.Build.Application.Root, "Procfile"), 0666, "web: python app.py")).To(Succeed())
 
 			contributor, _, err := conda.NewContributor(f.Build, mockRunner)

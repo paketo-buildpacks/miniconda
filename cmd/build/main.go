@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/buildpack/libbuildpack/buildplan"
 	"github.com/cloudfoundry/conda-cnb/conda"
 	"github.com/cloudfoundry/libcfbuildpack/build"
 	"github.com/cloudfoundry/libcfbuildpack/runner"
@@ -39,5 +38,5 @@ func runBuild(context build.Build) (int, error) {
 		}
 	}
 
-	return context.Success(buildplan.BuildPlan{})
+	return context.Success()
 }

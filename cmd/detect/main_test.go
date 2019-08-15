@@ -43,14 +43,20 @@ dependencies:
 			code, err := runDetect(factory.Detect)
 			Expect(err).ToNot(HaveOccurred())
 			Expect(code).To(Equal(detect.PassStatusCode))
-			Expect(factory.Output).To(HaveKeyWithValue(conda.CondaLayer,
-				buildplan.Dependency{
-					Metadata: buildplan.Metadata{
-						"build":  true,
-						"launch": true,
+			Expect(factory.Plans.Plan).To(Equal(buildplan.Plan{
+				Requires: []buildplan.Required{
+					{
+						Name: conda.CondaLayer,
+						Metadata: buildplan.Metadata{
+							"build":  true,
+							"launch": true,
+						},
 					},
-					Version: "",
-				}))
+				},
+				Provides: []buildplan.Provided{
+					{Name: conda.CondaLayer},
+				},
+			}))
 		})
 	})
 
