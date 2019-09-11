@@ -1,11 +1,12 @@
 package conda_test
 
 import (
-	"github.com/cloudfoundry/libcfbuildpack/buildpackplan"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 	"testing"
+
+	"github.com/cloudfoundry/libcfbuildpack/buildpackplan"
 
 	"github.com/cloudfoundry/conda-cnb/conda"
 
@@ -165,7 +166,7 @@ func testConda(t *testing.T, when spec.G, it spec.S) {
 			Expect(err).NotTo(HaveOccurred())
 
 			Expect(contributor.ContributeStartCommand()).To(Succeed())
-			Expect(f.Build.Layers).To(test.HaveApplicationMetadata(layers.Metadata{Processes: []layers.Process{{"web", "python app.py"}}}))
+			Expect(f.Build.Layers).To(test.HaveApplicationMetadata(layers.Metadata{Processes: []layers.Process{{"web", "python app.py", false}}}))
 		})
 	})
 }
