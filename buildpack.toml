@@ -18,6 +18,16 @@ stacks = ["org.cloudfoundry.stacks.cflinuxfs2","org.cloudfoundry.stacks.cflinuxf
 uri = "https://repo.continuum.io/miniconda/Miniconda3-4.6.14-Linux-x86_64.sh"
 version = "4.6.14"
 
+[[metadata.dependencies]]
+id = "miniconda3"
+name = "Miniconda"
+sha256 = "a23fcffe97690d3bbcd34cda798c3a3318e0f35d863c5d4aca3fc983fe8450b7"
+source = "https://github.com/conda/conda/archive/4.7.12.tar.gz"
+source_sha256 = "a23fcffe97690d3bbcd34cda798c3a3318e0f35d863c5d4aca3fc983fe8450b7"
+stacks = ["org.cloudfoundry.stacks.tiny","io.buildpacks.stacks.bionic","org.cloudfoundry.stacks.cflinuxfs3"]
+uri = "https://repo.continuum.io/miniconda/Miniconda3-4.7.12-Linux-x86_64.sh"
+version = "4.7.12"
+
 [[stacks]]
 id = "org.cloudfoundry.stacks.cflinuxfs3"
 
