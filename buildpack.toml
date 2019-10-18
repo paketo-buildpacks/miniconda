@@ -11,15 +11,6 @@ pre_package = "./scripts/build.sh"
 
 [[metadata.dependencies]]
 id = "miniconda3"
-sha256 = "0d6b23895a91294a4924bd685a3a1f48e35a17970a073cd2f684ffe2c31fc4be"
-source = "https://github.com/conda/conda/archive/4.6.14.tar.gz"
-source_sha256 = "0d6b23895a91294a4924bd685a3a1f48e35a17970a073cd2f684ffe2c31fc4be"
-stacks = ["org.cloudfoundry.stacks.cflinuxfs2","org.cloudfoundry.stacks.cflinuxfs3","io.buildpacks.stacks.bionic"]
-uri = "https://repo.continuum.io/miniconda/Miniconda3-4.6.14-Linux-x86_64.sh"
-version = "4.6.14"
-
-[[metadata.dependencies]]
-id = "miniconda3"
 name = "Miniconda"
 sha256 = "a23fcffe97690d3bbcd34cda798c3a3318e0f35d863c5d4aca3fc983fe8450b7"
 source = "https://github.com/conda/conda/archive/4.7.12.tar.gz"
