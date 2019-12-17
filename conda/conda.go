@@ -133,7 +133,13 @@ func (c *Contributor) ContributeStartCommand() error {
 		}
 
 		proc := regexp.MustCompile(`^\s*web\s*:\s*`).ReplaceAllString(string(procfileContents), "")
-		return c.context.Layers.WriteApplicationMetadata(layers.Metadata{Processes: []layers.Process{{"web", proc, false}}})
+		return c.context.Layers.WriteApplicationMetadata(layers.Metadata{Processes: []layers.Process{
+			{
+				Type:    "web",
+				Command: proc,
+				Direct:  false,
+			},
+		}})
 	}
 
 	return nil

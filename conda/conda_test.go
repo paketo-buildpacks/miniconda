@@ -166,7 +166,13 @@ func testConda(t *testing.T, when spec.G, it spec.S) {
 			Expect(err).NotTo(HaveOccurred())
 
 			Expect(contributor.ContributeStartCommand()).To(Succeed())
-			Expect(f.Build.Layers).To(test.HaveApplicationMetadata(layers.Metadata{Processes: []layers.Process{{"web", "python app.py", false}}}))
+			Expect(f.Build.Layers).To(test.HaveApplicationMetadata(layers.Metadata{Processes: []layers.Process{
+				{
+					Type:    "web",
+					Command: "python app.py",
+					Direct:  false,
+				},
+			}}))
 		})
 	})
 }
