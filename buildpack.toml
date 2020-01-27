@@ -19,6 +19,12 @@ stacks = ["io.buildpacks.stacks.bionic","org.cloudfoundry.stacks.cflinuxfs3"]
 uri = "https://repo.continuum.io/miniconda/Miniconda3-4.7.12-Linux-x86_64.sh"
 version = "4.7.12"
 
+[[metadata.dependency_deprecation_dates]]
+date = 2023-06-27T00:00:00Z
+link = "https://www.python.org/dev/peps/pep-0537/"
+name = "miniconda3"
+version_line = "4.7.x"
+
 [[stacks]]
 id = "org.cloudfoundry.stacks.cflinuxfs3"
 
