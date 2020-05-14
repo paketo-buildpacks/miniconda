@@ -1,15 +1,57 @@
-Conda Cloud Native Buildpack
+# Conda Cloud Native Buildpack
+
+## Integration
+
+The Conda CNB provides conda as a dependency. Downstream buildpacks can require
+the conda dependency by generating a [Build Plan
+TOML](https://github.com/buildpacks/spec/blob/master/buildpack.md#build-plan-toml)
+file that looks like the following:
+
+```toml
+[[requires]]
+
+  # The name of the Conda dependency is "conda". This value is considered
+  # part of the public API for the buildpack and will not change without a plan
+  # for deprecation.
+  name = "conda"
+
+  # The version of the Conda dependency is not required. In the case it
+  # is not specified, the buildpack will provide the default version, which can
+  # be seen in the buildpack.toml file.
+  # If you wish to request a specific version, the buildpack supports
+  # specifying a semver constraint in the form of "4.*", "4.7.*", or even
+  # "4.7.12".
+  version = "4.7.12"
+
+  # The Conda buildpack supports some non-required metadata options.
+  [requires.metadata]
+
+    # Setting the build flag to true will ensure that the Conda
+    # dependency is available on the $PATH for subsequent buildpacks during
+    # their build phase. If you are writing a buildpack that needs to run Conda
+    # during its build process, this flag should be set to true.
+    build = true
+
+    # Setting the launch flag to true will ensure that the Conda
+    # dependency is available on the $PATH for the running application. If you are
+    # writing an application that needs to run Conda at runtime, this flag should
+    # be set to true.
+    launch = true
+```
+
+## Usage
+
 To package this buildpack for consumption:
 ```
 $ ./scripts/package.sh
 ```
 This builds the buildpack's Go source using GOOS=linux by default. You can supply another value as the first argument to package.sh.
 
-# Vendoring 
+## Vendoring
 
 Follow these steps to vendor python packages in your app using conda
 
-**Prerequisites** 
+**Prerequisites**
 - Must be run on linux OS and **case-insensitive file system**
 - Install conda build tools: `conda install conda-build`
 
