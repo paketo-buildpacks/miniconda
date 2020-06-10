@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/cloudfoundry/conda-cnb/conda"
+	"github.com/paketo-community/conda/conda"
 	"github.com/cloudfoundry/libcfbuildpack/helper"
 	"path/filepath"
 	"testing"

@@ -8,7 +8,7 @@ import (
 
 	"github.com/cloudfoundry/libcfbuildpack/buildpackplan"
 
-	"github.com/cloudfoundry/conda-cnb/conda"
+	"github.com/paketo-community/conda/conda"
 
 	"github.com/cloudfoundry/libcfbuildpack/helper"
 	"github.com/cloudfoundry/libcfbuildpack/layers"
