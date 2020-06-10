@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/cloudfoundry/conda-cnb/conda"
+	"github.com/paketo-community/conda/conda"
 	"github.com/cloudfoundry/dagger"
 	yaml "gopkg.in/yaml.v2"
 

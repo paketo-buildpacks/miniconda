@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/buildpack/libbuildpack/buildplan"
-	"github.com/cloudfoundry/conda-cnb/conda"
+	"github.com/paketo-community/conda/conda"
 	"github.com/cloudfoundry/libcfbuildpack/detect"
 	"github.com/cloudfoundry/libcfbuildpack/helper"
 	"os"
