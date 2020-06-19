@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/paketo-community/conda/conda"
 	"github.com/cloudfoundry/libcfbuildpack/build"
 	"github.com/cloudfoundry/libcfbuildpack/runner"
+	"github.com/paketo-community/conda/conda"
 )
 
 func main() {
@@ -25,7 +25,7 @@ func main() {
 }
 
 func runBuild(context build.Build) (int, error) {
-	context.Logger.FirstLine(context.Logger.PrettyIdentity(context.Buildpack))
+	context.Logger.Title(context.Buildpack)
 
 	packagesContributor, willContribute, err := conda.NewContributor(context, runner.CommandRunner{})
 	if err != nil {
