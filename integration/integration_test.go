@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/paketo-community/conda/conda"
 	"github.com/cloudfoundry/dagger"
+	"github.com/paketo-community/conda/conda"
 	yaml "gopkg.in/yaml.v2"
 
 	. "github.com/onsi/gomega"
@@ -20,21 +20,36 @@ var (
 )
 
 func TestIntegration(t *testing.T) {
-	var err error
-	Expect := NewWithT(t).Expect
+	var (
+		Expect = NewWithT(t).Expect
+		err    error
+	)
+
 	bpDir, err = dagger.FindBPRoot()
 	Expect(err).NotTo(HaveOccurred())
+
 	condaURI, err = dagger.PackageBuildpack(bpDir)
 	Expect(err).ToNot(HaveOccurred())
-	defer dagger.DeleteBuildpack(condaURI)
 
+	defer AfterSuite(t)
 	spec.Run(t, "Integration", testIntegration, spec.Report(report.Terminal{}))
 }
 
+func AfterSuite(t *testing.T) {
+	var Expect = NewWithT(t).Expect
+
+	Expect(dagger.DeleteBuildpack(condaURI)).To(Succeed())
+}
+
 func testIntegration(t *testing.T, _ spec.G, it spec.S) {
-	var Expect func(interface{}, ...interface{}) GomegaAssertion
-	it.Before(func() {
+	var (
 		Expect = NewWithT(t).Expect
+
+		app *dagger.App
+	)
+
+	it.After(func() {
+		Expect(app.Destroy()).To(Succeed())
 	})
 
 	it("builds successfully and reuses the conda cache on a re-build with a simple conda app", func() {
@@ -42,9 +57,8 @@ func testIntegration(t *testing.T, _ spec.G, it spec.S) {
 		pythonVersion, err := readPythonVersion(filepath.Join(appRoot, conda.EnvironmentFile))
 		Expect(err).NotTo(HaveOccurred())
 
-		app, err := dagger.PackBuild(appRoot, condaURI)
+		app, err = dagger.PackBuild(appRoot, condaURI)
 		Expect(err).NotTo(HaveOccurred())
-		defer app.Destroy()
 		Expect(app.BuildLogs()).To(MatchRegexp("Conda Packages.*: Contributing to layer"))
 
 		app, err = dagger.PackBuildNamedImage(app.ImageName, appRoot, condaURI)
@@ -67,9 +81,10 @@ func testIntegration(t *testing.T, _ spec.G, it spec.S) {
 
 	it("uses package-list.txt as a lockfile for re-builds", func() {
 		appRoot := filepath.Join("testdata", "with_lock_file")
-		app, err := dagger.PackBuild(appRoot, condaURI)
+
+		var err error
+		app, err = dagger.PackBuild(appRoot, condaURI)
 		Expect(err).NotTo(HaveOccurred())
-		defer app.Destroy()
 
 		app, err = dagger.PackBuildNamedImage(app.ImageName, appRoot, condaURI)
 		Expect(err).NotTo(HaveOccurred())
@@ -83,10 +98,9 @@ func testIntegration(t *testing.T, _ spec.G, it spec.S) {
 	})
 
 	it("uses the vendored packages when the app is vendored", func() {
-		app, err := dagger.PackBuild(filepath.Join("testdata", "vendored"), condaURI)
+		var err error
+		app, err = dagger.PackBuild(filepath.Join("testdata", "vendored"), condaURI)
 		Expect(err).NotTo(HaveOccurred())
-		defer app.Destroy()
-
 		Expect(app.BuildLogs()).To(ContainSubstring("file:///workspace/vendor"))
 
 		Expect(app.Start()).To(Succeed())
