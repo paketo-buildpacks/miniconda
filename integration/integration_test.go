@@ -1,7 +1,10 @@
 package integration_test
 
 import (
+	"fmt"
 	"io/ioutil"
+	"os"
+	"os/exec"
 	"path/filepath"
 	"strings"
 	"testing"
@@ -25,10 +28,10 @@ func TestIntegration(t *testing.T) {
 		err    error
 	)
 
-	bpDir, err = dagger.FindBPRoot()
+	bpDir, err = filepath.Abs("./..")
 	Expect(err).NotTo(HaveOccurred())
 
-	condaURI, err = dagger.PackageBuildpack(bpDir)
+	condaURI, err = Package(bpDir, "1.2.3", false)
 	Expect(err).ToNot(HaveOccurred())
 
 	defer AfterSuite(t)
@@ -39,6 +42,29 @@ func AfterSuite(t *testing.T) {
 	var Expect = NewWithT(t).Expect
 
 	Expect(dagger.DeleteBuildpack(condaURI)).To(Succeed())
+}
+
+func Package(root, version string, cached bool) (string, error) {
+	var cmd *exec.Cmd
+
+	bpPath := filepath.Join(root, "artifact")
+	if cached {
+		cmd = exec.Command(".bin/packager", "--archive", "--version", version, fmt.Sprintf("%s-cached", bpPath))
+	} else {
+		cmd = exec.Command(".bin/packager", "--archive", "--uncached", "--version", version, bpPath)
+	}
+
+	cmd.Env = append(os.Environ(), fmt.Sprintf("PACKAGE_DIR=%s", bpPath))
+	cmd.Dir = root
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	err := cmd.Run()
+
+	if cached {
+		return fmt.Sprintf("%s-cached.tgz", bpPath), err
+	}
+
+	return fmt.Sprintf("%s.tgz", bpPath), err
 }
 
 func testIntegration(t *testing.T, _ spec.G, it spec.S) {
