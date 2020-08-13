@@ -2,7 +2,7 @@ api = "0.2"
 
 [buildpack]
 id = "paketo-community/conda"
-name = "Conda Buildpack"
+name = "Paketo Conda Buildpack"
 version = "{{ .Version }}"
 
 [metadata]
