@@ -11,7 +11,7 @@ require (
 	github.com/google/go-cmp v0.5.2
 	github.com/mattn/go-colorable v0.1.6 // indirect
 	github.com/mitchellh/mapstructure v1.3.2 // indirect
-	github.com/onsi/gomega v1.10.1
+	github.com/onsi/gomega v1.10.2
 	github.com/pkg/errors v0.9.1
 	github.com/sclevine/spec v1.4.0
 	golang.org/x/net v0.0.0-20200602114024-627f9648deb9 // indirect
