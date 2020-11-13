@@ -8,7 +8,7 @@ require (
 	github.com/cloudfoundry/dagger v0.0.0-20200529133056-bae03e09d9e3
 	github.com/cloudfoundry/libcfbuildpack v1.91.23
 	github.com/golang/mock v1.4.4
-	github.com/google/go-cmp v0.5.2
+	github.com/google/go-cmp v0.5.3
 	github.com/mattn/go-colorable v0.1.6 // indirect
 	github.com/mitchellh/mapstructure v1.3.2 // indirect
 	github.com/onsi/gomega v1.10.3
