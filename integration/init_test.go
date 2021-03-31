@@ -76,6 +76,6 @@ func TestIntegration(t *testing.T) {
 	suite("Default", testDefault)
 	suite("Logging", testLogging)
 	suite("LayerReuse", testReusingLayerRebuild)
-	suite("TestOffline", testOffline)
+	suite("Offline", testOffline)
 	suite.Run(t)
 }

@@ -21,7 +21,7 @@ func testOffline(t *testing.T, context spec.G, it spec.S) {
 	)
 
 	it.Before(func() {
-		pack = occam.NewPack()
+		pack = occam.NewPack().WithVerbose()
 		docker = occam.NewDocker()
 	})
 
