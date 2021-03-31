@@ -1,1 +1,0 @@
-{"build": "py37_0", "build_number": 0, "depends": ["python >=3.7,<3.8.0a0"], "license": "ISC", "name": "certifi", "subdir": "linux-64", "timestamp": 1552318217480, "version": "2019.3.9", "size": 158568, "md5": "28921b59b39bc66578303264677a5232", "sha256": "9689c6463d8ced2570ea705928a46bef1b902bb8bd0578a7733b73655f0b5ba9"}

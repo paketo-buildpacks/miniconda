@@ -1,1 +1,0 @@
-{"build": "py37_0", "build_number": 0, "depends": ["python >=3.7,<3.8.0a0"], "license": "BSD-3-Clause", "license_family": "BSD", "name": "click", "subdir": "linux-64", "timestamp": 1538599032841, "version": "7.0", "size": 121075, "md5": "e650ebf60660e6fae0ea24e788ed2281", "sha256": "1070961e8e776307869313325a2e091869d70e79de7adfb64b48d489f8ae9113"}

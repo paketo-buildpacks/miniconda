@@ -1,6 +1,4 @@
 .DS_Store
 .idea
 .bin
-/bin
-*.tgz
-conda-cnb_*
+build
