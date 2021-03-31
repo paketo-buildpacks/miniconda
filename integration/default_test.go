@@ -64,8 +64,10 @@ func testDefault(t *testing.T, context spec.G, it spec.S) {
 					settings.Buildpacks.Miniconda.Online,
 					settings.Buildpacks.BuildPlan.Online,
 				).
+				// WithTrustBuilder().
 				Execute(name, source)
 			Expect(err).ToNot(HaveOccurred(), logs.String)
+			fmt.Println("Finished pack build")
 
 			container, err = docker.Container.Run.
 				WithCommand("conda info").

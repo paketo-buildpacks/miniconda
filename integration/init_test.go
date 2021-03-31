@@ -2,6 +2,7 @@ package integration_test
 
 import (
 	"encoding/json"
+	"fmt"
 	"os"
 	"path/filepath"
 	"testing"
@@ -73,9 +74,11 @@ func TestIntegration(t *testing.T) {
 	SetDefaultEventuallyTimeout(10 * time.Second)
 
 	suite := spec.New("Integration", spec.Report(report.Terminal{}), spec.Sequential())
+	fmt.Println("Setup completed. Waiting...")
+	time.Sleep(60 * time.Minute)
 	suite("Default", testDefault)
-	suite("Logging", testLogging)
 	suite("LayerReuse", testReusingLayerRebuild)
-	suite("TestOffline", testOffline)
+	suite("Logging", testLogging)
+	suite("Offline", testOffline)
 	suite.Run(t)
 }

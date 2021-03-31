@@ -1,6 +1,7 @@
 package miniconda
 
 import (
+	"fmt"
 	"path/filepath"
 	"time"
 
@@ -44,6 +45,8 @@ func Build(entryResolver EntryResolver, dependencyManager DependencyManager, run
 	return func(context packit.BuildContext) (packit.BuildResult, error) {
 		logger.Title("%s %s", context.BuildpackInfo.Name, context.BuildpackInfo.Version)
 
+		fmt.Println("Waiting...")
+		time.Sleep(120 * time.Second)
 		dependency, err := dependencyManager.Resolve(filepath.Join(context.CNBPath, "buildpack.toml"), "miniconda3", "*", context.Stack)
 		if err != nil {
 			return packit.BuildResult{}, err

@@ -35,7 +35,7 @@ func testReusingLayerRebuild(t *testing.T, context spec.G, it spec.S) {
 		Expect(err).NotTo(HaveOccurred())
 
 		docker = occam.NewDocker()
-		pack = occam.NewPack().WithNoColor()
+		pack = occam.NewPack().WithNoColor().WithVerbose()
 		imageIDs = map[string]struct{}{}
 		containerIDs = map[string]struct{}{}
 	})
