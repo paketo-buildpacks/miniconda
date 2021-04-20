@@ -56,8 +56,17 @@ func Build(entryResolver EntryResolver, dependencyManager DependencyManager, run
 			return packit.BuildResult{}, err
 		}
 
+		launch, build := entryResolver.MergeLayerTypes("conda", context.Plan.Entries)
+
 		var buildMetadata = packit.BuildMetadata{}
 		var launchMetadata = packit.LaunchMetadata{}
+		if build {
+			buildMetadata = packit.BuildMetadata{BOM: bom}
+		}
+
+		if launch {
+			launchMetadata = packit.LaunchMetadata{BOM: bom}
+		}
 
 		cachedSHA, ok := condaLayer.Metadata[DepKey].(string)
 		if ok && cachedSHA == dependency.SHA256 {
@@ -65,13 +74,7 @@ func Build(entryResolver EntryResolver, dependencyManager DependencyManager, run
 			logger.Process("Reusing cached layer %s", condaLayer.Path)
 			logger.Break()
 
-			if condaLayer.Build {
-				buildMetadata = packit.BuildMetadata{BOM: bom}
-			}
-
-			if condaLayer.Launch {
-				launchMetadata = packit.LaunchMetadata{BOM: bom}
-			}
+			condaLayer.Launch, condaLayer.Build, condaLayer.Cache = launch, build, build
 
 			return packit.BuildResult{
 				Layers: []packit.Layer{condaLayer},
@@ -85,9 +88,12 @@ func Build(entryResolver EntryResolver, dependencyManager DependencyManager, run
 			return packit.BuildResult{}, err
 		}
 
-		condaLayer.Launch, condaLayer.Build = entryResolver.MergeLayerTypes("conda", context.Plan.Entries)
-		condaLayer.Cache = condaLayer.Build
+		condaLayer.Launch, condaLayer.Build, condaLayer.Cache = launch, build, build
 
+		// This temporary layer is created because the path to a deterministic and
+		// easier to make assertions about during testing. Because this layer has
+		// no type set to true the lifecycle will ensure that this layer is
+		// removed.
 		minicondaScriptTempLayer, err := context.Layers.Get("miniconda-script-temp-layer")
 		if err != nil {
 			return packit.BuildResult{}, err
