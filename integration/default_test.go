@@ -66,6 +66,7 @@ func testDefault(t *testing.T, context spec.G, it spec.S) {
 				).
 				Execute(name, source)
 			Expect(err).ToNot(HaveOccurred(), logs.String)
+			fmt.Println("Finished pack build")
 
 			container, err = docker.Container.Run.
 				WithCommand("conda info").

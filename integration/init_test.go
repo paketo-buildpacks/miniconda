@@ -74,8 +74,8 @@ func TestIntegration(t *testing.T) {
 
 	suite := spec.New("Integration", spec.Report(report.Terminal{}), spec.Parallel())
 	suite("Default", testDefault)
-	suite("Logging", testLogging)
 	suite("LayerReuse", testReusingLayerRebuild)
-	suite("TestOffline", testOffline)
+	suite("Logging", testLogging)
+	suite("Offline", testOffline)
 	suite.Run(t)
 }
