@@ -62,6 +62,7 @@ func testLogging(t *testing.T, context spec.G, it spec.S) {
 					settings.Buildpacks.Miniconda.Online,
 					settings.Buildpacks.BuildPlan.Online,
 				).
+				WithTrustBuilder().
 				Execute(name, source)
 			Expect(err).ToNot(HaveOccurred(), logs.String)
 
