@@ -36,6 +36,9 @@ jobs:
 
     - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/* || true
 
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
+
     - name: Run Integration Tests
       run: ./scripts/integration.sh --use-token
       env:
