@@ -59,7 +59,7 @@ func testOffline(t *testing.T, context spec.G, it spec.S) {
 					settings.Buildpacks.Miniconda.Offline,
 					settings.Buildpacks.BuildPlan.Online,
 				).
-				WithTrustBuilder().
+				// WithTrustBuilder().
 				WithNetwork("none").
 				Execute(name, source)
 

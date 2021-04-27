@@ -73,8 +73,7 @@ func testReusingLayerRebuild(t *testing.T, context spec.G, it spec.S) {
 				WithBuildpacks(
 					settings.Buildpacks.Miniconda.Online,
 					settings.Buildpacks.BuildPlan.Online,
-				).
-				WithTrustBuilder()
+				)
 
 			firstImage, logs, err = build.Execute(name, source)
 			Expect(err).NotTo(HaveOccurred(), logs.String)
