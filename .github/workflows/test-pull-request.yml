@@ -6,20 +6,20 @@ on:
     - main
 
 jobs:
-  unit:
-    name: Unit Tests
-    runs-on: ubuntu-latest
-    steps:
-    - name: Setup Go
-      uses: actions/setup-go@v1
-      with:
-        go-version: 1.16
+  # unit:
+  #   name: Unit Tests
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: Setup Go
+  #     uses: actions/setup-go@v1
+  #     with:
+  #       go-version: 1.16
 
-    - name: Checkout
-      uses: actions/checkout@v2
+  #   - name: Checkout
+  #     uses: actions/checkout@v2
 
-    - name: Run Unit Tests
-      run: ./scripts/unit.sh
+  #   - name: Run Unit Tests
+  #     run: ./scripts/unit.sh
 
   integration:
     name: Integration Tests
