@@ -1,1 +1,0 @@
-{"build": "py37_0", "build_number": 0, "depends": ["markupsafe >=0.23", "python >=3.7,<3.8.0a0", "setuptools"], "license": "3-Clause BSD", "name": "jinja2", "subdir": "linux-64", "timestamp": 1555082345132, "version": "2.10.1", "size": 192356, "md5": "22b058063b541f25f3e584da3eb2dda1", "sha256": "502b16cedac785e73a077b57d351a6115f6df49b25bd16a475e41f7a5c75b656"}
