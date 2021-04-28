@@ -6,15 +6,14 @@ on:
     - main
 
 jobs:
-<<<<<<< HEAD
-  unit:
-    name: Unit Tests
-    runs-on: ubuntu-latest
-    steps:
-    - name: Setup Go
-      uses: actions/setup-go@v1
-      with:
-        go-version: 1.16.x
+  # unit:
+  #   name: Unit Tests
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: Setup Go
+  #     uses: actions/setup-go@v1
+  #     with:
+  #       go-version: 1.16.x
   # unit:
   #   name: Unit Tests
   #   runs-on: ubuntu-latest
