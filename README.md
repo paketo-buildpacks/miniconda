@@ -1,21 +1,21 @@
-# Conda Cloud Native Buildpack
+# Miniconda Cloud Native Buildpack
 
 ## Integration
 
-The Conda CNB provides conda as a dependency. Downstream buildpacks can require
-the conda dependency by generating a [Build Plan
+The Miniconda CNB provides conda as a dependency. Downstream buildpacks can
+require the conda dependency by generating a [Build Plan
 TOML](https://github.com/buildpacks/spec/blob/master/buildpack.md#build-plan-toml)
 file that looks like the following:
 
 ```toml
 [[requires]]
 
-  # The name of the Conda dependency is "conda". This value is considered
+  # The name of the Miniconda dependency is "conda". This value is considered
   # part of the public API for the buildpack and will not change without a plan
   # for deprecation.
   name = "conda"
 
-  # The version of the Conda dependency is not required. In the case it
+  # The version of the conda dependency is not required. In the case it
   # is not specified, the buildpack will provide the default version, which can
   # be seen in the buildpack.toml file.
   # If you wish to request a specific version, the buildpack supports
@@ -23,29 +23,33 @@ file that looks like the following:
   # "4.7.12".
   version = "4.7.12"
 
-  # The Conda buildpack supports some non-required metadata options.
+  # The Miniconda buildpack supports some non-required metadata options.
   [requires.metadata]
 
-    # Setting the build flag to true will ensure that the Conda
+    # Setting the build flag to true will ensure that the conda
     # dependency is available on the $PATH for subsequent buildpacks during
-    # their build phase. If you are writing a buildpack that needs to run Conda
-    # during its build process, this flag should be set to true.
+    # their build phase. If you are writing a buildpack that needs to run
+    # miniconda during its build process, this flag should be set to true.
     build = true
 
-    # Setting the launch flag to true will ensure that the Conda
+    # Setting the launch flag to true will ensure that the conda
     # dependency is available on the $PATH for the running application. If you are
-    # writing an application that needs to run Conda at runtime, this flag should
-    # be set to true.
+    # writing an application that needs to run miniconda at runtime, this flag
+    # should be set to true.
     launch = true
 ```
 
 ## Usage
 
 To package this buildpack for consumption:
+
 ```
-$ ./scripts/package.sh
+$ ./scripts/package.sh --version <version-number>
 ```
-This builds the buildpack's Go source using GOOS=linux by default. You can supply another value as the first argument to package.sh.
+
+This will create a `buildpackage.cnb` file under the `build` directory which you
+can use to build your app as follows:
+`pack build <app-name> -p <path-to-app> -b build/buildpackage.cnb -b <other-buildpacks..>`
 
 ## Vendoring
 
