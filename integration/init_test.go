@@ -72,7 +72,7 @@ func TestIntegration(t *testing.T) {
 
 	SetDefaultEventuallyTimeout(10 * time.Second)
 
-	suite := spec.New("Integration", spec.Report(report.Terminal{}), spec.Sequential())
+	suite := spec.New("Integration", spec.Report(report.Terminal{}), spec.Parallel())
 	suite("Default", testDefault)
 	suite("Logging", testLogging)
 	suite("LayerReuse", testReusingLayerRebuild)

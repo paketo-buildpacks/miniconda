@@ -11,12 +11,12 @@ pre-package = "./scripts/build.sh"
 [[metadata.dependencies]]
 id = "miniconda3"
 name = "Miniconda"
-sha256 = "a23fcffe97690d3bbcd34cda798c3a3318e0f35d863c5d4aca3fc983fe8450b7"
-source = "https://github.com/conda/conda/archive/4.7.12.tar.gz"
-source_sha256 = "a23fcffe97690d3bbcd34cda798c3a3318e0f35d863c5d4aca3fc983fe8450b7"
+sha256 = "536817d1b14cb1ada88900f5be51ce0a5e042bae178b5550e62f61e223deae7c"
+source = "https://github.com/conda/conda/archive/4.9.2.tar.gz"
+source_sha256 = "d7f946e5c770e45da8961323ca96399bf1a881eb68bbaecc7cb1e249f5c86d54"
 stacks = ["io.buildpacks.stacks.bionic","org.cloudfoundry.stacks.cflinuxfs3"]
-uri = "https://repo.continuum.io/miniconda/Miniconda3-4.7.12-Linux-x86_64.sh"
-version = "4.7.12"
+uri = "https://repo.anaconda.com/miniconda/Miniconda3-py39_4.9.2-Linux-x86_64.sh"
+version = "4.9.2"
 
 [[metadata.dependency_deprecation_dates]]
 date = 2023-06-27T00:00:00Z
