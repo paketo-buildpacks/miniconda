@@ -56,7 +56,7 @@ can use to build your app as follows:
 Follow these steps to vendor python packages in your app using conda
 
 **Prerequisites**
-- Must be run on linux OS and **case-insensitive file system**
+- Must be run on linux OS and **case-sensitive file system**
 - Install conda build tools: `conda install conda-build`
 
 **Steps**
