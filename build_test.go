@@ -59,12 +59,13 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 		dependencyManager.GenerateBillOfMaterialsCall.Returns.BOMEntrySlice = []packit.BOMEntry{
 			{
 				Name: "miniconda3",
-				Metadata: map[string]interface{}{
-					"version": "miniconda3-dependency-version",
-					"name":    "miniconda3-dependency-name",
-					"sha256":  "miniconda3-dependency-sha",
-					"stacks":  []string{"some-stack"},
-					"uri":     "miniconda3-dependency-uri",
+				Metadata: packit.BOMMetadata{
+					Checksum: packit.BOMChecksum{
+						Algorithm: packit.SHA256,
+						Hash:      "miniconda3-dependency-sha",
+					},
+					URI:     "miniconda3-dependency-uri",
+					Version: "miniconda3-dependency-version",
 				},
 			},
 		}
@@ -215,12 +216,13 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 					BOM: []packit.BOMEntry{
 						{
 							Name: "miniconda3",
-							Metadata: map[string]interface{}{
-								"version": "miniconda3-dependency-version",
-								"name":    "miniconda3-dependency-name",
-								"sha256":  "miniconda3-dependency-sha",
-								"stacks":  []string{"some-stack"},
-								"uri":     "miniconda3-dependency-uri",
+							Metadata: packit.BOMMetadata{
+								Checksum: packit.BOMChecksum{
+									Algorithm: packit.SHA256,
+									Hash:      "miniconda3-dependency-sha",
+								},
+								URI:     "miniconda3-dependency-uri",
+								Version: "miniconda3-dependency-version",
 							},
 						},
 					},
@@ -229,12 +231,13 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 					BOM: []packit.BOMEntry{
 						{
 							Name: "miniconda3",
-							Metadata: map[string]interface{}{
-								"version": "miniconda3-dependency-version",
-								"name":    "miniconda3-dependency-name",
-								"sha256":  "miniconda3-dependency-sha",
-								"stacks":  []string{"some-stack"},
-								"uri":     "miniconda3-dependency-uri",
+							Metadata: packit.BOMMetadata{
+								Checksum: packit.BOMChecksum{
+									Algorithm: packit.SHA256,
+									Hash:      "miniconda3-dependency-sha",
+								},
+								URI:     "miniconda3-dependency-uri",
+								Version: "miniconda3-dependency-version",
 							},
 						},
 					},
