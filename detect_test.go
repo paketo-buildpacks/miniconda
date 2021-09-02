@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/paketo-buildpacks/packit"
-	"github.com/paketo-community/miniconda"
+	"github.com/paketo-buildpacks/miniconda"
 	"github.com/sclevine/spec"
 
 	. "github.com/onsi/gomega"
