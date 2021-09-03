@@ -1,4 +1,4 @@
-module github.com/paketo-community/miniconda
+module github.com/paketo-buildpacks/miniconda
 
 go 1.16
 

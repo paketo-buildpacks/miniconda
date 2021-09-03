@@ -12,8 +12,8 @@ import (
 	"github.com/paketo-buildpacks/packit/chronos"
 	"github.com/paketo-buildpacks/packit/postal"
 	"github.com/paketo-buildpacks/packit/scribe"
-	"github.com/paketo-community/miniconda"
-	"github.com/paketo-community/miniconda/fakes"
+	"github.com/paketo-buildpacks/miniconda"
+	"github.com/paketo-buildpacks/miniconda/fakes"
 	"github.com/sclevine/spec"
 
 	. "github.com/onsi/gomega"
