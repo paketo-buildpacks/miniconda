@@ -8,12 +8,15 @@ import (
 	"testing"
 	"time"
 
-	"github.com/paketo-buildpacks/packit"
-	"github.com/paketo-buildpacks/packit/chronos"
-	"github.com/paketo-buildpacks/packit/postal"
-	"github.com/paketo-buildpacks/packit/scribe"
 	"github.com/paketo-buildpacks/miniconda"
 	"github.com/paketo-buildpacks/miniconda/fakes"
+	"github.com/paketo-buildpacks/packit/v2"
+	"github.com/paketo-buildpacks/packit/v2/chronos"
+
+	//nolint Ignore SA1019, informed usage of deprecated package
+	"github.com/paketo-buildpacks/packit/v2/paketosbom"
+	"github.com/paketo-buildpacks/packit/v2/postal"
+	"github.com/paketo-buildpacks/packit/v2/scribe"
 	"github.com/sclevine/spec"
 
 	. "github.com/onsi/gomega"
@@ -59,9 +62,9 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 		dependencyManager.GenerateBillOfMaterialsCall.Returns.BOMEntrySlice = []packit.BOMEntry{
 			{
 				Name: "miniconda3",
-				Metadata: packit.BOMMetadata{
-					Checksum: packit.BOMChecksum{
-						Algorithm: packit.SHA256,
+				Metadata: paketosbom.BOMMetadata{
+					Checksum: paketosbom.BOMChecksum{
+						Algorithm: paketosbom.SHA256,
 						Hash:      "miniconda3-dependency-sha",
 					},
 					URI:     "miniconda3-dependency-uri",
@@ -162,7 +165,7 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 		Expect(dependencyManager.DeliverCall.Receives.DestinationPath).To(Equal(filepath.Join(layersDir, "miniconda-script-temp-layer")))
 		Expect(dependencyManager.DeliverCall.Receives.PlatformPath).To(Equal("some-platform-path"))
 
-		Expect(runner.RunCall.Receives.RunPath).To(Equal(filepath.Join(layersDir, "miniconda-script-temp-layer", "miniconda3-dependency-uri")))
+		Expect(runner.RunCall.Receives.RunPath).To(Equal(filepath.Join(layersDir, "miniconda-script-temp-layer", "miniconda3-dependency-name")))
 		Expect(runner.RunCall.Receives.LayerPath).To(Equal(filepath.Join(layersDir, "conda")))
 
 		Expect(buffer.String()).To(ContainSubstring("Some Buildpack some-version"))
@@ -216,9 +219,9 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 					BOM: []packit.BOMEntry{
 						{
 							Name: "miniconda3",
-							Metadata: packit.BOMMetadata{
-								Checksum: packit.BOMChecksum{
-									Algorithm: packit.SHA256,
+							Metadata: paketosbom.BOMMetadata{
+								Checksum: paketosbom.BOMChecksum{
+									Algorithm: paketosbom.SHA256,
 									Hash:      "miniconda3-dependency-sha",
 								},
 								URI:     "miniconda3-dependency-uri",
@@ -231,9 +234,9 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 					BOM: []packit.BOMEntry{
 						{
 							Name: "miniconda3",
-							Metadata: packit.BOMMetadata{
-								Checksum: packit.BOMChecksum{
-									Algorithm: packit.SHA256,
+							Metadata: paketosbom.BOMMetadata{
+								Checksum: paketosbom.BOMChecksum{
+									Algorithm: paketosbom.SHA256,
 									Hash:      "miniconda3-dependency-sha",
 								},
 								URI:     "miniconda3-dependency-uri",

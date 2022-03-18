@@ -4,10 +4,10 @@ import (
 	"path/filepath"
 	"time"
 
-	"github.com/paketo-buildpacks/packit"
-	"github.com/paketo-buildpacks/packit/chronos"
-	"github.com/paketo-buildpacks/packit/postal"
-	"github.com/paketo-buildpacks/packit/scribe"
+	"github.com/paketo-buildpacks/packit/v2"
+	"github.com/paketo-buildpacks/packit/v2/chronos"
+	"github.com/paketo-buildpacks/packit/v2/postal"
+	"github.com/paketo-buildpacks/packit/v2/scribe"
 )
 
 //go:generate faux --interface DependencyManager --output fakes/dependency_manager.go
@@ -122,10 +122,8 @@ func Build(entryResolver EntryResolver, dependencyManager DependencyManager, run
 			"built_at": clock.Now().Format(time.RFC3339Nano),
 		}
 
-		// This is what packit uses to name the downloaded file
-		// https://github.com/paketo-buildpacks/packit/blob/v0.14.0/postal/service.go#L159
-		artifactName := filepath.Base(dependency.URI)
-		scriptPath := filepath.Join(minicondaScriptTempLayer.Path, artifactName)
+		scriptPath := filepath.Join(minicondaScriptTempLayer.Path, dependency.Name)
+
 		err = runner.Run(scriptPath, condaLayer.Path)
 		if err != nil {
 			return packit.BuildResult{}, err

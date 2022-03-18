@@ -1,6 +1,6 @@
 package miniconda
 
-import "github.com/paketo-buildpacks/packit"
+import "github.com/paketo-buildpacks/packit/v2"
 
 // Detect will return a packit.DetectFunc that will be invoked during the
 // detect phase of the buildpack lifecycle.

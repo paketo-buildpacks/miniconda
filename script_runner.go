@@ -2,9 +2,8 @@ package miniconda
 
 import (
 	"fmt"
-	"os"
 
-	"github.com/paketo-buildpacks/packit/pexec"
+	"github.com/paketo-buildpacks/packit/v2/pexec"
 )
 
 //go:generate faux --interface Executable --output fakes/executable.go
@@ -29,13 +28,7 @@ func NewScriptRunner(executable Executable) ScriptRunner {
 // Run invokes the miniconda script located in the given runPath, which
 // installs conda into the a layer path designated by condaLayerPath.
 func (s ScriptRunner) Run(runPath, condaLayerPath string) error {
-
-	err := os.Chmod(runPath, 0550)
-	if err != nil {
-		return err
-	}
-
-	err = s.executable.Execute(pexec.Execution{
+	err := s.executable.Execute(pexec.Execution{
 		Args: []string{
 			runPath,
 			"-b",
