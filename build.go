@@ -122,10 +122,8 @@ func Build(entryResolver EntryResolver, dependencyManager DependencyManager, run
 			"built_at": clock.Now().Format(time.RFC3339Nano),
 		}
 
-		// This is what packit uses to name the downloaded file
-		// https://github.com/paketo-buildpacks/packit/v2/blob/v0.14.0/postal/service.go#L159
-		artifactName := filepath.Base(dependency.URI)
-		scriptPath := filepath.Join(minicondaScriptTempLayer.Path, artifactName)
+		scriptPath := filepath.Join(minicondaScriptTempLayer.Path, dependency.Name)
+
 		err = runner.Run(scriptPath, condaLayer.Path)
 		if err != nil {
 			return packit.BuildResult{}, err

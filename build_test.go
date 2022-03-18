@@ -165,7 +165,7 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 		Expect(dependencyManager.DeliverCall.Receives.DestinationPath).To(Equal(filepath.Join(layersDir, "miniconda-script-temp-layer")))
 		Expect(dependencyManager.DeliverCall.Receives.PlatformPath).To(Equal("some-platform-path"))
 
-		Expect(runner.RunCall.Receives.RunPath).To(Equal(filepath.Join(layersDir, "miniconda-script-temp-layer", "miniconda3-dependency-uri")))
+		Expect(runner.RunCall.Receives.RunPath).To(Equal(filepath.Join(layersDir, "miniconda-script-temp-layer", "miniconda3-dependency-name")))
 		Expect(runner.RunCall.Receives.LayerPath).To(Equal(filepath.Join(layersDir, "conda")))
 
 		Expect(buffer.String()).To(ContainSubstring("Some Buildpack some-version"))
