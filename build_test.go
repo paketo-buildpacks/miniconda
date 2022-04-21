@@ -16,6 +16,7 @@ import (
 	//nolint Ignore SA1019, informed usage of deprecated package
 	"github.com/paketo-buildpacks/packit/v2/paketosbom"
 	"github.com/paketo-buildpacks/packit/v2/postal"
+	"github.com/paketo-buildpacks/packit/v2/sbom"
 	"github.com/paketo-buildpacks/packit/v2/scribe"
 	"github.com/sclevine/spec"
 
@@ -35,10 +36,11 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 
 		dependencyManager *fakes.DependencyManager
 		runner            *fakes.Runner
-		logger            scribe.Logger
 		entryResolver     *fakes.EntryResolver
+		sbomGenerator     *fakes.SBOMGenerator
 
-		build packit.BuildFunc
+		build        packit.BuildFunc
+		buildContext packit.BuildContext
 	)
 
 	it.Before(func() {
@@ -59,6 +61,7 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 			Version: "miniconda3-dependency-version",
 		}
 
+		// Legacy SBOM
 		dependencyManager.GenerateBillOfMaterialsCall.Returns.BOMEntrySlice = []packit.BOMEntry{
 			{
 				Name: "miniconda3",
@@ -82,22 +85,26 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 
 		entryResolver = &fakes.EntryResolver{}
 
+		// Syft SBOM
+		sbomGenerator = &fakes.SBOMGenerator{}
+		sbomGenerator.GenerateFromDependencyCall.Returns.SBOM = sbom.SBOM{}
+
 		buffer = bytes.NewBuffer(nil)
-		logger = scribe.NewLogger(buffer)
+		logEmitter := scribe.NewEmitter(buffer)
 
-		build = miniconda.Build(entryResolver, dependencyManager, runner, logger, clock)
-	})
-
-	it.After(func() {
-		Expect(os.RemoveAll(layersDir)).To(Succeed())
-		Expect(os.RemoveAll(cnbDir)).To(Succeed())
-	})
-
-	it("returns a result that installs conda", func() {
-		result, err := build(packit.BuildContext{
+		build = miniconda.Build(
+			entryResolver,
+			dependencyManager,
+			runner,
+			sbomGenerator,
+			logEmitter,
+			clock,
+		)
+		buildContext = packit.BuildContext{
 			BuildpackInfo: packit.BuildpackInfo{
-				Name:    "Some Buildpack",
-				Version: "some-version",
+				Name:        "Some Buildpack",
+				Version:     "some-version",
+				SBOMFormats: []string{sbom.CycloneDXFormat, sbom.SPDXFormat},
 			},
 			CNBPath: cnbDir,
 			Plan: packit.BuildpackPlan{
@@ -108,26 +115,45 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 			Platform: packit.Platform{Path: "some-platform-path"},
 			Layers:   packit.Layers{Path: layersDir},
 			Stack:    "some-stack",
-		})
+		}
+	})
+
+	it.After(func() {
+		Expect(os.RemoveAll(layersDir)).To(Succeed())
+		Expect(os.RemoveAll(cnbDir)).To(Succeed())
+	})
+
+	it("returns a result that installs conda", func() {
+		result, err := build(buildContext)
 		Expect(err).NotTo(HaveOccurred())
 
-		Expect(result).To(Equal(packit.BuildResult{
-			Layers: []packit.Layer{
-				{
-					Name:             "conda",
-					Path:             filepath.Join(layersDir, "conda"),
-					SharedEnv:        packit.Environment{},
-					BuildEnv:         packit.Environment{},
-					LaunchEnv:        packit.Environment{},
-					ProcessLaunchEnv: map[string]packit.Environment{},
-					Build:            false,
-					Launch:           false,
-					Cache:            false,
-					Metadata: map[string]interface{}{
-						miniconda.DepKey: "miniconda3-dependency-sha",
-						"built_at":       timeStamp.Format(time.RFC3339Nano),
-					},
-				},
+		Expect(result.Layers).To(HaveLen(1))
+		layer := result.Layers[0]
+
+		Expect(layer.Name).To(Equal("conda"))
+		Expect(layer.Path).To(Equal(filepath.Join(layersDir, "conda")))
+
+		Expect(layer.SharedEnv).To(BeEmpty())
+		Expect(layer.BuildEnv).To(BeEmpty())
+		Expect(layer.LaunchEnv).To(BeEmpty())
+		Expect(layer.ProcessLaunchEnv).To(BeEmpty())
+
+		Expect(layer.Build).To(BeFalse())
+		Expect(layer.Launch).To(BeFalse())
+		Expect(layer.Cache).To(BeFalse())
+
+		Expect(layer.Metadata).To(HaveLen(2))
+		Expect(layer.Metadata["dependency-sha"]).To(Equal("miniconda3-dependency-sha"))
+		Expect(layer.Metadata["built_at"]).To(Equal(timeStamp.Format(time.RFC3339Nano)))
+
+		Expect(layer.SBOM.Formats()).To(Equal([]packit.SBOMFormat{
+			{
+				Extension: sbom.Format(sbom.CycloneDXFormat).Extension(),
+				Content:   sbom.NewFormattedReader(sbom.SBOM{}, sbom.CycloneDXFormat),
+			},
+			{
+				Extension: sbom.Format(sbom.SPDXFormat).Extension(),
+				Content:   sbom.NewFormattedReader(sbom.SBOM{}, sbom.SPDXFormat),
 			},
 		}))
 
@@ -168,6 +194,8 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 		Expect(runner.RunCall.Receives.RunPath).To(Equal(filepath.Join(layersDir, "miniconda-script-temp-layer", "miniconda3-dependency-name")))
 		Expect(runner.RunCall.Receives.LayerPath).To(Equal(filepath.Join(layersDir, "conda")))
 
+		Expect(sbomGenerator.GenerateFromDependencyCall.Receives.Dir).To(Equal(filepath.Join(layersDir, "conda")))
+
 		Expect(buffer.String()).To(ContainSubstring("Some Buildpack some-version"))
 		Expect(buffer.String()).To(ContainSubstring("Executing build process"))
 		Expect(buffer.String()).To(ContainSubstring("Installing Miniconda"))
@@ -180,72 +208,49 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 		})
 
 		it("returns a layer with build and launch set true and the BOM is set for build and launch", func() {
-			result, err := build(packit.BuildContext{
-				BuildpackInfo: packit.BuildpackInfo{
-					Name:    "Some Buildpack",
-					Version: "some-version",
-				},
-				CNBPath: cnbDir,
-				Plan: packit.BuildpackPlan{
-					Entries: []packit.BuildpackPlanEntry{
-						{Name: "conda"},
-					},
-				},
-				Platform: packit.Platform{Path: "some-platform-path"},
-				Layers:   packit.Layers{Path: layersDir},
-				Stack:    "some-stack",
-			})
+			result, err := build(buildContext)
 			Expect(err).NotTo(HaveOccurred())
 
-			Expect(result).To(Equal(packit.BuildResult{
-				Layers: []packit.Layer{
+			Expect(result.Layers).To(HaveLen(1))
+			layer := result.Layers[0]
+
+			Expect(layer.Name).To(Equal("conda"))
+
+			Expect(layer.Build).To(BeTrue())
+			Expect(layer.Launch).To(BeTrue())
+			Expect(layer.Cache).To(BeTrue())
+
+			Expect(result.Build.BOM).To(Equal(
+				[]packit.BOMEntry{
 					{
-						Name:             "conda",
-						Path:             filepath.Join(layersDir, "conda"),
-						SharedEnv:        packit.Environment{},
-						BuildEnv:         packit.Environment{},
-						LaunchEnv:        packit.Environment{},
-						ProcessLaunchEnv: map[string]packit.Environment{},
-						Build:            true,
-						Launch:           true,
-						Cache:            true,
-						Metadata: map[string]interface{}{
-							miniconda.DepKey: "miniconda3-dependency-sha",
-							"built_at":       timeStamp.Format(time.RFC3339Nano),
-						},
-					},
-				},
-				Launch: packit.LaunchMetadata{
-					BOM: []packit.BOMEntry{
-						{
-							Name: "miniconda3",
-							Metadata: paketosbom.BOMMetadata{
-								Checksum: paketosbom.BOMChecksum{
-									Algorithm: paketosbom.SHA256,
-									Hash:      "miniconda3-dependency-sha",
-								},
-								URI:     "miniconda3-dependency-uri",
-								Version: "miniconda3-dependency-version",
+						Name: "miniconda3",
+						Metadata: paketosbom.BOMMetadata{
+							Checksum: paketosbom.BOMChecksum{
+								Algorithm: paketosbom.SHA256,
+								Hash:      "miniconda3-dependency-sha",
 							},
+							URI:     "miniconda3-dependency-uri",
+							Version: "miniconda3-dependency-version",
 						},
 					},
 				},
-				Build: packit.BuildMetadata{
-					BOM: []packit.BOMEntry{
-						{
-							Name: "miniconda3",
-							Metadata: paketosbom.BOMMetadata{
-								Checksum: paketosbom.BOMChecksum{
-									Algorithm: paketosbom.SHA256,
-									Hash:      "miniconda3-dependency-sha",
-								},
-								URI:     "miniconda3-dependency-uri",
-								Version: "miniconda3-dependency-version",
+			))
+
+			Expect(result.Launch.BOM).To(Equal(
+				[]packit.BOMEntry{
+					{
+						Name: "miniconda3",
+						Metadata: paketosbom.BOMMetadata{
+							Checksum: paketosbom.BOMChecksum{
+								Algorithm: paketosbom.SHA256,
+								Hash:      "miniconda3-dependency-sha",
 							},
+							URI:     "miniconda3-dependency-uri",
+							Version: "miniconda3-dependency-version",
 						},
 					},
 				},
-			}))
+			))
 		})
 	})
 
@@ -256,9 +261,8 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 			})
 
 			it("returns an error", func() {
-				_, err := build(packit.BuildContext{
-					Layers: packit.Layers{Path: layersDir},
-				})
+				_, err := build(buildContext)
+
 				Expect(err).To(MatchError("resolve call failed"))
 			})
 		})
@@ -273,10 +277,7 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 			})
 
 			it("returns an error", func() {
-				_, err := build(packit.BuildContext{
-					CNBPath: cnbDir,
-					Layers:  packit.Layers{Path: layersDir},
-				})
+				_, err := build(buildContext)
 
 				Expect(err).To(MatchError(ContainSubstring("permission denied")))
 			})
@@ -293,10 +294,7 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 			})
 
 			it("returns an error", func() {
-				_, err := build(packit.BuildContext{
-					CNBPath: cnbDir,
-					Layers:  packit.Layers{Path: layersDir},
-				})
+				_, err := build(buildContext)
 
 				Expect(err).To(MatchError(ContainSubstring("permission denied")))
 			})
@@ -308,9 +306,7 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 			})
 
 			it("returns an error", func() {
-				_, err := build(packit.BuildContext{
-					Layers: packit.Layers{Path: layersDir},
-				})
+				_, err := build(buildContext)
 
 				Expect(err).To(MatchError("deliver call failed"))
 			})
@@ -322,11 +318,33 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 			})
 
 			it("returns an error", func() {
-				_, err := build(packit.BuildContext{
-					Layers: packit.Layers{Path: layersDir},
-				})
+				_, err := build(buildContext)
 
 				Expect(err).To(MatchError("run call failed"))
+			})
+		})
+
+		context("when generating the SBOM returns an error", func() {
+			it.Before(func() {
+				buildContext.BuildpackInfo.SBOMFormats = []string{"random-format"}
+			})
+
+			it("returns an error", func() {
+				_, err := build(buildContext)
+
+				Expect(err).To(MatchError(`unsupported SBOM format: 'random-format'`))
+			})
+		})
+
+		context("when formatting the SBOM returns an error", func() {
+			it.Before(func() {
+				sbomGenerator.GenerateFromDependencyCall.Returns.Error = errors.New("failed to generate SBOM")
+			})
+
+			it("returns an error", func() {
+				_, err := build(buildContext)
+
+				Expect(err).To(MatchError(ContainSubstring("failed to generate SBOM")))
 			})
 		})
 	})
