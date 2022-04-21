@@ -7,12 +7,14 @@ import (
 	"github.com/paketo-buildpacks/packit/v2"
 	"github.com/paketo-buildpacks/packit/v2/chronos"
 	"github.com/paketo-buildpacks/packit/v2/postal"
+	"github.com/paketo-buildpacks/packit/v2/sbom"
 	"github.com/paketo-buildpacks/packit/v2/scribe"
 )
 
 //go:generate faux --interface DependencyManager --output fakes/dependency_manager.go
 //go:generate faux --interface EntryResolver --output fakes/entry_resolver.go
 //go:generate faux --interface Runner --output fakes/runner.go
+//go:generate faux --interface SBOMGenerator --output fakes/sbom_generator.go
 
 // DependencyManager defines the interface for picking the best matching
 // dependency and installing it.
@@ -33,6 +35,10 @@ type Runner interface {
 	Run(runPath, layerPath string) error
 }
 
+type SBOMGenerator interface {
+	GenerateFromDependency(dependency postal.Dependency, dir string) (sbom.SBOM, error)
+}
+
 // Build will return a packit.BuildFunc that will be invoked during the build
 // phase of the buildpack lifecycle.
 //
@@ -40,7 +46,14 @@ type Runner interface {
 // into a layer, run the miniconda script to install conda into a separate
 // layer and generate Bill-of-Materials. It also makes use of the checksum of
 // the dependency to reuse the layer when possible.
-func Build(entryResolver EntryResolver, dependencyManager DependencyManager, runner Runner, logger scribe.Logger, clock chronos.Clock) packit.BuildFunc {
+func Build(
+	entryResolver EntryResolver,
+	dependencyManager DependencyManager,
+	runner Runner,
+	sbomGenerator SBOMGenerator,
+	logger scribe.Emitter,
+	clock chronos.Clock,
+) packit.BuildFunc {
 	return func(context packit.BuildContext) (packit.BuildResult, error) {
 		logger.Title("%s %s", context.BuildpackInfo.Name, context.BuildpackInfo.Version)
 
@@ -49,7 +62,7 @@ func Build(entryResolver EntryResolver, dependencyManager DependencyManager, run
 			return packit.BuildResult{}, err
 		}
 
-		var bom = dependencyManager.GenerateBillOfMaterials(dependency)
+		legacySBOM := dependencyManager.GenerateBillOfMaterials(dependency)
 
 		condaLayer, err := context.Layers.Get("conda")
 		if err != nil {
@@ -61,16 +74,15 @@ func Build(entryResolver EntryResolver, dependencyManager DependencyManager, run
 		var buildMetadata = packit.BuildMetadata{}
 		var launchMetadata = packit.LaunchMetadata{}
 		if build {
-			buildMetadata = packit.BuildMetadata{BOM: bom}
+			buildMetadata = packit.BuildMetadata{BOM: legacySBOM}
 		}
 
 		if launch {
-			launchMetadata = packit.LaunchMetadata{BOM: bom}
+			launchMetadata = packit.LaunchMetadata{BOM: legacySBOM}
 		}
 
 		cachedSHA, ok := condaLayer.Metadata[DepKey].(string)
 		if ok && cachedSHA == dependency.SHA256 {
-
 			logger.Process("Reusing cached layer %s", condaLayer.Path)
 			logger.Break()
 
@@ -129,12 +141,23 @@ func Build(entryResolver EntryResolver, dependencyManager DependencyManager, run
 			return packit.BuildResult{}, err
 		}
 
-		if condaLayer.Build {
-			buildMetadata = packit.BuildMetadata{BOM: bom}
+		logger.GeneratingSBOM(condaLayer.Path)
+		var sbomContent sbom.SBOM
+		duration, err = clock.Measure(func() error {
+			sbomContent, err = sbomGenerator.GenerateFromDependency(dependency, condaLayer.Path)
+			return err
+		})
+		if err != nil {
+			return packit.BuildResult{}, err
 		}
 
-		if condaLayer.Launch {
-			launchMetadata = packit.LaunchMetadata{BOM: bom}
+		logger.Action("Completed in %s", duration.Round(time.Millisecond))
+		logger.Break()
+
+		logger.FormattingSBOM(context.BuildpackInfo.SBOMFormats...)
+		condaLayer.SBOM, err = sbomContent.InFormats(context.BuildpackInfo.SBOMFormats...)
+		if err != nil {
+			return packit.BuildResult{}, err
 		}
 
 		return packit.BuildResult{

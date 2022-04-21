@@ -4,7 +4,7 @@ import "sync"
 
 type Runner struct {
 	RunCall struct {
-		sync.Mutex
+		mutex     sync.Mutex
 		CallCount int
 		Receives  struct {
 			RunPath   string
@@ -18,8 +18,8 @@ type Runner struct {
 }
 
 func (f *Runner) Run(param1 string, param2 string) error {
-	f.RunCall.Lock()
-	defer f.RunCall.Unlock()
+	f.RunCall.mutex.Lock()
+	defer f.RunCall.mutex.Unlock()
 	f.RunCall.CallCount++
 	f.RunCall.Receives.RunPath = param1
 	f.RunCall.Receives.LayerPath = param2
