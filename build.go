@@ -130,8 +130,7 @@ func Build(
 		logger.Break()
 
 		condaLayer.Metadata = map[string]interface{}{
-			DepKey:     dependency.SHA256,
-			"built_at": clock.Now().Format(time.RFC3339Nano),
+			DepKey: dependency.SHA256,
 		}
 
 		scriptPath := filepath.Join(minicondaScriptTempLayer.Path, dependency.Name)

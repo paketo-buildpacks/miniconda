@@ -130,7 +130,7 @@ func testReusingLayerRebuild(t *testing.T, context spec.G, it spec.S) {
 				return cLogs.String()
 			}).Should(MatchRegexp(`conda version : \d+\.\d+\.\d+`))
 
-			Expect(secondImage.Buildpacks[0].Layers["conda"].Metadata["built_at"]).To(Equal(firstImage.Buildpacks[0].Layers["conda"].Metadata["built_at"]))
+			Expect(secondImage.Buildpacks[0].Layers["conda"].SHA).To(Equal(firstImage.Buildpacks[0].Layers["conda"].SHA))
 		})
 	})
 
