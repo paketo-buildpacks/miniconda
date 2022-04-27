@@ -6,7 +6,6 @@ import (
 	"os"
 	"path/filepath"
 	"testing"
-	"time"
 
 	"github.com/paketo-buildpacks/miniconda"
 	"github.com/paketo-buildpacks/miniconda/fakes"
@@ -30,9 +29,7 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 		layersDir string
 		cnbDir    string
 
-		buffer    *bytes.Buffer
-		timeStamp time.Time
-		clock     chronos.Clock
+		buffer *bytes.Buffer
 
 		dependencyManager *fakes.DependencyManager
 		runner            *fakes.Runner
@@ -76,11 +73,6 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 			},
 		}
 
-		timeStamp = time.Now()
-		clock = chronos.NewClock(func() time.Time {
-			return timeStamp
-		})
-
 		runner = &fakes.Runner{}
 
 		entryResolver = &fakes.EntryResolver{}
@@ -98,7 +90,7 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 			runner,
 			sbomGenerator,
 			logEmitter,
-			clock,
+			chronos.DefaultClock,
 		)
 		buildContext = packit.BuildContext{
 			BuildpackInfo: packit.BuildpackInfo{
@@ -142,9 +134,8 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 		Expect(layer.Launch).To(BeFalse())
 		Expect(layer.Cache).To(BeFalse())
 
-		Expect(layer.Metadata).To(HaveLen(2))
+		Expect(layer.Metadata).To(HaveLen(1))
 		Expect(layer.Metadata["dependency-sha"]).To(Equal("miniconda3-dependency-sha"))
-		Expect(layer.Metadata["built_at"]).To(Equal(timeStamp.Format(time.RFC3339Nano)))
 
 		Expect(layer.SBOM.Formats()).To(Equal([]packit.SBOMFormat{
 			{
