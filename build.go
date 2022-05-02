@@ -6,13 +6,13 @@ import (
 
 	"github.com/paketo-buildpacks/packit/v2"
 	"github.com/paketo-buildpacks/packit/v2/chronos"
+	"github.com/paketo-buildpacks/packit/v2/draft"
 	"github.com/paketo-buildpacks/packit/v2/postal"
 	"github.com/paketo-buildpacks/packit/v2/sbom"
 	"github.com/paketo-buildpacks/packit/v2/scribe"
 )
 
 //go:generate faux --interface DependencyManager --output fakes/dependency_manager.go
-//go:generate faux --interface EntryResolver --output fakes/entry_resolver.go
 //go:generate faux --interface Runner --output fakes/runner.go
 //go:generate faux --interface SBOMGenerator --output fakes/sbom_generator.go
 
@@ -22,12 +22,6 @@ type DependencyManager interface {
 	Resolve(path, id, version, stack string) (postal.Dependency, error)
 	Deliver(dependency postal.Dependency, cnbPath, destinationPath, platformPath string) error
 	GenerateBillOfMaterials(dependencies ...postal.Dependency) []packit.BOMEntry
-}
-
-// EntryResolver defines the interface for picking the most relevant entry from
-// the Buildpack Plan entries.
-type EntryResolver interface {
-	MergeLayerTypes(name string, entries []packit.BuildpackPlanEntry) (launch, build bool)
 }
 
 // Runner defines the interface for invoking the miniconda script downloaded as a dependency.
@@ -47,7 +41,6 @@ type SBOMGenerator interface {
 // layer and generate Bill-of-Materials. It also makes use of the checksum of
 // the dependency to reuse the layer when possible.
 func Build(
-	entryResolver EntryResolver,
 	dependencyManager DependencyManager,
 	runner Runner,
 	sbomGenerator SBOMGenerator,
@@ -56,6 +49,8 @@ func Build(
 ) packit.BuildFunc {
 	return func(context packit.BuildContext) (packit.BuildResult, error) {
 		logger.Title("%s %s", context.BuildpackInfo.Name, context.BuildpackInfo.Version)
+
+		planner := draft.NewPlanner()
 
 		dependency, err := dependencyManager.Resolve(filepath.Join(context.CNBPath, "buildpack.toml"), "miniconda3", "*", context.Stack)
 		if err != nil {
@@ -69,7 +64,7 @@ func Build(
 			return packit.BuildResult{}, err
 		}
 
-		launch, build := entryResolver.MergeLayerTypes("conda", context.Plan.Entries)
+		launch, build := planner.MergeLayerTypes("conda", context.Plan.Entries)
 
 		var buildMetadata = packit.BuildMetadata{}
 		var launchMetadata = packit.LaunchMetadata{}
