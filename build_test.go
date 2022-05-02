@@ -33,7 +33,6 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 
 		dependencyManager *fakes.DependencyManager
 		runner            *fakes.Runner
-		entryResolver     *fakes.EntryResolver
 		sbomGenerator     *fakes.SBOMGenerator
 
 		build        packit.BuildFunc
@@ -75,8 +74,6 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 
 		runner = &fakes.Runner{}
 
-		entryResolver = &fakes.EntryResolver{}
-
 		// Syft SBOM
 		sbomGenerator = &fakes.SBOMGenerator{}
 		sbomGenerator.GenerateFromDependencyCall.Returns.SBOM = sbom.SBOM{}
@@ -85,7 +82,6 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 		logEmitter := scribe.NewEmitter(buffer)
 
 		build = miniconda.Build(
-			entryResolver,
 			dependencyManager,
 			runner,
 			sbomGenerator,
@@ -164,11 +160,6 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 			},
 		}))
 
-		Expect(entryResolver.MergeLayerTypesCall.Receives.Name).To(Equal("conda"))
-		Expect(entryResolver.MergeLayerTypesCall.Receives.Entries).To(Equal([]packit.BuildpackPlanEntry{
-			{Name: "conda"},
-		}))
-
 		Expect(dependencyManager.DeliverCall.Receives.Dependency).To(Equal(
 			postal.Dependency{
 				ID:      "miniconda3",
@@ -194,8 +185,9 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 
 	context("when the conda layer is required at build and launch", func() {
 		it.Before(func() {
-			entryResolver.MergeLayerTypesCall.Returns.Launch = true
-			entryResolver.MergeLayerTypesCall.Returns.Build = true
+			buildContext.Plan.Entries[0].Metadata = make(map[string]interface{})
+			buildContext.Plan.Entries[0].Metadata["launch"] = true
+			buildContext.Plan.Entries[0].Metadata["build"] = true
 		})
 
 		it("returns a layer with build and launch set true and the BOM is set for build and launch", func() {
