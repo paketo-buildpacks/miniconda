@@ -115,7 +115,13 @@ func Build(
 		logger.Subprocess("Installing Miniconda %s", dependency.Version)
 
 		duration, err := clock.Measure(func() error {
-			return dependencyManager.Deliver(dependency, context.CNBPath, minicondaScriptTempLayer.Path, context.Platform.Path)
+			err := dependencyManager.Deliver(dependency, context.CNBPath, minicondaScriptTempLayer.Path, context.Platform.Path)
+			if err != nil {
+				return err
+			}
+
+			scriptPath := filepath.Join(minicondaScriptTempLayer.Path, dependency.Name)
+			return runner.Run(scriptPath, condaLayer.Path)
 		})
 		if err != nil {
 			return packit.BuildResult{}, err
@@ -126,13 +132,6 @@ func Build(
 
 		condaLayer.Metadata = map[string]interface{}{
 			DepKey: dependency.SHA256,
-		}
-
-		scriptPath := filepath.Join(minicondaScriptTempLayer.Path, dependency.Name)
-
-		err = runner.Run(scriptPath, condaLayer.Path)
-		if err != nil {
-			return packit.BuildResult{}, err
 		}
 
 		logger.GeneratingSBOM(condaLayer.Path)
