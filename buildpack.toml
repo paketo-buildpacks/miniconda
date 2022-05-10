@@ -24,12 +24,6 @@ api = "0.7"
     uri = "https://repo.anaconda.com/miniconda/Miniconda3-py39_4.11.0-Linux-x86_64.sh"
     version = "4.11.0"
 
-  [[metadata.dependency_deprecation_dates]]
-    date = "2025-10-01T00:00:00Z"
-    link = "https://www.python.org/dev/peps/pep-0596/"
-    name = "miniconda3"
-    version_line = "4.11.x"
-
 [[stacks]]
   id = "org.cloudfoundry.stacks.cflinuxfs3"
 
