@@ -14,6 +14,7 @@ api = "0.7"
   pre-package = "./scripts/build.sh"
 
   [[metadata.dependencies]]
+    cpe = "cpe:2.3:a:conda:miniconda3:4.9.2:*:*:*:*:python:*:*"
     id = "miniconda3"
     name = "Miniconda"
     sha256 = "536817d1b14cb1ada88900f5be51ce0a5e042bae178b5550e62f61e223deae7c"
@@ -22,7 +23,6 @@ api = "0.7"
     stacks = ["io.buildpacks.stacks.bionic", "org.cloudfoundry.stacks.cflinuxfs3"]
     uri = "https://repo.anaconda.com/miniconda/Miniconda3-py39_4.9.2-Linux-x86_64.sh"
     version = "4.9.2"
-    cpe = "cpe:2.3:a:conda:miniconda3:4.9.2:*:*:*:*:python:*:*"
 
   [[metadata.dependency_deprecation_dates]]
     date = "2023-06-27T00:00:00Z"
