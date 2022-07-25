@@ -38,6 +38,9 @@ jobs:
     - name: Cleanup
       run: rm -rf github-config
 
+    - name: Diff
+      run: git diff
+
     - name: Commit
       id: commit
       uses: paketo-buildpacks/github-config/actions/pull-request/create-commit@main
