@@ -36,8 +36,12 @@ func testReusingLayerRebuild(t *testing.T, context spec.G, it spec.S) {
 
 		docker = occam.NewDocker()
 		pack = occam.NewPack().WithNoColor()
+
 		imageIDs = map[string]struct{}{}
 		containerIDs = map[string]struct{}{}
+
+		source, err = occam.Source(filepath.Join("testdata", "default_app"))
+		Expect(err).NotTo(HaveOccurred())
 	})
 
 	it.After(func() {
@@ -64,9 +68,6 @@ func testReusingLayerRebuild(t *testing.T, context spec.G, it spec.S) {
 				firstContainer  occam.Container
 				secondContainer occam.Container
 			)
-
-			source, err = occam.Source(filepath.Join("testdata", "default_app"))
-			Expect(err).NotTo(HaveOccurred())
 
 			build := pack.Build.
 				WithPullPolicy("never").
