@@ -2,7 +2,7 @@ api = "0.7"
 
 [buildpack]
   id = "paketo-buildpacks/miniconda"
-  name = "Paketo Miniconda Buildpack"
+  name = "Paketo Buildpack for Miniconda"
   sbom-formats = ["application/vnd.cyclonedx+json", "application/spdx+json", "application/vnd.syft+json"]
 
   [[buildpack.licenses]]
