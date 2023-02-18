@@ -49,12 +49,12 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 
 		dependencyManager = &fakes.DependencyManager{}
 		dependencyManager.ResolveCall.Returns.Dependency = postal.Dependency{
-			ID:      "miniconda3",
-			Name:    "miniconda3-dependency-name",
-			SHA256:  "miniconda3-dependency-sha",
-			Stacks:  []string{"some-stack"},
-			URI:     "miniconda3-dependency-uri",
-			Version: "miniconda3-dependency-version",
+			ID:       "miniconda3",
+			Name:     "miniconda3-dependency-name",
+			Checksum: "miniconda3-dependency-sha",
+			Stacks:   []string{"some-stack"},
+			URI:      "miniconda3-dependency-uri",
+			Version:  "miniconda3-dependency-version",
 		}
 
 		// Legacy SBOM
@@ -151,23 +151,23 @@ func testBuild(t *testing.T, context spec.G, it spec.S) {
 
 		Expect(dependencyManager.GenerateBillOfMaterialsCall.Receives.Dependencies).To(Equal([]postal.Dependency{
 			{
-				ID:      "miniconda3",
-				Name:    "miniconda3-dependency-name",
-				SHA256:  "miniconda3-dependency-sha",
-				Stacks:  []string{"some-stack"},
-				URI:     "miniconda3-dependency-uri",
-				Version: "miniconda3-dependency-version",
+				ID:       "miniconda3",
+				Name:     "miniconda3-dependency-name",
+				Checksum: "miniconda3-dependency-sha",
+				Stacks:   []string{"some-stack"},
+				URI:      "miniconda3-dependency-uri",
+				Version:  "miniconda3-dependency-version",
 			},
 		}))
 
 		Expect(dependencyManager.DeliverCall.Receives.Dependency).To(Equal(
 			postal.Dependency{
-				ID:      "miniconda3",
-				Name:    "miniconda3-dependency-name",
-				SHA256:  "miniconda3-dependency-sha",
-				Stacks:  []string{"some-stack"},
-				URI:     "miniconda3-dependency-uri",
-				Version: "miniconda3-dependency-version",
+				ID:       "miniconda3",
+				Name:     "miniconda3-dependency-name",
+				Checksum: "miniconda3-dependency-sha",
+				Stacks:   []string{"some-stack"},
+				URI:      "miniconda3-dependency-uri",
+				Version:  "miniconda3-dependency-version",
 			}))
 		Expect(dependencyManager.DeliverCall.Receives.CnbPath).To(Equal(cnbDir))
 		Expect(dependencyManager.DeliverCall.Receives.DestinationPath).To(Equal(filepath.Join(layersDir, "miniconda-script-temp-layer")))
