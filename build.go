@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/paketo-buildpacks/packit/v2"
+	"github.com/paketo-buildpacks/packit/v2/cargo"
 	"github.com/paketo-buildpacks/packit/v2/chronos"
 	"github.com/paketo-buildpacks/packit/v2/draft"
 	"github.com/paketo-buildpacks/packit/v2/postal"
@@ -76,8 +77,14 @@ func Build(
 			launchMetadata = packit.LaunchMetadata{BOM: legacySBOM}
 		}
 
-		cachedSHA, ok := condaLayer.Metadata[DepKey].(string)
-		if ok && cachedSHA == dependency.SHA256 {
+		cachedChecksum, ok := condaLayer.Metadata[DepKey].(string)
+		dependencyChecksum := dependency.Checksum
+		if dependencyChecksum == "" {
+			//nolint:staticcheck // SHA256 is only a fallback in case Checksum is not present
+			dependencyChecksum = dependency.SHA256
+		}
+
+		if ok && cachedChecksum != "" && cargo.Checksum(cachedChecksum).MatchString(dependencyChecksum) {
 			logger.Process("Reusing cached layer %s", condaLayer.Path)
 			logger.Break()
 
@@ -131,7 +138,7 @@ func Build(
 		logger.Break()
 
 		condaLayer.Metadata = map[string]interface{}{
-			DepKey: dependency.SHA256,
+			DepKey: dependencyChecksum,
 		}
 
 		logger.GeneratingSBOM(condaLayer.Path)
