@@ -72,5 +72,35 @@ func testLogging(t *testing.T, context spec.G, it spec.S) {
 				MatchRegexp(`      Completed in ([0-9]*(\.[0-9]*)?[a-z]+)+`),
 			))
 		})
+
+		it("logs helpful information to the user with mamba installation", func() {
+			var (
+				logs fmt.Stringer
+				err  error
+			)
+
+			image, logs, err = pack.WithNoColor().Build.
+				WithEnv(map[string]string{"BP_CONDA_SOLVER": "mamba"}).
+				WithPullPolicy("never").
+				WithBuildpacks(
+					settings.Buildpacks.Miniconda.Online,
+					settings.Buildpacks.BuildPlan.Online,
+				).
+				Execute(name, source)
+			Expect(err).ToNot(HaveOccurred(), logs.String)
+
+			Expect(logs).To(ContainLines(
+				MatchRegexp(fmt.Sprintf(`%s \d+\.\d+\.\d+`, settings.Buildpack.Name)),
+				"  Executing build process",
+				MatchRegexp(`    Installing Miniconda \d+\.\d+\.\d+`),
+				MatchRegexp(`      Completed in ([0-9]*(\.[0-9]*)?[a-z]+)+`),
+				"",
+				"    Installing mamba solver",
+				MatchRegexp(`      Solver completed in ([0-9]*(\.[0-9]*)?[a-z]+)+`),
+				"",
+				"    Configuring mamba solver",
+				MatchRegexp(`      Configuration completed in ([0-9]*(\.[0-9]*)?[a-z]+)+`),
+			))
+		})
 	})
 }
