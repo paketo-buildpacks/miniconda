@@ -155,7 +155,7 @@ func testDefault(t *testing.T, context spec.G, it spec.S) {
 					cLogs, err := docker.Container.Logs.Execute(container2.ID)
 					Expect(err).NotTo(HaveOccurred())
 					return cLogs.String()
-				}).Should(ContainSubstring(`"name":"Miniconda"`))
+				}).Should(ContainSubstring(`"name":"Miniconda.sh"`))
 
 				// check that all required SBOM files are present
 				Expect(filepath.Join(sbomDir, "sbom", "launch", strings.ReplaceAll(settings.Buildpack.ID, "/", "_"), "conda", "sbom.cdx.json")).To(BeARegularFile())
@@ -165,7 +165,7 @@ func testDefault(t *testing.T, context spec.G, it spec.S) {
 				// check an SBOM file to make sure it has an entry for cpython
 				contents, err := os.ReadFile(filepath.Join(sbomDir, "sbom", "launch", strings.ReplaceAll(settings.Buildpack.ID, "/", "_"), "conda", "sbom.cdx.json"))
 				Expect(err).NotTo(HaveOccurred())
-				Expect(string(contents)).To(ContainSubstring(`"name": "Miniconda"`))
+				Expect(string(contents)).To(ContainSubstring(`"name": "Miniconda.sh"`))
 			})
 		})
 	})
