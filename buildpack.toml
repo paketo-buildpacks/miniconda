@@ -14,15 +14,15 @@ api = "0.7"
   pre-package = "./scripts/build.sh"
 
   [[metadata.dependencies]]
-    cpe = "cpe:2.3:a:conda:miniconda3:22.11.1:*:*:*:*:python:*:*"
+    cpe = "cpe:2.3:a:conda:miniconda3:24.1.2:*:*:*:*:python:*:*"
     id = "miniconda3"
-    name = "Miniconda"
-    sha256 = "e685005710679914a909bfb9c52183b3ccc56ad7bb84acc861d596fcbe5d28bb"
-    source = "https://github.com/conda/conda/archive/refs/tags/22.11.1.tar.gz"
-    source_sha256 = "f9256a7e71a9f35063b683f6c7823acf05c1f75468fc609954f1f5efae7c03ac"
+    name = "Miniconda.sh"
+    uri = "https://repo.anaconda.com/miniconda/Miniconda3-py39_24.1.2-0-Linux-x86_64.sh"
+    sha256 = "2ec135e4ae2154bb41e8df9ecac7ef23a7d6ca59fc1c8071cfe5298505c19140"
+    source = "https://github.com/conda/conda/archive/refs/tags/24.1.2.tar.gz"
+    sha256_source = "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
     stacks = ["*"]
-    uri = "https://repo.anaconda.com/miniconda/Miniconda3-py39_22.11.1-1-Linux-x86_64.sh"
-    version = "22.11.1"
+    version = "24.1.2"
 
 [[stacks]]
   id = "*"

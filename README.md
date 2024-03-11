@@ -1,5 +1,16 @@
 # Miniconda Cloud Native Buildpack
 
+The Paketo Buildpack for Miniconda is a Cloud Native Buildpack that installs
+miniconda into a layer and makes it available on the PATH.
+
+The buildpack is published for consumption at `gcr.io/paketo-buildpacks/miniconda`.
+
+## Configuration
+
+|  Environment Variable  | Description                                                      |
+|------------------------|------------------------------------------------------------------|
+| `$BP_MINICONDA_SOLVER` | Configure the solver to be used (current valid value is `mamba`) |
+
 ## Integration
 
 The Miniconda CNB provides conda as a dependency. Downstream buildpacks can
@@ -50,6 +61,16 @@ $ ./scripts/package.sh --version <version-number>
 This will create a `buildpackage.cnb` file under the `build` directory which you
 can use to build your app as follows:
 `pack build <app-name> -p <path-to-app> -b build/buildpackage.cnb -b <other-buildpacks..>`
+
+To use the mamba solver:
+
+```shell
+pack build <app-name> \
+           --env BP_MINICONDA_SOLVER=mamba \
+           -p <path-to-app> \
+           -b build/buildpackage.cnb \
+           -b <other-buildpacks..>
+```
 
 ## Vendoring
 

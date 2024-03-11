@@ -1,6 +1,7 @@
 package miniconda
 
 import (
+	"os"
 	"path/filepath"
 	"time"
 
@@ -8,6 +9,7 @@ import (
 	"github.com/paketo-buildpacks/packit/v2/cargo"
 	"github.com/paketo-buildpacks/packit/v2/chronos"
 	"github.com/paketo-buildpacks/packit/v2/draft"
+	"github.com/paketo-buildpacks/packit/v2/pexec"
 	"github.com/paketo-buildpacks/packit/v2/postal"
 	"github.com/paketo-buildpacks/packit/v2/sbom"
 	"github.com/paketo-buildpacks/packit/v2/scribe"
@@ -32,6 +34,14 @@ type Runner interface {
 
 type SBOMGenerator interface {
 	GenerateFromDependency(dependency postal.Dependency, dir string) (sbom.SBOM, error)
+}
+
+func GetEnvOrDefault(key, defaultValue string) string {
+	value, exists := os.LookupEnv(key)
+	if !exists {
+		return defaultValue
+	}
+	return value
 }
 
 // Build will return a packit.BuildFunc that will be invoked during the build
@@ -136,6 +146,39 @@ func Build(
 
 		logger.Action("Completed in %s", duration.Round(time.Millisecond))
 		logger.Break()
+
+		solver := GetEnvOrDefault("BP_CONDA_SOLVER", "conda")
+
+		if solver == "mamba" {
+			logger.Subprocess("Installing mamba solver")
+
+			conda := pexec.NewExecutable(condaLayer.Path + "/bin/conda")
+			duration, err = clock.Measure(func() error {
+				return conda.Execute(pexec.Execution{
+					Args: []string{"install", "-n", "base", "conda-libmamba-solver", "-y"},
+				})
+			})
+			if err != nil {
+				return packit.BuildResult{}, err
+			}
+
+			logger.Action("Solver completed in %s", duration.Round(time.Millisecond))
+			logger.Break()
+
+			logger.Subprocess("Configuring mamba solver")
+			duration, err = clock.Measure(func() error {
+				return conda.Execute(pexec.Execution{
+					Args: []string{"config", "--set", "solver", "libmamba"},
+				})
+			})
+			if err != nil {
+				return packit.BuildResult{}, err
+			}
+
+			logger.Action("Configuration completed in %s", duration.Round(time.Millisecond))
+			logger.Break()
+
+		}
 
 		condaLayer.Metadata = map[string]interface{}{
 			DepKey: dependencyChecksum,
