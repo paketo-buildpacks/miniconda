@@ -19,7 +19,7 @@ A copy of the upstream README.md can be found here: [README.md](../README.md)
 - All PRs (other than an upstream sync detailed below) should first land on `main`
 - If a PR is needed for a given release, a new PR should be made against that release branch
 - When needing to pull in upstream changes (typically done as a post-release task to stay up to date as needed):
-  - Navigate the the [main-upstream](https://github.com/plotly/paketo-buildpacks_python/tree/main-upstream) branch
+  - Navigate the the [main-upstream](https://github.com/plotly/miniconda/tree/main-upstream) branch
   - Select **Sync fork**
   - A PR should then be opened to add these changes to our `main` branch, favouring our custom work whenever there are conflicts
 
