@@ -4,6 +4,7 @@ api = "0.7"
   id = "paketo-buildpacks/miniconda"
   name = "Paketo Buildpack for Miniconda"
   sbom-formats = ["application/vnd.cyclonedx+json", "application/spdx+json", "application/vnd.syft+json"]
+  version = "5.8.0"
 
   [[buildpack.licenses]]
     type = "Apache-2.0"

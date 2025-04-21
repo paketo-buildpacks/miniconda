@@ -140,7 +140,7 @@ function buildpackage::create() {
   pack \
     buildpack package "${output}" \
       --path "${BUILD_DIR}/buildpack.tgz" \
-      --format image
+      --format image --target linux/amd64
 }
 
 main "${@:-}"
