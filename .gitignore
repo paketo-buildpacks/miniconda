@@ -2,3 +2,6 @@
 .idea
 .bin
 build
+/linux
+/darwin
+/windows

@@ -10,13 +10,24 @@ api = "0.7"
     uri = "https://github.com/paketo-buildpacks/miniconda/blob/main/LICENSE"
 
 [metadata]
-  include-files = ["bin/run", "bin/build", "bin/detect", "buildpack.toml"]
-  pre-package = "./scripts/build.sh"
+  include-files = [
+    "buildpack.toml",
+    "linux/amd64/bin/build",
+    "linux/amd64/bin/detect",
+    "linux/amd64/bin/run",
+    "linux/arm64/bin/build",
+    "linux/arm64/bin/detect",
+    "linux/arm64/bin/run",
+  ]
+
+  pre-package = "./scripts/build.sh --target linux/amd64 --target linux/arm64"
 
   [[metadata.dependencies]]
+    arch = "amd64"
     cpe = "cpe:2.3:a:conda:miniconda3:24.1.2:*:*:*:*:python:*:*"
     id = "miniconda3"
     name = "Miniconda.sh"
+    os = "linux"
     uri = "https://repo.anaconda.com/miniconda/Miniconda3-py39_24.1.2-0-Linux-x86_64.sh"
     sha256 = "2ec135e4ae2154bb41e8df9ecac7ef23a7d6ca59fc1c8071cfe5298505c19140"
     source = "https://github.com/conda/conda/archive/refs/tags/24.1.2.tar.gz"
@@ -24,5 +35,26 @@ api = "0.7"
     stacks = ["*"]
     version = "24.1.2"
 
+  [[metadata.dependencies]]
+    arch = "arm64"
+    cpe = "cpe:2.3:a:conda:miniconda3:24.1.2:*:*:*:*:python:*:*"
+    id = "miniconda3"
+    name = "Miniconda.sh"
+    os = "linux"
+    uri = "https://repo.anaconda.com/miniconda/Miniconda3-py39_24.1.2-0-Linux-aarch64.sh"
+    sha256 = "b3e7d8ad4a4c9106594b268ab1cd9494ce982eaf7734bb2cd13a47e14e92a43e"
+    source = "https://github.com/conda/conda/archive/refs/tags/24.1.2.tar.gz"
+    sha256_source = "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
+    stacks = ["*"]
+    version = "24.1.2"
+
 [[stacks]]
   id = "*"
+
+[[targets]]
+  arch = "amd64"
+  os = "linux"
+
+[[targets]]
+  arch = "arm64"
+  os = "linux"
