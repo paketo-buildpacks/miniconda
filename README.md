@@ -3,7 +3,7 @@
 The Paketo Buildpack for Miniconda is a Cloud Native Buildpack that installs
 miniconda into a layer and makes it available on the PATH.
 
-The buildpack is published for consumption at `gcr.io/paketo-buildpacks/miniconda`.
+The buildpack is published for consumption at `paketobuildpacks/miniconda`.
 
 ## Configuration
 
